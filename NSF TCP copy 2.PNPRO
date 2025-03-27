@@ -13,8 +13,8 @@
       <place label-y="-2.0" magnets="FOUR_PER_SIDE" name="theirisn" x="4.0" y="21.0"/>
       <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="acksent" x="4.0" y="27.0"/>
       <place label-x="-2.5" label-y="0.0" magnets="FOUR_PER_SIDE" name="ackrcvd" x="4.0" y="34.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="estab" x="27.0" y="38.0"/>
-      <place label-x="1.0" magnets="NSEW_SQUARE_POINTS" name="estab_" x="32.0" y="38.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="estab" x="4.0" y="39.0"/>
+      <place label-x="1.0" magnets="NSEW_SQUARE_POINTS" name="estab_" x="54.0" y="39.0"/>
       <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="syn2_" x="54.0" y="10.0"/>
       <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="myisn_" x="54.0" y="15.0"/>
       <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="theirisn_" x="54.0" y="21.0"/>
@@ -28,28 +28,32 @@
       <transition delay="I[1.0]" label-x="2.0" label-y="-0.5" magnets="FOUR_PER_SIDE" name="ACK" type="GEN" x="19.55" y="27.0"/>
       <transition delay="I[1.0]" label-y="2.0" magnets="NSEW_SQUARE_POINTS" name="CONNECT" type="GEN" x="19.55" y="37.0"/>
       <transition delay="I[1.0]" label-y="2.0" magnets="FOUR_PER_SIDE" name="SYN" type="GEN" x="19.55" y="9.0"/>
-      <color-class definition="c{1..3}" name="C0" x="56.4375" y="37.0"/>
-      <color-var domain="C0" name="v0" x="57.125" y="39.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait1" x="4.0" y="52.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="finrcvd_" x="54.0" y="46.0"/>
-      <transition delay="I[1.0]" label-x="2.0" label-y="-0.5" magnets="FOUR_PER_SIDE" name="FIN" type="GEN" x="19.55" y="44.0"/>
-      <transition delay="I[1.0]" label-x="2.0" label-y="-1.0" magnets="FOUR_PER_SIDE" name="FIN_" type="GEN" x="39.55" y="45.0"/>
-      <transition delay="I[1.0]" label-x="2.0" label-y="-0.5" magnets="FOUR_PER_SIDE" name="ACKF" type="GEN" x="19.55" y="51.0"/>
-      <transition delay="I[1.0]" delay-x="0.0" delay-y="2.0" label-x="2.5" label-y="0.5" magnets="FOUR_PER_SIDE" name="ACKF_" type="GEN" x="39.55" y="51.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="finrcvd" x="4.0" y="46.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait1_" x="54.0" y="52.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="ackfrcvd" x="4.0" y="59.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="timewait" x="4.0" y="70.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="ackfrcvd_" x="54.0" y="59.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="finsent" x="4.0" y="41.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="finsent_" x="54.0" y="41.0"/>
-      <place name="timewait_" x="54.0" y="70.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait2" x="4.0" y="65.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait2_" x="54.0" y="65.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="closewait_" x="54.0" y="75.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="closewait" x="4.0" y="75.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="lastack_" x="54.0" y="80.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="lastack" x="4.0" y="81.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait1" x="4.0" y="55.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="finrcvd_" x="54.0" y="49.0"/>
+      <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="FIN" type="GEN" x="19.55" y="48.0"/>
+      <transition delay="I[1.0]" label-x="-2.0" label-y="1.0" magnets="FOUR_PER_SIDE" name="FIN_" type="GEN" x="39.55" y="49.0"/>
+      <transition delay="I[1.0]" label-x="2.0" label-y="-0.5" magnets="FOUR_PER_SIDE" name="ACKF" type="GEN" x="19.55" y="55.0"/>
+      <transition delay="I[1.0]" delay-x="0.0" delay-y="2.0" label-x="-2.5" label-y="-0.5" magnets="FOUR_PER_SIDE" name="ACKF_" type="GEN" x="39.55" y="55.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="finrcvd" x="4.0" y="49.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait1_" x="54.0" y="55.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="ackfrcvd" x="4.0" y="62.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="timewait" x="4.0" y="73.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="ackfrcvd_" x="54.0" y="62.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="finsent" x="4.0" y="44.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="finsent_" x="54.0" y="44.0"/>
+      <place name="timewait_" x="54.0" y="73.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait2" x="4.0" y="68.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="fin_wait2_" x="54.0" y="68.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="closewait_" x="54.0" y="78.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="closewait" x="4.0" y="78.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="lastack_" x="54.0" y="83.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="lastack" x="4.0" y="84.0"/>
+      <transition delay="I[1.0]" label-x="2.5" magnets="FOUR_PER_SIDE" name="ACKF2" type="GEN" x="19.55" y="64.0"/>
+      <transition delay="I[1.0]" label-x="-2.5" magnets="FOUR_PER_SIDE" name="ACKF2_" type="GEN" x="39.55" y="64.0"/>
+      <transition delay="I[1.0]" label-x="2.5" label-y="-0.5" magnets="FOUR_PER_SIDE" name="CLOSE" type="GEN" x="19.55" y="43.0"/>
+      <transition delay="I[1.0]" label-x="-3.0" label-y="0.0" magnets="FIVE_PER_SIDE" name="CLOSE_" type="GEN" x="39.55" y="43.0"/>
+      <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="FIN2" type="GEN" x="19.55" y="71.0"/>
+      <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="FIN2_" type="GEN" x="39.55" y="71.0"/>
     </nodes>
     <edges>
       <arc head="ACK" head-magnet="4" kind="INPUT" tail="ackonce"/>
@@ -73,19 +77,18 @@
       <arc head="theirisn" head-magnet="3" kind="OUTPUT" tail="ACK" tail-magnet="14"/>
       <arc head="theirisn" head-magnet="12" kind="OUTPUT" tail="SYN_" tail-magnet="8"/>
       <arc head="theirisn" head-magnet="0" kind="OUTPUT" tail="SYNACK_"/>
-      <arc head="theirisn_" head-magnet="6" kind="OUTPUT" tail="SYN" tail-magnet="11"/>
-      <arc head="ackrcvd_" kind="OUTPUT" tail="SYNACK"/>
+      <arc head="ackrcvd_" kind="OUTPUT" mult-k="1.1723632812499996" tail="SYNACK">
+        <point x="36.5" y="30.0"/>
+      </arc>
       <arc head="acksent" kind="OUTPUT" mult-k="1.4465820312499997" tail="SYNACK" tail-magnet="10">
         <point x="18.5883681640625" y="20.79609375"/>
       </arc>
       <arc head="theirisn_" head-magnet="4" kind="OUTPUT" tail="SYNACK"/>
       <arc head="acksent" kind="OUTPUT" tail="ACK"/>
-      <arc head="ackrcvd" kind="OUTPUT" tail="ACK" tail-magnet="7"/>
       <arc head="ACK" head-magnet="15" kind="INPUT" tail="ackrcvd" tail-magnet="11"/>
       <arc head="ackrcvd_" kind="OUTPUT" tail="ACK"/>
       <arc head="CONNECT" kind="INPUT" tail="ackrcvd" tail-magnet="3"/>
-      <arc head="estab" kind="OUTPUT" tail="CONNECT"/>
-      <arc head="ackrcvd" head-magnet="15" kind="OUTPUT" tail="SYNACK_" tail-magnet="6"/>
+      <arc head="estab" kind="OUTPUT" tail="CONNECT" tail-magnet="7"/>
       <arc head="ackrcvd" head-magnet="0" kind="OUTPUT" tail="ACK_" tail-magnet="6"/>
       <arc head="estab_" kind="OUTPUT" tail="CONNECT_"/>
       <arc head="CONNECT_" head-magnet="6" kind="INPUT" tail="ackrcvd_"/>
@@ -96,7 +99,6 @@
       <arc head="acksent_" kind="OUTPUT" tail="SYNACK_" tail-magnet="8"/>
       <arc head="CONNECT_" head-magnet="5" kind="INPUT" tail="theirisn_" tail-magnet="1"/>
       <arc head="CONNECT_" head-magnet="4" kind="INPUT" tail="myisn_"/>
-      <arc head="theirisn_" head-magnet="3" kind="OUTPUT" tail="ACK_"/>
       <arc head="ACK_" head-magnet="4" kind="INPUT" tail="theirisn_" tail-magnet="2"/>
       <arc head="myisn_" kind="OUTPUT" tail="ACK_"/>
       <arc head="ACK_" head-magnet="0" kind="INPUT" mult-k="1.23779296875" tail="myisn_" tail-magnet="4">
@@ -121,37 +123,44 @@
         <point x="35.0" y="13.5"/>
         <point x="54.28964195971005" y="11.707135384039947"/>
       </arc>
-      <arc head="FIN" head-magnet="4" kind="INPUT" tail="estab"/>
-      <arc head="FIN_" head-magnet="0" kind="INPUT" tail="estab_" tail-magnet="2"/>
       <arc head="finsent" head-magnet="0" kind="OUTPUT" tail="FIN" tail-magnet="13"/>
-      <arc head="finrcvd_" kind="OUTPUT" mult-k="1.10732421875" tail="FIN" tail-magnet="5">
-        <point x="38.5" y="48.5"/>
+      <arc head="finrcvd_" kind="OUTPUT" mult-k="3.0999023437500006" tail="FIN" tail-magnet="5">
+        <point x="31.215747070312503" y="47.51240234375"/>
+        <point x="35.5" y="47.0"/>
+        <point x="38.0" y="47.0"/>
       </arc>
-      <arc head="finsent_" head-magnet="4" kind="OUTPUT" tail="FIN_" tail-magnet="5"/>
+      <arc head="finsent_" head-magnet="4" kind="OUTPUT" tail="FIN_" tail-magnet="0"/>
       <arc head="finrcvd" kind="OUTPUT" mult-k="0.8795898437499999" tail="FIN_" tail-magnet="14">
-        <point x="22.0" y="48.5"/>
+        <point x="22.0" y="47.0"/>
       </arc>
-      <arc head="fin_wait1_" head-magnet="4" kind="OUTPUT" mult-k="1.2249023437500002" tail="FIN_" tail-magnet="6">
-        <point x="45.0" y="48.5"/>
-      </arc>
-      <arc head="fin_wait1" head-magnet="0" kind="OUTPUT" tail="FIN" tail-magnet="15"/>
+      <arc head="fin_wait1" head-magnet="1" kind="OUTPUT" tail="FIN" tail-magnet="13"/>
       <arc head="ACKF_" head-magnet="5" kind="INPUT" tail="finrcvd_" tail-magnet="3"/>
       <arc head="ackfrcvd" head-magnet="0" kind="OUTPUT" tail="ACKF_" tail-magnet="14"/>
       <arc head="ACKF" head-magnet="13" kind="INPUT" tail="finrcvd" tail-magnet="1"/>
       <arc head="ackfrcvd_" head-magnet="4" kind="OUTPUT" tail="ACKF" tail-magnet="6"/>
-      <arc head="fin_wait2" head-magnet="7" kind="OUTPUT" tail="ACKF" tail-magnet="15"/>
-      <arc head="fin_wait2_" kind="OUTPUT" tail="ACKF_" tail-magnet="11"/>
-      <arc head="FIN_" head-magnet="9" kind="INPUT" mult-k="1.02392578125" tail="ackfrcvd_" tail-magnet="5">
-        <point x="47.288255671721394" y="53.3061101639089"/>
+      <arc head="closewait_" head-magnet="4" kind="OUTPUT" mult-k="2.3215820312499993" tail="ACKF_" tail-magnet="8">
+        <point x="41.2280712890625" y="59.3095703125"/>
+        <point x="43.48186769342422" y="62.78423891067505"/>
       </arc>
-      <arc head="FIN" head-magnet="9" kind="INPUT" tail="ackfrcvd" tail-magnet="7"/>
-      <arc head="closewait_" head-magnet="4" kind="OUTPUT" tail="ACKF_" tail-magnet="8"/>
-      <arc head="FIN_" kind="INPUT" tail="closewait_" tail-magnet="5"/>
       <arc head="closewait" head-magnet="0" kind="OUTPUT" tail="FIN_" tail-magnet="8"/>
-      <arc head="closewait_" head-magnet="3" kind="OUTPUT" tail="FIN" tail-magnet="11"/>
+      <arc head="closewait_" head-magnet="3" kind="OUTPUT" tail="FIN" tail-magnet="6"/>
       <arc head="lastack_" head-magnet="5" kind="OUTPUT" tail="FIN_" tail-magnet="8"/>
-      <arc head="FIN" head-magnet="8" kind="INPUT" tail="closewait" tail-magnet="7"/>
-      <arc head="lastack" head-magnet="0" kind="OUTPUT" tail="FIN" tail-magnet="9"/>
+      <arc head="lastack" head-magnet="0" kind="OUTPUT" tail="FIN" tail-magnet="11"/>
+      <arc head="CLOSE" head-magnet="12" kind="INPUT" tail="estab" tail-magnet="3"/>
+      <arc head="CLOSE_" head-magnet="5" kind="INPUT" tail="estab_" tail-magnet="1"/>
+      <arc head="fin_wait1" head-magnet="0" kind="OUTPUT" tail="CLOSE" tail-magnet="8"/>
+      <arc head="fin_wait1_" kind="OUTPUT" tail="CLOSE_" tail-magnet="13"/>
+      <arc head="closewait_" head-magnet="6" kind="OUTPUT" tail="FIN_" tail-magnet="7"/>
+      <arc head="closewait" kind="OUTPUT" tail="FIN" tail-magnet="15"/>
+      <arc head="fin_wait1_" head-magnet="3" kind="OUTPUT" tail="FIN_" tail-magnet="6"/>
+      <arc head="theirisn_" head-magnet="3" kind="OUTPUT" tail="ACK_" tail-magnet="2"/>
+      <arc head="CLOSE_" head-magnet="16" kind="INPUT" tail="estab" tail-magnet="1"/>
+      <arc head="CLOSE" head-magnet="6" kind="INPUT" tail="estab_" tail-magnet="3"/>
+      <arc head="FIN" head-magnet="12" kind="INPUT" tail="estab" tail-magnet="1"/>
+      <arc head="FIN_" kind="INPUT" tail="estab_" tail-magnet="2"/>
+      <arc head="ackrcvd" head-magnet="14" kind="OUTPUT" mult-k="1.17373046875" tail="SYNACK_" tail-magnet="6">
+        <point x="21.5" y="31.0"/>
+      </arc>
     </edges>
   </gspn>
   <measures gspn-name="PetriNet" name="Measures" simplified-UI="false">
