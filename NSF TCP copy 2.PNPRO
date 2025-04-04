@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="NSF TCP copy 2" version="121">
-  <gspn name="PetriNet">
+  <gspn name="PetriNet" zoom="75">
     <nodes>
       <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" marking="1" name="client" x="9.0" y="5.0"/>
       <place label-y="-2.0" magnets="FOUR_PER_SIDE" marking="1" name="idle" x="16.0" y="5.0"/>
@@ -50,8 +50,10 @@
       <transition delay="I[1.0]" label-x="-2.5" magnets="FOUR_PER_SIDE" name="ACKF2_" type="GEN" x="39.55" y="71.0"/>
       <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="FIN2" type="GEN" x="19.55" y="64.0"/>
       <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="FIN2_" type="GEN" x="39.55" y="64.0"/>
-      <place name="teardown" x="4.0" y="45.0"/>
-      <place name="teardown_" x="54.0" y="45.0"/>
+      <place magnets="FIVE_PER_SIDE" name="teardown" x="4.0" y="45.0"/>
+      <place magnets="FIVE_PER_SIDE" name="teardown_" x="54.0" y="45.0"/>
+      <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="close" type="GEN" x="19.55" y="43.0"/>
+      <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="close_" type="GEN" x="39.55" y="43.0"/>
     </nodes>
     <edges>
       <arc head="ACK" head-magnet="4" kind="INPUT" tail="ackonce"/>
@@ -129,14 +131,12 @@
       <arc head="finrcvd" kind="OUTPUT" mult-k="0.8795898437499999" tail="FIN_" tail-magnet="14">
         <point x="22.0" y="47.0"/>
       </arc>
-      <arc head="fin_wait1" head-magnet="1" kind="OUTPUT" mult-k="1.4465820312499997" tail="FIN" tail-magnet="13">
-        <point x="18.236586415489835" y="49.5252361140075"/>
+      <arc head="fin_wait1" head-magnet="16" kind="OUTPUT" mult-k="1.4465820312499997" tail="FIN" tail-magnet="15">
+        <point x="18.5" y="50.0"/>
       </arc>
-      <arc head="ACKF_" head-magnet="5" kind="INPUT" tail="finrcvd_" tail-magnet="3"/>
       <arc head="ackfrcvd" head-magnet="0" kind="OUTPUT" tail="ACKF_" tail-magnet="13"/>
-      <arc head="ACKF" head-magnet="13" kind="INPUT" tail="finrcvd" tail-magnet="1"/>
       <arc head="ackfrcvd_" head-magnet="4" kind="OUTPUT" tail="ACKF" tail-magnet="4"/>
-      <arc head="fin_wait1_" head-magnet="3" kind="OUTPUT" tail="FIN_" tail-magnet="6"/>
+      <arc head="fin_wait1_" head-magnet="6" kind="OUTPUT" tail="FIN_" tail-magnet="6"/>
       <arc head="theirisn_" head-magnet="3" kind="OUTPUT" tail="ACK_" tail-magnet="2"/>
       <arc head="ackrcvd" head-magnet="14" kind="OUTPUT" mult-k="1.17373046875" tail="SYNACK_" tail-magnet="11">
         <point x="21.5" y="31.0"/>
@@ -146,8 +146,6 @@
       <arc head="ACK" head-magnet="15" kind="INPUT" tail="myisn" tail-magnet="3"/>
       <arc head="CONNECT_" head-magnet="8" kind="INPUT" tail="ackrcvd_" tail-magnet="2"/>
       <arc head="CONNECT_" head-magnet="7" kind="INPUT" tail="acksent_" tail-magnet="3"/>
-      <arc head="ACKF" head-magnet="14" kind="INPUT" tail="fin_wait1" tail-magnet="2"/>
-      <arc head="ACKF_" head-magnet="6" kind="INPUT" tail="fin_wait1_" tail-magnet="2"/>
       <arc head="fin_wait2" head-magnet="0" kind="OUTPUT" mult-k="1.13876953125" tail="ACKF_" tail-magnet="15">
         <point x="25.478002929687495" y="61.800976562500004"/>
       </arc>
@@ -160,7 +158,25 @@
       <arc head="FIN2" head-magnet="15" kind="INPUT" tail="closewait" tail-magnet="0"/>
       <arc head="FIN2_" head-magnet="2" kind="INPUT" tail="finrcvd_" tail-magnet="2"/>
       <arc head="FIN2_" head-magnet="7" kind="INPUT" tail="closewait_" tail-magnet="5"/>
-      <arc head="ACKF_" head-magnet="3" kind="INPUT" tail="estab_" tail-magnet="2"/>
+      <arc head="close" head-magnet="13" kind="INPUT" tail="estab" tail-magnet="0"/>
+      <arc head="close_" head-magnet="6" kind="INPUT" tail="estab_" tail-magnet="3"/>
+      <arc head="teardown" head-magnet="17" kind="OUTPUT" tail="close" tail-magnet="14"/>
+      <arc head="ACKF" head-magnet="0" kind="INPUT" tail="teardown" tail-magnet="3"/>
+      <arc head="teardown_" head-magnet="14" kind="OUTPUT" tail="close_" tail-magnet="11"/>
+      <arc head="ACKF_" head-magnet="2" kind="INPUT" tail="teardown_"/>
+      <arc head="FIN_" head-magnet="5" kind="INPUT" tail="teardown_"/>
+      <arc head="FIN" head-magnet="12" kind="INPUT" tail="teardown" tail-magnet="2"/>
+      <arc head="teardown_" head-magnet="11" kind="OUTPUT" mult-k="0.78173828125" tail="FIN" tail-magnet="2">
+        <point x="35.0" y="46.0"/>
+      </arc>
+      <arc head="teardown" kind="OUTPUT" mult-k="0.7110351562500001" tail="FIN_" tail-magnet="0">
+        <point x="25.5" y="46.0"/>
+      </arc>
+      <arc head="fin_wait1_" head-magnet="4" kind="OUTPUT" tail="ACKF_" tail-magnet="5"/>
+      <arc head="fin_wait1" head-magnet="1" kind="OUTPUT" tail="ACKF" tail-magnet="13"/>
+      <arc head="fin_wait2_" head-magnet="5" kind="OUTPUT" tail="FIN2" tail-magnet="6"/>
+      <arc head="fin_wait2" head-magnet="1" kind="OUTPUT" tail="FIN2_" tail-magnet="8"/>
+      <arc head="ACKF2" head-magnet="13" kind="INPUT" tail="fin_wait2" tail-magnet="1"/>
     </edges>
   </gspn>
   <measures gspn-name="PetriNet" name="Measures" simplified-UI="false">
