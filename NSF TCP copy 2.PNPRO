@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="NSF TCP copy 2" version="121">
-  <gspn name="PetriNet" zoom="75">
+  <gspn name="PetriNet">
     <nodes>
       <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" marking="1" name="client" x="9.0" y="5.0"/>
       <place label-y="-2.0" magnets="FOUR_PER_SIDE" marking="1" name="idle" x="16.0" y="5.0"/>
@@ -37,15 +37,15 @@
       <place magnets="NSEW_SQUARE_POINTS" name="finrcvd" x="4.0" y="49.0"/>
       <place magnets="NSEW_SQUARE_POINTS" name="fin_wait1_" x="54.0" y="55.0"/>
       <place magnets="NSEW_SQUARE_POINTS" name="ackfrcvd" x="4.0" y="62.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="timewait" x="4.0" y="73.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="timewait" x="4.0" y="78.0"/>
       <place magnets="NSEW_SQUARE_POINTS" name="ackfrcvd_" x="54.0" y="62.0"/>
-      <place name="timewait_" x="54.0" y="73.0"/>
+      <place name="timewait_" x="54.0" y="78.0"/>
       <place magnets="NSEW_SQUARE_POINTS" name="fin_wait2" x="4.0" y="68.0"/>
       <place magnets="NSEW_SQUARE_POINTS" name="fin_wait2_" x="54.0" y="68.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="closewait_" x="54.0" y="78.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="closewait" x="4.0" y="78.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="lastack_" x="54.0" y="83.0"/>
-      <place magnets="NSEW_SQUARE_POINTS" name="lastack" x="4.0" y="84.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="closewait_" x="54.0" y="83.0"/>
+      <place magnets="FIVE_PER_SIDE" name="closewait" x="4.0" y="83.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="lastack_" x="54.0" y="88.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="lastack" x="4.0" y="89.0"/>
       <transition delay="I[1.0]" label-x="2.5" magnets="FOUR_PER_SIDE" name="ACKF2" type="GEN" x="19.55" y="71.0"/>
       <transition delay="I[1.0]" label-x="-2.5" magnets="FOUR_PER_SIDE" name="ACKF2_" type="GEN" x="39.55" y="71.0"/>
       <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="FIN2" type="GEN" x="19.55" y="64.0"/>
@@ -54,6 +54,8 @@
       <place magnets="FIVE_PER_SIDE" name="teardown_" x="54.0" y="45.0"/>
       <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="close" type="GEN" x="19.55" y="43.0"/>
       <transition delay="I[1.0]" label-x="2.5" label-y="-1.0" magnets="FOUR_PER_SIDE" name="close_" type="GEN" x="39.55" y="43.0"/>
+      <place magnets="FIVE_PER_SIDE" name="closing" x="4.0" y="73.0"/>
+      <place magnets="FIVE_PER_SIDE" name="closing_" x="54.0" y="73.0"/>
     </nodes>
     <edges>
       <arc head="ACK" head-magnet="4" kind="INPUT" tail="ackonce"/>
@@ -150,13 +152,10 @@
         <point x="25.478002929687495" y="61.800976562500004"/>
       </arc>
       <arc head="fin_wait2_" head-magnet="6" kind="OUTPUT" tail="ACKF" tail-magnet="6"/>
-      <arc head="closewait" head-magnet="7" kind="OUTPUT" tail="FIN_" tail-magnet="15"/>
+      <arc head="closewait" head-magnet="2" kind="OUTPUT" tail="FIN_" tail-magnet="15"/>
       <arc head="closewait_" head-magnet="4" kind="OUTPUT" tail="FIN" tail-magnet="10"/>
       <arc head="timewait_" kind="OUTPUT" tail="ACKF_" tail-magnet="7"/>
-      <arc head="closewait" head-magnet="6" kind="OUTPUT" tail="ACKF" tail-magnet="8"/>
-      <arc head="FIN2" head-magnet="14" kind="INPUT" tail="finrcvd" tail-magnet="2"/>
-      <arc head="FIN2" head-magnet="15" kind="INPUT" tail="closewait" tail-magnet="0"/>
-      <arc head="FIN2_" head-magnet="2" kind="INPUT" tail="finrcvd_" tail-magnet="2"/>
+      <arc head="FIN2" head-magnet="15" kind="INPUT" tail="closewait" tail-magnet="18"/>
       <arc head="FIN2_" head-magnet="7" kind="INPUT" tail="closewait_" tail-magnet="5"/>
       <arc head="close" head-magnet="13" kind="INPUT" tail="estab" tail-magnet="0"/>
       <arc head="close_" head-magnet="6" kind="INPUT" tail="estab_" tail-magnet="3"/>
@@ -172,11 +171,25 @@
       <arc head="teardown" kind="OUTPUT" mult-k="0.7110351562500001" tail="FIN_" tail-magnet="0">
         <point x="25.5" y="46.0"/>
       </arc>
-      <arc head="fin_wait1_" head-magnet="4" kind="OUTPUT" tail="ACKF_" tail-magnet="5"/>
-      <arc head="fin_wait1" head-magnet="1" kind="OUTPUT" tail="ACKF" tail-magnet="13"/>
+      <arc head="fin_wait1_" head-magnet="4" kind="OUTPUT" tail="ACKF_" tail-magnet="7"/>
+      <arc head="fin_wait1" head-magnet="1" kind="OUTPUT" tail="ACKF" tail-magnet="15"/>
       <arc head="fin_wait2_" head-magnet="5" kind="OUTPUT" tail="FIN2" tail-magnet="6"/>
       <arc head="fin_wait2" head-magnet="1" kind="OUTPUT" tail="FIN2_" tail-magnet="8"/>
       <arc head="ACKF2" head-magnet="13" kind="INPUT" tail="fin_wait2" tail-magnet="1"/>
+      <arc head="ACKF" head-magnet="13" kind="INPUT" tail="finrcvd" tail-magnet="1"/>
+      <arc head="ACKF_" head-magnet="5" kind="INPUT" tail="finrcvd_" tail-magnet="3"/>
+      <arc head="closewait" head-magnet="15" kind="OUTPUT" tail="ACKF" tail-magnet="8"/>
+      <arc head="ACKF2" head-magnet="12" kind="INPUT" tail="ackfrcvd" tail-magnet="1"/>
+      <arc head="ACKF2" head-magnet="0" kind="INPUT" tail="fin_wait1" tail-magnet="3"/>
+      <arc head="ACKF2_" head-magnet="7" kind="INPUT" tail="fin_wait2_" tail-magnet="2"/>
+      <arc head="ACKF2_" head-magnet="6" kind="INPUT" tail="ackfrcvd_" tail-magnet="2"/>
+      <arc head="ACKF2_" head-magnet="3" kind="INPUT" tail="fin_wait1_" tail-magnet="2"/>
+      <arc head="lastack_" head-magnet="5" kind="OUTPUT" tail="FIN2_" tail-magnet="10"/>
+      <arc head="lastack" kind="OUTPUT" tail="FIN2" tail-magnet="9"/>
+      <arc head="closing" head-magnet="17" kind="OUTPUT" tail="ACKF" tail-magnet="15"/>
+      <arc head="closing_" head-magnet="14" kind="OUTPUT" tail="ACKF_" tail-magnet="7"/>
+      <arc head="closing" head-magnet="0" kind="OUTPUT" tail="FIN2_" tail-magnet="14"/>
+      <arc head="closing_" head-magnet="7" kind="OUTPUT" tail="FIN2" tail-magnet="4"/>
     </edges>
   </gspn>
   <measures gspn-name="PetriNet" name="Measures" simplified-UI="false">
