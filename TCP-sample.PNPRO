@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="NSF-TCP" version="121">
+  <gspn name="PT" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false">
+    <nodes/>
+    <edges/>
+  </gspn>
+  <measures gspn-name="PT" name="Measures" simplified-UI="false">
+    <assignments/>
+    <greatspn/>
+    <formulas>
+      <formula comment="Basic statistics of the toolchain execution." language="STAT"/>
+    </formulas>
+  </measures>
+  <gspn name="TCP-TINA-sample" view-rates="false" zoom="75">
+    <nodes>
+      <place marking="1" name="CLOSED" x="31.0" y="9.0"/>
+      <place name="CLOSEWAIT" x="26.0" y="74.0"/>
+      <place name="CLOSING" x="7.0" y="70.0"/>
+      <place name="ESTAB" x="3.0" y="36.0"/>
+      <place name="FIN" x="48.0" y="74.0"/>
+      <place name="FINACK" x="2.0" y="49.0"/>
+      <place name="FINWAIT1" x="3.0" y="57.0"/>
+      <place name="FINWAIT2" x="4.0" y="64.0"/>
+      <place name="LASTACK" x="3.0" y="43.0"/>
+      <place name="LISTEN" x="53.0" y="9.0"/>
+      <place name="SYN" x="3.0" y="12.0"/>
+      <place name="SYNACK" x="3.0" y="29.0"/>
+      <place name="SYNRCVD" x="3.0" y="23.0"/>
+      <place name="SYNSENT" x="3.0" y="18.0"/>
+      <place name="TIMEWAIT" x="19.0" y="73.0"/>
+      <place marking="1" name="xCLOSED" x="74.0" y="9.0"/>
+      <place name="xCLOSEWAIT" x="57.0" y="74.0"/>
+      <place name="xCLOSING" x="67.0" y="74.0"/>
+      <place name="xESTAB" x="113.0" y="33.0"/>
+      <place name="xFIN" x="113.0" y="41.0"/>
+      <place name="xFINACK" x="113.0" y="59.0"/>
+      <place name="xFINWAIT1" x="108.0" y="71.0"/>
+      <place name="xFINWAIT2" x="99.0" y="71.0"/>
+      <place name="xLASTACK" x="113.0" y="46.0"/>
+      <place name="xLISTEN" x="58.0" y="9.0"/>
+      <place name="xSYN" x="113.0" y="9.0"/>
+      <place name="xSYNACK" x="113.0" y="28.0"/>
+      <place name="xSYNRCVD" x="113.0" y="22.0"/>
+      <place name="xSYNSENT" x="113.0" y="15.0"/>
+      <place label-x="1.0" label-y="2.5" name="xTIMEWAIT" x="87.0" y="74.0"/>
+      <transition name="AOPEN" nservers-x="0.5" type="EXP" x="18.55" y="9.0"/>
+      <transition name="CLOSE2" nservers-x="0.5" type="EXP" x="44.55" y="39.0"/>
+      <transition name="CLOSE3" nservers-x="0.5" type="EXP" x="37.55" y="74.0"/>
+      <transition name="POPEN" nservers-x="0.5" type="EXP" x="44.55" y="9.0"/>
+      <transition name="SEND" nservers-x="0.5" type="EXP" x="31.55" y="5.0"/>
+      <transition name="end" nservers-x="0.5" type="EXP" x="48.55" y="39.0"/>
+      <transition name="raf" nservers-x="0.5" type="EXP" x="48.55" y="55.0"/>
+      <transition name="raf1" nservers-x="0.5" type="EXP" x="48.55" y="62.0"/>
+      <transition name="raf2" nservers-x="0.5" type="EXP" x="19.55" y="39.0"/>
+      <transition name="ras" nservers-x="0.5" type="EXP" x="30.55" y="32.0"/>
+      <transition name="rf" nservers-x="0.5" type="EXP" x="19.55" y="81.0"/>
+      <transition name="rf1" nservers-x="0.5" type="EXP" x="48.55" y="48.0"/>
+      <transition name="rf2" nservers-x="0.5" type="EXP" x="30.55" y="55.0"/>
+      <transition name="rs" nservers-x="0.5" type="EXP" x="30.55" y="17.0"/>
+      <transition name="rs1" nservers-x="0.5" type="EXP" x="30.55" y="21.0"/>
+      <transition name="rsa" nservers-x="0.5" type="EXP" x="30.55" y="25.0"/>
+      <transition name="xAOPEN" nservers-x="0.5" type="EXP" x="78.55" y="9.0"/>
+      <transition name="xCLOSE2" nservers-x="0.5" type="EXP" x="102.55" y="39.0"/>
+      <transition name="xCLOSE3" nservers-x="0.5" type="EXP" x="93.55" y="51.0"/>
+      <transition name="xPOPEN" nservers-x="0.5" type="EXP" x="66.55" y="5.0"/>
+      <transition name="xSEND" nservers-x="0.5" type="EXP" x="88.55" y="5.0"/>
+      <transition name="xend" nservers-x="0.5" type="EXP" x="63.55" y="39.0"/>
+      <transition name="xraf" nservers-x="0.5" type="EXP" x="63.55" y="55.0"/>
+      <transition name="xraf1" nservers-x="0.5" type="EXP" x="79.55" y="74.0"/>
+      <transition name="xraf2" nservers-x="0.5" type="EXP" x="93.55" y="39.0"/>
+      <transition name="xras" nservers-x="0.5" type="EXP" x="79.55" y="32.0"/>
+      <transition name="xrf" nservers-x="0.5" type="EXP" x="79.55" y="39.0"/>
+      <transition name="xrf1" nservers-x="0.5" type="EXP" x="79.55" y="81.0"/>
+      <transition name="xrf2" nservers-x="0.5" type="EXP" x="79.55" y="55.0"/>
+      <transition name="xrs" nservers-x="0.5" type="EXP" x="79.55" y="17.0"/>
+      <transition name="xrs1" nservers-x="0.5" type="EXP" x="79.55" y="21.0"/>
+      <transition name="xrsa" nservers-x="0.5" type="EXP" x="79.55" y="25.0"/>
+    </nodes>
+    <edges>
+      <arc head="AOPEN" head-magnet="0" kind="INPUT" tail="CLOSED" tail-magnet="0"/>
+      <arc head="POPEN" head-magnet="0" kind="INPUT" tail="CLOSED" tail-magnet="0"/>
+      <arc head="xrs1" head-magnet="0" kind="INPUT" tail="xSYNSENT" tail-magnet="0"/>
+      <arc head="xrs1" head-magnet="0" kind="INPUT" tail="SYN" tail-magnet="0"/>
+      <arc head="xSYNRCVD" head-magnet="0" kind="OUTPUT" tail="xrs1" tail-magnet="0"/>
+      <arc head="xSYNACK" head-magnet="0" kind="OUTPUT" tail="xrs1" tail-magnet="0"/>
+      <arc head="xrsa" head-magnet="0" kind="INPUT" tail="xSYNSENT" tail-magnet="0"/>
+      <arc head="xrsa" head-magnet="0" kind="INPUT" tail="SYN" tail-magnet="0"/>
+      <arc head="xrsa" head-magnet="0" kind="INPUT" tail="SYNACK" tail-magnet="0"/>
+      <arc head="xESTAB" head-magnet="0" kind="OUTPUT" tail="xrsa" tail-magnet="0"/>
+      <arc head="xSYNACK" head-magnet="0" kind="OUTPUT" tail="xrsa" tail-magnet="0"/>
+      <arc head="LISTEN" head-magnet="0" kind="OUTPUT" tail="POPEN" tail-magnet="0"/>
+      <arc head="SEND" head-magnet="0" kind="INPUT" tail="LISTEN" tail-magnet="0"/>
+      <arc head="SYNSENT" head-magnet="0" kind="OUTPUT" tail="SEND" tail-magnet="0"/>
+      <arc head="SYN" head-magnet="0" kind="OUTPUT" mult-k="1.44091796875" tail="SEND">
+        <point x="24.373828125" y="7.90654296875"/>
+      </arc>
+      <arc head="end" head-magnet="0" kind="INPUT" tail="TIMEWAIT" tail-magnet="0"/>
+      <arc head="CLOSED" head-magnet="0" kind="OUTPUT" tail="end" tail-magnet="0"/>
+      <arc head="raf" head-magnet="0" kind="INPUT" tail="FINWAIT1" tail-magnet="0"/>
+      <arc head="raf" head-magnet="0" kind="INPUT" tail="xFINACK" tail-magnet="0"/>
+      <arc head="SYNSENT" head-magnet="0" kind="OUTPUT" tail="AOPEN" tail-magnet="0"/>
+      <arc head="raf1" head-magnet="0" kind="INPUT" tail="CLOSING" tail-magnet="0"/>
+      <arc head="raf1" head-magnet="0" kind="INPUT" tail="xFINACK" tail-magnet="0"/>
+      <arc head="TIMEWAIT" head-magnet="0" kind="OUTPUT" tail="raf1" tail-magnet="0"/>
+      <arc head="raf2" head-magnet="0" kind="INPUT" tail="LASTACK" tail-magnet="0"/>
+      <arc head="raf2" head-magnet="0" kind="INPUT" tail="xFINACK" tail-magnet="0"/>
+      <arc head="CLOSED" head-magnet="0" kind="OUTPUT" tail="raf2" tail-magnet="0"/>
+      <arc head="ras" head-magnet="0" kind="INPUT" tail="SYNRCVD" tail-magnet="0"/>
+      <arc head="ras" head-magnet="0" kind="INPUT" tail="xSYNACK" tail-magnet="0"/>
+      <arc head="ESTAB" head-magnet="0" kind="OUTPUT" tail="ras" tail-magnet="0"/>
+      <arc head="rf" head-magnet="0" kind="INPUT" tail="ESTAB" tail-magnet="0"/>
+      <arc head="SYN" head-magnet="0" kind="OUTPUT" tail="AOPEN" tail-magnet="0"/>
+      <arc head="rf" head-magnet="0" kind="INPUT" tail="xFIN" tail-magnet="0"/>
+      <arc head="CLOSEWAIT" head-magnet="0" kind="OUTPUT" tail="rf" tail-magnet="0"/>
+      <arc head="FINACK" head-magnet="0" kind="OUTPUT" tail="rf" tail-magnet="0"/>
+      <arc head="rf1" head-magnet="0" kind="INPUT" tail="FINWAIT1" tail-magnet="0"/>
+      <arc head="rf1" head-magnet="0" kind="INPUT" tail="xFIN" tail-magnet="0"/>
+      <arc head="CLOSING" head-magnet="0" kind="OUTPUT" tail="rf1" tail-magnet="0"/>
+      <arc head="FINACK" head-magnet="0" kind="OUTPUT" tail="rf1" tail-magnet="0"/>
+      <arc head="rf2" head-magnet="0" kind="INPUT" tail="FINWAIT2" tail-magnet="0"/>
+      <arc head="rf2" head-magnet="0" kind="INPUT" tail="xFIN" tail-magnet="0"/>
+      <arc head="TIMEWAIT" head-magnet="0" kind="OUTPUT" tail="rf2" tail-magnet="0"/>
+      <arc head="CLOSE2" head-magnet="0" kind="INPUT" tail="ESTAB" tail-magnet="0"/>
+      <arc head="FINACK" head-magnet="0" kind="OUTPUT" tail="rf2" tail-magnet="0"/>
+      <arc head="rs" head-magnet="0" kind="INPUT" tail="LISTEN" tail-magnet="0"/>
+      <arc head="rs" head-magnet="0" kind="INPUT" tail="xSYN" tail-magnet="0"/>
+      <arc head="SYNRCVD" head-magnet="0" kind="OUTPUT" tail="rs" tail-magnet="0"/>
+      <arc head="SYN" head-magnet="0" kind="OUTPUT" tail="rs" tail-magnet="0"/>
+      <arc head="SYNACK" head-magnet="0" kind="OUTPUT" tail="rs" tail-magnet="0"/>
+      <arc head="rs1" head-magnet="0" kind="INPUT" tail="SYNSENT" tail-magnet="0"/>
+      <arc head="rs1" head-magnet="0" kind="INPUT" tail="xSYN" tail-magnet="0"/>
+      <arc head="SYNRCVD" head-magnet="0" kind="OUTPUT" tail="rs1" tail-magnet="0"/>
+      <arc head="SYNACK" head-magnet="0" kind="OUTPUT" tail="rs1" tail-magnet="0"/>
+      <arc head="FINWAIT1" head-magnet="0" kind="OUTPUT" tail="CLOSE2" tail-magnet="0"/>
+      <arc head="rsa" head-magnet="0" kind="INPUT" mult-k="0.7766601562500001" tail="SYNSENT" tail-magnet="0">
+        <point x="21.336425781250004" y="23.49462890625"/>
+      </arc>
+      <arc head="rsa" head-magnet="0" kind="INPUT" tail="xSYN" tail-magnet="0"/>
+      <arc head="rsa" head-magnet="0" kind="INPUT" tail="xSYNACK" tail-magnet="0"/>
+      <arc head="ESTAB" head-magnet="0" kind="OUTPUT" tail="rsa" tail-magnet="0"/>
+      <arc head="SYNACK" head-magnet="0" kind="OUTPUT" tail="rsa" tail-magnet="0"/>
+      <arc head="xAOPEN" head-magnet="0" kind="INPUT" tail="xCLOSED" tail-magnet="0"/>
+      <arc head="xSYNSENT" head-magnet="0" kind="OUTPUT" tail="xAOPEN" tail-magnet="0"/>
+      <arc head="xSYN" head-magnet="0" kind="OUTPUT" tail="xAOPEN" tail-magnet="0"/>
+      <arc head="xCLOSE2" head-magnet="0" kind="INPUT" tail="xESTAB" tail-magnet="0"/>
+      <arc head="xFINWAIT1" head-magnet="0" kind="OUTPUT" tail="xCLOSE2" tail-magnet="0"/>
+      <arc head="FIN" head-magnet="0" kind="OUTPUT" tail="CLOSE2" tail-magnet="0"/>
+      <arc head="xFIN" head-magnet="0" kind="OUTPUT" tail="xCLOSE2" tail-magnet="0"/>
+      <arc head="xCLOSE3" head-magnet="0" kind="INPUT" tail="xCLOSEWAIT" tail-magnet="0"/>
+      <arc head="xLASTACK" head-magnet="0" kind="OUTPUT" tail="xCLOSE3" tail-magnet="0"/>
+      <arc head="xFIN" head-magnet="0" kind="OUTPUT" tail="xCLOSE3" tail-magnet="0"/>
+      <arc head="xPOPEN" head-magnet="0" kind="INPUT" tail="xCLOSED" tail-magnet="0"/>
+      <arc head="xLISTEN" head-magnet="0" kind="OUTPUT" tail="xPOPEN" tail-magnet="0"/>
+      <arc head="xSEND" head-magnet="0" kind="INPUT" tail="xLISTEN" tail-magnet="0"/>
+      <arc head="xSYNSENT" head-magnet="0" kind="OUTPUT" tail="xSEND" tail-magnet="0"/>
+      <arc head="xSYN" head-magnet="0" kind="OUTPUT" tail="xSEND" tail-magnet="0"/>
+      <arc head="xend" head-magnet="0" kind="INPUT" tail="xTIMEWAIT" tail-magnet="0"/>
+      <arc head="CLOSE3" head-magnet="0" kind="INPUT" tail="CLOSEWAIT" tail-magnet="0"/>
+      <arc head="xCLOSED" head-magnet="0" kind="OUTPUT" tail="xend" tail-magnet="0"/>
+      <arc head="xraf" head-magnet="0" kind="INPUT" tail="xFINWAIT1" tail-magnet="0"/>
+      <arc head="xraf" head-magnet="0" kind="INPUT" tail="FINACK" tail-magnet="0"/>
+      <arc head="xFINWAIT2" head-magnet="0" kind="OUTPUT" tail="xraf" tail-magnet="0"/>
+      <arc head="xraf1" head-magnet="0" kind="INPUT" tail="xCLOSING" tail-magnet="0"/>
+      <arc head="xraf1" head-magnet="0" kind="INPUT" tail="FINACK" tail-magnet="0"/>
+      <arc head="xTIMEWAIT" head-magnet="0" kind="OUTPUT" tail="xraf1" tail-magnet="0"/>
+      <arc head="xraf2" head-magnet="0" kind="INPUT" tail="xLASTACK" tail-magnet="0"/>
+      <arc head="xraf2" head-magnet="0" kind="INPUT" tail="FINACK" tail-magnet="0"/>
+      <arc head="xCLOSED" head-magnet="0" kind="OUTPUT" tail="xraf2" tail-magnet="0"/>
+      <arc head="LASTACK" head-magnet="0" kind="OUTPUT" tail="CLOSE3" tail-magnet="0"/>
+      <arc head="xras" head-magnet="0" kind="INPUT" tail="xSYNRCVD" tail-magnet="0"/>
+      <arc head="xras" head-magnet="0" kind="INPUT" tail="SYNACK" tail-magnet="0"/>
+      <arc head="xESTAB" head-magnet="0" kind="OUTPUT" tail="xras" tail-magnet="0"/>
+      <arc head="xrf" head-magnet="0" kind="INPUT" tail="xESTAB" tail-magnet="0"/>
+      <arc head="xrf" head-magnet="0" kind="INPUT" tail="FIN" tail-magnet="0"/>
+      <arc head="xCLOSEWAIT" head-magnet="0" kind="OUTPUT" tail="xrf" tail-magnet="0"/>
+      <arc head="xFINACK" head-magnet="0" kind="OUTPUT" tail="xrf" tail-magnet="0"/>
+      <arc head="xrf1" head-magnet="0" kind="INPUT" tail="xFINWAIT1" tail-magnet="0"/>
+      <arc head="xrf1" head-magnet="0" kind="INPUT" tail="FIN" tail-magnet="0"/>
+      <arc head="xCLOSING" head-magnet="0" kind="OUTPUT" tail="xrf1" tail-magnet="0"/>
+      <arc head="FIN" head-magnet="0" kind="OUTPUT" tail="CLOSE3" tail-magnet="0"/>
+      <arc head="xFINACK" head-magnet="0" kind="OUTPUT" tail="xrf1" tail-magnet="0"/>
+      <arc head="xrf2" head-magnet="0" kind="INPUT" tail="xFINWAIT2" tail-magnet="0"/>
+      <arc head="xrf2" head-magnet="0" kind="INPUT" tail="FIN" tail-magnet="0"/>
+      <arc head="xTIMEWAIT" head-magnet="0" kind="OUTPUT" tail="xrf2" tail-magnet="0"/>
+      <arc head="xFINACK" head-magnet="0" kind="OUTPUT" tail="xrf2" tail-magnet="0"/>
+      <arc head="xrs" head-magnet="0" kind="INPUT" tail="xLISTEN" tail-magnet="0"/>
+      <arc head="xrs" head-magnet="0" kind="INPUT" tail="SYN" tail-magnet="0"/>
+      <arc head="xSYNRCVD" head-magnet="0" kind="OUTPUT" tail="xrs" tail-magnet="0"/>
+      <arc head="xSYN" head-magnet="0" kind="OUTPUT" tail="xrs" tail-magnet="0"/>
+      <arc head="xSYNACK" head-magnet="0" kind="OUTPUT" tail="xrs" tail-magnet="0"/>
+    </edges>
+  </gspn>
+  <gspn name="Database" zoom="125">
+    <nodes>
+      <color-class definition="circular s{1 .. 4} " name="Srv" x="23.5625" y="2.0"/>
+      <color-class definition="enum r{1 .. 3}" name="R" x="23.5" y="3.0"/>
+      <color-class definition="Srv * R" name="SrvR" x="23.5625" y="4.875"/>
+      <place domain="Srv" label-x="5.5" label-y="0.0" marking="&lt;All&gt;" name="all_active" x="2.0" y="9.0"/>
+      <transition label-x="2.375" label-y="0.0" name="Start" rotation="1.5707963267948966" type="EXP" x="2.55" y="5.0"/>
+      <place domain="SrvR" label-x="1.5" label-y="-1.5" name="wait_mutex" x="6.0" y="3.0"/>
+      <color-var domain="Srv" name="s" x="35.9375" y="2.0"/>
+      <color-var domain="R" name="r" x="35.9375" y="3.0"/>
+      <transition label-x="2.5" label-y="0.0" magnets="THREE_PER_SIDE" name="Acquire" rotation="1.5707963267948966" type="IMM" x="10.85" y="5.0"/>
+      <place domain="SrvR" label-x="3.9375" label-y="-0.9375" name="modify" x="10.0" y="9.0"/>
+      <transition label-x="2.625" label-y="0.0" magnets="THREE_PER_SIDE" name="Change" rotation="1.5707963267948966" type="EXP" x="10.55" y="13.0"/>
+      <place domain="SrvR" label-x="5.1875" label-y="-0.125" name="wait_ack" x="10.0" y="17.0"/>
+      <transition label-x="-2.8125" label-y="-0.0625" magnets="THREE_PER_SIDE" name="Release" rotation="1.5707963267948966" type="IMM" x="10.85" y="21.0"/>
+      <place domain="SrvR" label-x="-0.6875" label-y="-1.5" name="message" x="16.6875" y="11.0"/>
+      <place domain="SrvR" label-x="0.5" label-y="-1.5" name="rec_buf" x="27.0" y="11.0"/>
+      <transition label-y="1.75" name="SendMessage" type="EXP" x="22.55" y="11.0"/>
+      <transition label-x="2.5" label-y="0.0" magnets="THREE_PER_SIDE" name="Update" rotation="1.5707963267948966" type="IMM" x="31.85" y="13.0"/>
+      <place domain="Srv" label-x="6.0" label-y="0.0" marking="&lt;All&gt;" name="all_passive" x="31.0" y="9.0"/>
+      <place domain="SrvR" label-x="5.0" label-y="0.0" name="updating" x="31.0" y="17.0"/>
+      <transition label-x="3.5" label-y="0.0" magnets="THREE_PER_SIDE" name="EndUpdate" rotation="1.5707963267948966" type="EXP" x="31.55" y="21.0"/>
+      <place domain="SrvR" label-x="0.5" label-y="-1.5" name="reply_buf" x="27.0" y="23.0"/>
+      <place domain="SrvR" label-x="1.3125" label-y="-1.5" name="acknowledge" x="16.6875" y="23.0"/>
+      <transition label-x="0.0625" label-y="1.6875" name="SendReply" type="EXP" x="22.55" y="23.0"/>
+      <place domain="R" label-x="1.0" label-y="-1.5" marking="&lt;All&gt;" name="mutex" x="15.0" y="3.0"/>
+    </nodes>
+    <edges>
+      <arc head="Start" kind="INPUT" mult="&lt;s&gt;" mult-k="0.50009765625" mult-x="0.6875" mult-y="6.835937500007105E-4" tail="all_active"/>
+      <arc head="wait_mutex" kind="OUTPUT" mult="&lt;s,r&gt;" mult-k="0.42509765625000007" mult-y="1.471041044549537E-4" tail="Start">
+        <point x="3.0" y="4.0"/>
+      </arc>
+      <arc head="Acquire" head-magnet="11" kind="INPUT" mult="&lt;s,r&gt;" mult-k="1.0081054687500002" mult-x="0.13798762881259918" mult-y="-0.6800233185912363" tail="wait_mutex">
+        <point x="10.0" y="4.0"/>
+      </arc>
+      <arc head="modify" kind="OUTPUT" mult="&lt;s,r&gt;" mult-k="0.41669921875000004" mult-y="-0.2542919921875004" tail="Acquire" tail-magnet="4"/>
+      <arc head="Change" kind="INPUT" mult="&lt;s,r&gt;" mult-k="0.50009765625" mult-x="-1.0" mult-y="-3.906250000014211E-4" tail="modify"/>
+      <arc head="wait_ack" kind="OUTPUT" mult="&lt;s,r&gt;" mult-k="0.50009765625" mult-y="-3.906250000014211E-4" tail="Change"/>
+      <arc head="Release" kind="INPUT" mult="&lt;s,r&gt;" mult-k="0.56259765625" mult-x="-1.0" mult-y="-3.906250000014211E-4" tail="wait_ack"/>
+      <arc head="all_active" kind="OUTPUT" mult="&lt;s&gt;" mult-k="2.8219726562500003" mult-x="0.75" mult-y="0.0626231650004172" tail="Release" tail-magnet="4">
+        <point x="11.0" y="24.0"/>
+        <point x="3.0" y="24.0"/>
+      </arc>
+      <arc head="message" kind="OUTPUT" mult="&lt;All-s,r&gt;" mult-k="1.24990234375" mult-x="0.6847715006851729" mult-y="-0.5" tail="Change" tail-magnet="9">
+        <point x="12.0" y="12.0"/>
+      </arc>
+      <arc head="SendMessage" kind="INPUT" mult="&lt;s,r&gt;" mult-k="0.6059570312500001" mult-x="-4.8828125E-4" mult-y="-0.5" tail="message"/>
+      <arc head="rec_buf" kind="OUTPUT" mult="&lt;s,r&gt;" mult-k="0.39990234375" mult-x="4.8828125E-4" mult-y="-0.5" tail="SendMessage"/>
+      <arc head="Update" head-magnet="11" kind="INPUT" mult="&lt;s,r&gt;" mult-k="0.50009765625" mult-x="0.019913081521757192" mult-y="-0.5649233062925738" tail="rec_buf">
+        <point x="31.0" y="12.0"/>
+      </arc>
+      <arc head="Update" head-magnet="10" kind="INPUT" mult="&lt;s&gt;" mult-k="0.5844726562500001" mult-x="0.75" mult-y="-2.1972656250213163E-4" tail="all_passive"/>
+      <arc head="updating" kind="OUTPUT" mult="&lt;s,r&gt;" mult-k="0.35068359375" mult-y="-1.318359374984368E-4" tail="Update" tail-magnet="4"/>
+      <arc head="EndUpdate" kind="INPUT" mult="&lt;s,r&gt;" mult-k="0.50009765625" mult-y="-3.906250000014211E-4" tail="updating"/>
+      <arc head="all_passive" kind="OUTPUT" mult="&lt;s&gt;" mult-k="3.613183593750001" mult-x="0.06322408536586721" mult-y="0.75" tail="EndUpdate" tail-magnet="4">
+        <point x="32.0" y="24.0"/>
+        <point x="40.0" y="24.0"/>
+        <point x="40.0" y="7.0"/>
+        <point x="32.0" y="7.0"/>
+      </arc>
+      <arc head="reply_buf" kind="OUTPUT" mult="&lt;s,r&gt;" mult-k="0.74599609375" mult-x="-0.9375" mult-y="-0.3125" tail="EndUpdate" tail-magnet="5">
+        <point x="31.0" y="24.0"/>
+      </arc>
+      <arc head="SendReply" kind="INPUT" mult="&lt;s,r&gt;" mult-k="0.50009765625" mult-x="4.8828125E-4" mult-y="-0.5" tail="reply_buf"/>
+      <arc head="acknowledge" kind="OUTPUT" mult="&lt;s,r&gt;" mult-k="0.39990234375" mult-x="-4.8828125E-4" mult-y="-0.5" tail="SendReply"/>
+      <arc head="Release" head-magnet="3" kind="INPUT" mult="&lt;All-s,r&gt;" mult-x="0.2368039638520436" mult-y="-0.5" tail="acknowledge">
+        <point x="12.0" y="24.0"/>
+      </arc>
+      <arc head="mutex" kind="OUTPUT" mult="&lt;r&gt;" mult-k="2.95009765625" mult-x="-0.8126023815524199" mult-y="0.0625" tail="Release" tail-magnet="9">
+        <point x="12.0" y="20.5"/>
+        <point x="19.5" y="20.5"/>
+        <point x="19.5" y="4.0"/>
+      </arc>
+      <arc head="Acquire" head-magnet="9" kind="INPUT" mult="&lt;r&gt;" mult-k="0.7000976562500001" mult-x="-0.06344441089473385" mult-y="-0.5121589918863645" tail="mutex">
+        <point x="12.0" y="4.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <measures gspn-name="Database" name="DatabaseMeasures" simplified-UI="false">
+    <assignments/>
+    <greatspn/>
+    <formulas>
+      <formula comment="Basic statistics of the toolchain execution." language="STAT"/>
+      <formula comment="All the basic Petri net measures" language="ALL"/>
+    </formulas>
+  </measures>
+  <gspn name="multiproc">
+    <nodes>
+      <color-class definition="p{1..4} is proc" name="P" x="51.5" y="2.0"/>
+      <place domain="P" label-x="0.35125200000000056" label-y="-1.373747999999999" name="OwnMemAcc" x="7.0" y="4.0"/>
+      <constant consttype="INTEGER" domain="P" name="S" value="&lt;All&gt;" x="51.25" y="6.0"/>
+      <place domain="P" label-x="-1.5" label-y="1.0" marking="S" name="Active" x="7.0" y="18.0"/>
+      <place domain="P" label-x="-0.25499999999999723" label-y="-1.3737479999999973" name="Queue" x="27.0" y="18.0"/>
+      <color-class definition="P * P" name="PxP" x="51.0" y="3.0"/>
+      <place domain="PxP" label-x="2.0" name="ExtMemAcc" x="43.0" y="18.0"/>
+      <place domain="P" label-x="3.5" label-y="-1.5" marking="S" name="Memory" x="43.0" y="10.0"/>
+      <place label-x="0.2637480000000192" label-y="-1.2737520000000035" marking="1" name="ExtBus" x="43.0" y="27.0"/>
+      <transition delay="2.000000e+00" name="req_ext_acc" nservers="1" nservers-x="0.0" nservers-y="1.5" type="EXP" x="16.55" y="18.0"/>
+      <transition delay="2.000000e+00" delay-x="1.000002000000002" delay-y="1.0937480000000015" label-x="3.5" label-y="-1.0" name="begin_own_acc" nservers="1" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="2.55" y="10.0"/>
+      <transition delay="5.000000e+00" delay-x="1.000001999999995" delay-y="1.0937540000000006" label-x="3.5" label-y="-1.0" name="end_own_acc" nservers="1" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="12.55" y="10.0"/>
+      <transition delay="5.000000e+00" label-x="-1.0" name="end_ext_acc" nservers="1" nservers-y="1.5" type="EXP" x="50.55" y="18.0"/>
+      <color-var domain="P" name="x" x="51.0" y="4.0"/>
+      <color-var domain="P" name="y" x="51.0" y="5.0"/>
+      <transition guard="x!=y" label-x="2.0" label-y="-2.0" name="begin_ext_acc" type="IMM" x="35.85" y="18.0"/>
+    </nodes>
+    <edges>
+      <arc head="req_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.10000000000000142" mult-y="-0.5" tail="Active" tail-magnet="0"/>
+      <arc head="Queue" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-x="0.3999999999999986" mult-y="-0.5" tail="req_ext_acc" tail-magnet="0"/>
+      <arc head="begin_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.5935390510653722" mult-y="-0.4532304744673148" tail="Active" tail-magnet="0">
+        <point x="3.0" y="16.5"/>
+      </arc>
+      <arc head="OwnMemAcc" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" tail="begin_own_acc" tail-magnet="0">
+        <point x="3.0" y="5.0"/>
+      </arc>
+      <arc head="end_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="1.1081396939130386" mult-y="-0.1348824486957021" tail="Memory" tail-magnet="0">
+        <point x="43.0" y="3.0"/>
+        <point x="18.0" y="3.0"/>
+      </arc>
+      <arc head="end_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="-0.12241451034210371" mult-y="-0.5" tail="OwnMemAcc" tail-magnet="0">
+        <point x="13.0" y="5.0"/>
+      </arc>
+      <arc head="Memory" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-k="2.45205078125" mult-x="-0.4719368887700952" mult-y="-0.5130965412289186" tail="end_own_acc" tail-magnet="0">
+        <point x="16.0" y="14.0"/>
+        <point x="24.5" y="14.0"/>
+        <point x="39.5" y="6.5"/>
+      </arc>
+      <arc head="Active" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" tail="end_own_acc" tail-magnet="0">
+        <point x="13.0" y="16.5"/>
+      </arc>
+      <arc head="end_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x,y&gt;" mult-x="0.29999999999999716" mult-y="-0.5" tail="ExtMemAcc" tail-magnet="0"/>
+      <arc head="Active" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-x="-0.32876605545765614" mult-y="-0.5" tail="end_ext_acc" tail-magnet="0">
+        <point x="59.0" y="19.0"/>
+        <point x="59.0" y="31.0"/>
+        <point x="8.0" y="31.0"/>
+      </arc>
+      <arc head="ExtBus" head-magnet="0" kind="OUTPUT" tail="end_ext_acc" tail-magnet="0">
+        <point x="53.5" y="20.5"/>
+        <point x="53.5" y="28.0"/>
+      </arc>
+      <arc head="Memory" head-magnet="0" kind="OUTPUT" mult="&lt;y&gt;" mult-k="1.65380859375" mult-y="2.3818597561131583E-4" tail="end_ext_acc" tail-magnet="0">
+        <point x="53.5" y="17.0"/>
+        <point x="53.5" y="11.0"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" tail="ExtBus" tail-magnet="0">
+        <point x="34.0" y="28.0"/>
+        <point x="34.0" y="21.0"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;y&gt;" tail="Memory" tail-magnet="0">
+        <point x="34.0" y="11.0"/>
+        <point x="34.0" y="16.5"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.4600155999999984" mult-y="-0.5599987999999989" tail="Queue" tail-magnet="0"/>
+      <arc head="ExtMemAcc" head-magnet="0" kind="OUTPUT" mult="&lt;x,y&gt;" mult-k="0.50009765625" mult-x="0.20000000000000284" mult-y="-0.5" tail="begin_ext_acc" tail-magnet="0"/>
+    </edges>
+  </gspn>
+  <measures gspn-name="multiproc" name="Measures 1" simplified-UI="false">
+    <assignments/>
+    <greatspn/>
+    <formulas>
+      <formula language="STAT"/>
+      <formula language="ALL"/>
+    </formulas>
+  </measures>
+  <gspn name="Clients" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false">
+    <nodes>
+      <place label-y="-1.5" name="CA" x="16.0" y="30.0"/>
+      <place label-y="-1.5" name="CF" x="16.0" y="22.0"/>
+      <place label-y="-1.5" name="CG" x="16.0" y="14.0"/>
+      <place label-y="-1.5" name="CR" x="16.0" y="5.0"/>
+      <place label-x="-1.5" label-y="-1.5" name="CwA" x="10.0" y="26.0"/>
+      <place label-x="-1.0" label-y="-1.5" name="Cb" x="10.0" y="18.0"/>
+      <place label-x="-1.5" label-y="-1.5" name="CwG" x="10.0" y="10.0"/>
+      <place label-y="-1.5" marking="6" name="Ci" x="5.0" y="5.0"/>
+      <transition label-x="-1.0" label-y="-1.0" name="crA" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="10.55" y="30.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="csF" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="10.55" y="22.0"/>
+      <transition label-x="-1.5" name="crG" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="10.55" y="14.0"/>
+      <transition name="csR" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="10.55" y="5.0"/>
+    </nodes>
+    <edges>
+      <arc head="crA" head-magnet="0" kind="INPUT" tail="CA" tail-magnet="0"/>
+      <arc head="CF" head-magnet="0" kind="OUTPUT" tail="csF" tail-magnet="0"/>
+      <arc head="crG" head-magnet="0" kind="INPUT" tail="CG" tail-magnet="0"/>
+      <arc head="CR" head-magnet="0" kind="OUTPUT" tail="csR" tail-magnet="0"/>
+      <arc head="CwA" head-magnet="0" kind="OUTPUT" tail="csF" tail-magnet="0"/>
+      <arc head="Ci" head-magnet="0" kind="OUTPUT" mult-k="1.2069335937499996" tail="crA" tail-magnet="0">
+        <point x="6.0" y="31.0"/>
+      </arc>
+      <arc head="crG" head-magnet="0" kind="INPUT" tail="CwG" tail-magnet="0"/>
+      <arc head="csF" head-magnet="0" kind="INPUT" tail="Cb" tail-magnet="0"/>
+      <arc head="Cb" head-magnet="0" kind="OUTPUT" tail="crG" tail-magnet="0"/>
+      <arc head="crA" head-magnet="0" kind="INPUT" tail="CwA" tail-magnet="0"/>
+      <arc head="CwG" head-magnet="0" kind="OUTPUT" tail="csR" tail-magnet="0"/>
+      <arc head="csR" head-magnet="0" kind="INPUT" tail="Ci" tail-magnet="0"/>
+    </edges>
+  </gspn>
+  <gspn name="Servers" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false">
+    <nodes>
+      <place label-y="-1.5" name="SA" x="18.0" y="39.0"/>
+      <place label-y="-1.5" name="SF" x="18.0" y="33.0"/>
+      <place label-y="-1.5" name="SR" x="18.0" y="9.0"/>
+      <place label-y="-1.5" name="CA" x="6.0" y="46.0"/>
+      <place label-y="-1.5" name="CF" x="6.0" y="27.0"/>
+      <place label-x="-1.5" label-y="-1.0" name="StF" x="11.0" y="30.0"/>
+      <place label-y="-1.5" name="CG" x="6.0" y="21.0"/>
+      <place label-y="-1.5" name="CR" x="6.0" y="3.0"/>
+      <place label-y="-1.5" name="SG" x="18.0" y="15.0"/>
+      <place label-x="1.0" label-y="-1.5" marking="2" name="Si" x="15.0" y="24.0"/>
+      <place label-x="-1.0" label-y="-1.5" name="StR" x="11.0" y="6.0"/>
+      <place label-x="-1.5" label-y="-1.5" name="SwG" x="11.0" y="12.0"/>
+      <place label-x="-1.5" label-y="-1.5" name="SpG" x="11.0" y="18.0"/>
+      <place label-x="-1.5" label-y="-1.0" name="SwA" x="11.0" y="36.0"/>
+      <place label-x="-1.5" label-y="-1.0" name="SpA" x="11.0" y="42.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="ssF" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="33.0"/>
+      <transition label-x="-1.0" label-y="-1.0" name="srF" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="27.0"/>
+      <transition label-x="0.5" label-y="-1.0" name="srR" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="3.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="ssR" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="9.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="srG" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="15.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="ssG" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="21.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="srA" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="39.0"/>
+      <transition label-x="-1.0" label-y="-1.0" name="ssA" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="46.0"/>
+    </nodes>
+    <edges>
+      <arc head="srG" head-magnet="0" kind="INPUT" tail="SG" tail-magnet="0"/>
+      <arc head="srA" head-magnet="0" kind="INPUT" tail="SA" tail-magnet="0"/>
+      <arc head="SF" head-magnet="0" kind="OUTPUT" tail="ssF" tail-magnet="0"/>
+      <arc head="SR" head-magnet="0" kind="OUTPUT" tail="ssR" tail-magnet="0"/>
+      <arc head="SwA" head-magnet="0" kind="OUTPUT" tail="ssF" tail-magnet="0"/>
+      <arc head="CA" head-magnet="0" kind="OUTPUT" tail="ssA" tail-magnet="0"/>
+      <arc head="srF" head-magnet="0" kind="INPUT" tail="Si" tail-magnet="0"/>
+      <arc head="srF" head-magnet="0" kind="INPUT" tail="CF" tail-magnet="0"/>
+      <arc head="ssF" head-magnet="0" kind="INPUT" tail="StF" tail-magnet="0"/>
+      <arc head="StF" head-magnet="0" kind="OUTPUT" tail="srF" tail-magnet="0"/>
+      <arc head="Si" head-magnet="0" kind="OUTPUT" tail="ssG" tail-magnet="0"/>
+      <arc head="CG" head-magnet="0" kind="OUTPUT" tail="ssG" tail-magnet="0"/>
+      <arc head="srR" head-magnet="0" kind="INPUT" tail="CR" tail-magnet="0"/>
+      <arc head="Si" head-magnet="0" kind="OUTPUT" mult-k="1.11513671875" tail="ssA" tail-magnet="0">
+        <point x="16.0" y="47.0"/>
+      </arc>
+      <arc head="ssG" head-magnet="0" kind="INPUT" tail="SpG" tail-magnet="0"/>
+      <arc head="SpG" head-magnet="0" kind="OUTPUT" tail="srG" tail-magnet="0"/>
+      <arc head="ssA" head-magnet="0" kind="INPUT" tail="SpA" tail-magnet="0"/>
+      <arc head="SpA" head-magnet="0" kind="OUTPUT" tail="srA" tail-magnet="0"/>
+      <arc head="srA" head-magnet="0" kind="INPUT" tail="SwA" tail-magnet="0"/>
+      <arc head="srG" head-magnet="0" kind="INPUT" tail="SwG" tail-magnet="0"/>
+      <arc head="SwG" head-magnet="0" kind="OUTPUT" tail="ssR" tail-magnet="0"/>
+      <arc head="ssR" head-magnet="0" kind="INPUT" tail="StR" tail-magnet="0"/>
+      <arc head="StR" head-magnet="0" kind="OUTPUT" tail="srR" tail-magnet="0"/>
+      <arc head="srR" head-magnet="0" kind="INPUT" mult-k="0.80732421875" tail="Si" tail-magnet="0">
+        <point x="16.0" y="4.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <gspn name="ResManagers" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false">
+    <nodes>
+      <place label-x="1.0" label-y="-1.5" marking="4" name="Uf" x="19.0" y="11.0"/>
+      <place label-y="-1.5" name="SR" x="6.0" y="5.0"/>
+      <place label-y="-1.5" name="SG" x="6.0" y="17.0"/>
+      <place label-x="-1.5" label-y="-1.0" name="MpG" x="11.0" y="14.0"/>
+      <place label-x="-2.0" label-y="-1.0" name="MwU" x="11.0" y="8.0"/>
+      <place label-x="1.0" label-y="-1.5" marking="3" name="Mi" x="19.0" y="5.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="msG" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="17.0"/>
+      <transition label-x="-2.0" label-y="-0.5" name="maU" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="11.0"/>
+      <transition name="mrR" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="11.55" y="5.0"/>
+    </nodes>
+    <edges>
+      <arc head="maU" head-magnet="0" kind="INPUT" mult-k="0.74482421875" tail="Uf" tail-magnet="0"/>
+      <arc head="Mi" head-magnet="0" kind="OUTPUT" tail="msG" tail-magnet="0"/>
+      <arc head="mrR" head-magnet="0" kind="INPUT" tail="SR" tail-magnet="0"/>
+      <arc head="SG" head-magnet="0" kind="OUTPUT" tail="msG" tail-magnet="0"/>
+      <arc head="msG" head-magnet="0" kind="INPUT" tail="MpG" tail-magnet="0"/>
+      <arc head="MpG" head-magnet="0" kind="OUTPUT" tail="maU" tail-magnet="0"/>
+      <arc head="maU" head-magnet="0" kind="INPUT" tail="MwU" tail-magnet="0"/>
+      <arc head="MwU" head-magnet="0" kind="OUTPUT" tail="mrR" tail-magnet="0"/>
+      <arc head="mrR" head-magnet="0" kind="INPUT" mult-k="0.7075195312500001" tail="Mi" tail-magnet="0"/>
+    </edges>
+  </gspn>
+  <gspn name="ResUnits" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false">
+    <nodes>
+      <place label-x="1.0" label-y="-1.5" marking="4" name="Uf" x="19.0" y="12.0"/>
+      <place label-y="-1.5" name="SA" x="7.0" y="18.0"/>
+      <place label-y="-1.5" name="SF" x="7.0" y="6.0"/>
+      <place label-x="-1.5" label-y="-1.5" name="MpA" x="12.0" y="15.0"/>
+      <place label-x="-1.5" label-y="-1.0" name="MtF" x="12.0" y="9.0"/>
+      <place label-x="1.0" label-y="-1.5" marking="3" name="Mi" x="19.0" y="6.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="msA" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="12.55" y="18.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="mfU" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="12.55" y="12.0"/>
+      <transition label-x="-1.5" label-y="-1.0" name="mrF" nservers-x="0.5" rotation="4.71238898038469" type="EXP" x="12.55" y="6.0"/>
+    </nodes>
+    <edges>
+      <arc head="Uf" head-magnet="0" kind="OUTPUT" mult-k="0.26669921875" tail="mfU" tail-magnet="0"/>
+      <arc head="mrF" head-magnet="0" kind="INPUT" tail="Mi" tail-magnet="0"/>
+      <arc head="SA" head-magnet="0" kind="OUTPUT" tail="msA" tail-magnet="0"/>
+      <arc head="mrF" head-magnet="0" kind="INPUT" tail="SF" tail-magnet="0"/>
+      <arc head="Mi" head-magnet="0" kind="OUTPUT" mult-k="0.25830078125" tail="msA" tail-magnet="0"/>
+      <arc head="msA" head-magnet="0" kind="INPUT" tail="MpA" tail-magnet="0"/>
+      <arc head="MpA" head-magnet="0" kind="OUTPUT" tail="mfU" tail-magnet="0"/>
+      <arc head="mfU" head-magnet="0" kind="INPUT" tail="MtF" tail-magnet="0"/>
+      <arc head="MtF" head-magnet="0" kind="OUTPUT" tail="mrF" tail-magnet="0"/>
+    </edges>
+  </gspn>
+  <multinet name="ClientsAndServers" show-color-cmd="false" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false">
+    <bindings-list/>
+    <subnet netname="Clients"/>
+    <subnet netname="Servers"/>
+    <subnet netname="ResManagers"/>
+    <subnet netname="ResUnits"/>
+  </multinet>
+  <gspn name="multiproc 1">
+    <nodes>
+      <color-class definition="p{1..4} is proc" name="P" x="51.5" y="2.0"/>
+      <place domain="P" label-x="0.35125200000000056" label-y="-1.373747999999999" name="OwnMemAcc" x="7.0" y="4.0"/>
+      <constant consttype="INTEGER" domain="P" name="S" value="&lt;All&gt;" x="51.25" y="6.0"/>
+      <place domain="P" label-x="-1.5" label-y="1.0" marking="S" name="Active" x="7.0" y="18.0"/>
+      <place domain="P" label-x="-0.25499999999999723" label-y="-1.3737479999999973" name="Queue" x="27.0" y="18.0"/>
+      <color-class definition="P * P" name="PxP" x="51.0" y="3.0"/>
+      <place domain="PxP" label-x="2.0" name="ExtMemAcc" x="43.0" y="18.0"/>
+      <place domain="P" label-x="3.5" label-y="-1.5" marking="S" name="Memory" x="43.0" y="10.0"/>
+      <place label-x="0.2637480000000192" label-y="-1.2737520000000035" marking="1" name="ExtBus" x="43.0" y="27.0"/>
+      <transition delay="2.000000e+00" name="req_ext_acc" nservers="1" nservers-x="0.0" nservers-y="1.5" type="EXP" x="16.55" y="18.0"/>
+      <transition delay="2.000000e+00" delay-x="1.000002000000002" delay-y="1.0937480000000015" label-x="3.5" label-y="-1.0" name="begin_own_acc" nservers="1" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="2.55" y="10.0"/>
+      <transition delay="5.000000e+00" delay-x="1.000001999999995" delay-y="1.0937540000000006" label-x="3.5" label-y="-1.0" name="end_own_acc" nservers="1" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="12.55" y="10.0"/>
+      <transition delay="5.000000e+00" label-x="-1.0" name="end_ext_acc" nservers="1" nservers-y="1.5" type="EXP" x="50.55" y="18.0"/>
+      <color-var domain="P" name="x" x="51.0" y="4.0"/>
+      <color-var domain="P" name="y" x="51.0" y="5.0"/>
+      <transition guard="x!=y" label-x="2.0" label-y="-2.0" name="begin_ext_acc" type="IMM" x="35.85" y="18.0"/>
+    </nodes>
+    <edges>
+      <arc head="req_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.10000000000000142" mult-y="-0.5" tail="Active" tail-magnet="0"/>
+      <arc head="Queue" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-x="0.3999999999999986" mult-y="-0.5" tail="req_ext_acc" tail-magnet="0"/>
+      <arc head="begin_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.5935390510653722" mult-y="-0.4532304744673148" tail="Active" tail-magnet="0">
+        <point x="3.0" y="16.5"/>
+      </arc>
+      <arc head="OwnMemAcc" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" tail="begin_own_acc" tail-magnet="0">
+        <point x="3.0" y="5.0"/>
+      </arc>
+      <arc head="end_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="1.1081396939130386" mult-y="-0.1348824486957021" tail="Memory" tail-magnet="0">
+        <point x="43.0" y="3.0"/>
+        <point x="18.0" y="3.0"/>
+      </arc>
+      <arc head="end_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="-0.12241451034210371" mult-y="-0.5" tail="OwnMemAcc" tail-magnet="0">
+        <point x="13.0" y="5.0"/>
+      </arc>
+      <arc head="Memory" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-k="2.45205078125" mult-x="-0.4719368887700952" mult-y="-0.5130965412289186" tail="end_own_acc" tail-magnet="0">
+        <point x="16.0" y="14.0"/>
+        <point x="24.5" y="14.0"/>
+        <point x="39.5" y="6.5"/>
+      </arc>
+      <arc head="Active" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" tail="end_own_acc" tail-magnet="0">
+        <point x="13.0" y="16.5"/>
+      </arc>
+      <arc head="end_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x,y&gt;" mult-x="0.29999999999999716" mult-y="-0.5" tail="ExtMemAcc" tail-magnet="0"/>
+      <arc head="Active" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-x="-0.32876605545765614" mult-y="-0.5" tail="end_ext_acc" tail-magnet="0">
+        <point x="59.0" y="19.0"/>
+        <point x="59.0" y="31.0"/>
+        <point x="8.0" y="31.0"/>
+      </arc>
+      <arc head="ExtBus" head-magnet="0" kind="OUTPUT" tail="end_ext_acc" tail-magnet="0">
+        <point x="53.5" y="20.5"/>
+        <point x="53.5" y="28.0"/>
+      </arc>
+      <arc head="Memory" head-magnet="0" kind="OUTPUT" mult="&lt;y&gt;" mult-k="1.65380859375" mult-y="2.3818597561131583E-4" tail="end_ext_acc" tail-magnet="0">
+        <point x="53.5" y="17.0"/>
+        <point x="53.5" y="11.0"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" tail="ExtBus" tail-magnet="0">
+        <point x="34.0" y="28.0"/>
+        <point x="34.0" y="21.0"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;y&gt;" tail="Memory" tail-magnet="0">
+        <point x="34.0" y="11.0"/>
+        <point x="34.0" y="16.5"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.4600155999999984" mult-y="-0.5599987999999989" tail="Queue" tail-magnet="0"/>
+      <arc head="ExtMemAcc" head-magnet="0" kind="OUTPUT" mult="&lt;x,y&gt;" mult-k="0.50009765625" mult-x="0.20000000000000284" mult-y="-0.5" tail="begin_ext_acc" tail-magnet="0"/>
+    </edges>
+  </gspn>
+  <measures gspn-name="multiproc 1" name="Measures 2" simplified-UI="false">
+    <assignments/>
+    <greatspn/>
+    <formulas>
+      <formula language="STAT"/>
+      <formula language="ALL"/>
+    </formulas>
+  </measures>
+  <gspn name="Philosophers" zoom="150">
+    <nodes>
+      <color-class definition="circular p{1..N}" name="Philo" x="3.5" y="2.875"/>
+      <color-var domain="Philo" name="x" x="3.5625" y="4.0625"/>
+      <place domain="Philo" label-x="2.875" label-y="1.3125" magnets="THREE_PER_SIDE" marking="&lt;All&gt;" name="Fork" x="6.0" y="15.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF1a" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="14.55" y="11.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF1b" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="22.55" y="11.0"/>
+      <place domain="Philo" label-y="-1.5" marking="&lt;All&gt;" name="Think" x="18.0" y="6.0"/>
+      <place domain="Philo" label-x="3.375" label-y="1.3125" name="Catch1" x="14.0" y="15.0"/>
+      <place domain="Philo" label-x="3.5" name="Catch2" x="22.0" y="15.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF2a" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="14.55" y="19.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF2b" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="22.55" y="19.0"/>
+      <place domain="Philo" name="Eat" x="18.0" y="25.0"/>
+      <transition magnets="THREE_PER_SIDE" name="end" nservers-x="0.5" rotation="3.141592653589793" type="EXP" x="11.55" y="25.0"/>
+      <template last-binding="2" name="N" type="INTEGER" x="3.5" y="1.6875"/>
+    </nodes>
+    <edges>
+      <arc head="FF1a" kind="INPUT" mult="&lt;x&gt;" mult-k="0.56103515625" mult-x="0.744140625" mult-y="0.69482421875" tail="Think"/>
+      <arc head="FF1b" kind="INPUT" mult="&lt;x&gt;" mult-k="0.56103515625" mult-x="-0.744140625" mult-y="0.69482421875" tail="Think"/>
+      <arc head="Catch1" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.37509765625" mult-x="-0.8125" mult-y="0.062109375000000355" tail="FF1a"/>
+      <arc head="FF2a" kind="INPUT" mult="&lt;x&gt;" mult-k="0.50009765625" mult-x="-0.75" mult-y="0.0" tail="Catch1"/>
+      <arc head="FF2b" kind="INPUT" mult="&lt;x&gt;" mult-k="0.50009765625" mult-x="-0.75" mult-y="0.125" tail="Catch2"/>
+      <arc head="Catch2" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.37509765625" mult-x="-0.8125" mult-y="-3.9062499999964473E-4" tail="FF1b"/>
+      <arc head="Eat" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.44228515625" mult-x="0.5625" mult-y="-0.4375" tail="FF2a"/>
+      <arc head="Eat" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.44228515625" mult-x="-0.6625000000000014" mult-y="-0.3500000000000014" tail="FF2b"/>
+      <arc head="end" kind="INPUT" mult="&lt;x&gt;" mult-k="0.50009765625" mult-x="0.0" mult-y="-0.6875" tail="Eat"/>
+      <arc head="Think" kind="OUTPUT" mult="&lt;x&gt;" mult-k="2.6465820312500004" mult-x="0.0" mult-y="-0.4375" tail="end" tail-magnet="3">
+        <point x="3.5" y="26.5"/>
+        <point x="3.5" y="7.0"/>
+      </arc>
+      <arc head="FF1b" kind="INPUT" mult="&lt;x&gt;" mult-k="2.39228515625" mult-x="0.6875" mult-y="0.125" tail="Fork" tail-magnet="8">
+        <point x="6.5" y="9.0"/>
+        <point x="23.0" y="9.0"/>
+      </arc>
+      <arc head="FF1a" kind="INPUT" mult="&lt;x++&gt;" mult-k="1.6516601562499997" mult-x="0.125" mult-y="0.625" tail="Fork" tail-magnet="10">
+        <point x="7.5" y="10.0"/>
+        <point x="15.0" y="10.0"/>
+      </arc>
+      <arc head="FF2a" kind="INPUT" mult="&lt;x&gt;" mult-k="1.7165039062499998" mult-x="-0.1875" mult-y="-0.5" tail="Fork" tail-magnet="2">
+        <point x="7.5" y="22.5"/>
+        <point x="15.0" y="22.5"/>
+      </arc>
+      <arc head="FF2b" kind="INPUT" mult="&lt;x++&gt;" mult-k="2.32822265625" mult-x="1.25" mult-y="0.0625" tail="Fork" tail-magnet="4">
+        <point x="6.5" y="23.5"/>
+        <point x="23.0" y="23.5"/>
+      </arc>
+      <arc head="Fork" kind="OUTPUT" mult="&lt;x&gt;+&lt;x++&gt;" mult-k="0.5999023437500001" mult-x="0.6249999999999991" mult-y="-0.5" tail="end" tail-magnet="5">
+        <point x="4.5" y="25.5"/>
+        <point x="4.5" y="16.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <measures gspn-name="Philosophers" name="PhilosophersMeasures" simplified-UI="false">
+    <assignments>
+      <assignment bind-model="SINGLE_VALUE" single-val="4" type="INTEGER" varname="N"/>
+    </assignments>
+    <greatspn/>
+    <formulas>
+      <formula comment="Basic statistics of the toolchain execution." language="STAT"/>
+      <formula comment="All the basic Petri net measures" language="ALL"/>
+    </formulas>
+  </measures>
+  <gspn name="NSF-TCP" show-fluid-cmd="false" show-timed-cmd="false" view-rates="false" zoom="125">
+    <nodes>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" marking="1" name="client" x="7.0" y="3.0"/>
+      <place label-y="-2.0" magnets="FOUR_PER_SIDE" marking="1" name="idle" x="14.0" y="3.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" marking="1" name="ackonce" x="21.0" y="3.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" marking="1" name="ackonce_" x="32.0" y="3.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" marking="1" name="idle_" x="40.0" y="3.0"/>
+      <place label-y="-2.0" magnets="FOUR_PER_SIDE" name="client_" x="47.0" y="3.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="syn2" x="2.0" y="8.0"/>
+      <place label-y="-2.0" magnets="FIVE_PER_SIDE" name="myisn" x="2.0" y="13.0"/>
+      <place label-y="-2.0" magnets="FOUR_PER_SIDE" name="theirisn" x="2.0" y="19.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="acksent" x="2.0" y="25.0"/>
+      <place label-x="-2.5" label-y="0.0" magnets="FOUR_PER_SIDE" name="ackrcvd" x="7.0" y="32.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="connected" x="21.0" y="36.0"/>
+      <place magnets="NSEW_SQUARE_POINTS" name="connected_" x="32.0" y="36.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="syn2_" x="52.0" y="8.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="myisn_" x="52.0" y="13.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="theirisn_" x="52.0" y="19.0"/>
+      <place label-y="-2.0" magnets="NSEW_SQUARE_POINTS" name="acksent_" x="52.0" y="25.0"/>
+      <place label-x="3.5" label-y="0.0" magnets="NSEW_SQUARE_POINTS" name="ackrcvd_" x="47.0" y="32.0"/>
+      <transition delay="I[1.0]" label-y="2.5" magnets="NSEW_SQUARE_POINTS" name="COMPLETE" type="GEN" x="27.55" y="16.0"/>
+      <transition delay="I[1.0]" label-y="2.0" magnets="FOUR_PER_SIDE" name="SYN_" type="GEN" x="37.55" y="9.0"/>
+      <transition delay="I[1.0]" label-x="0.5" label-y="2.5" magnets="THREE_PER_SIDE" name="SYNACK_" type="GEN" x="37.55" y="16.0"/>
+      <transition delay="I[1.0]" label-x="-2.0" label-y="-0.5" magnets="THREE_PER_SIDE" name="ACK_" type="GEN" x="37.55" y="25.0"/>
+      <transition delay="I[1.0]" label-x="0.5" label-y="2.0" magnets="NSEW_SQUARE_POINTS" name="CONNECT_" type="GEN" x="39.55" y="36.0"/>
+      <transition delay="I[1.0]" label-y="2.5" magnets="FOUR_PER_SIDE" name="SYNACK" type="GEN" x="17.55" y="16.0"/>
+      <transition delay="I[1.0]" label-x="2.0" label-y="-0.5" magnets="FOUR_PER_SIDE" name="ACK" type="GEN" x="17.55" y="25.0"/>
+      <transition delay="I[1.0]" label-y="2.0" magnets="NSEW_SQUARE_POINTS" name="CONNECT" type="GEN" x="14.55" y="36.0"/>
+      <transition delay="I[1.0]" label-y="2.0" magnets="FOUR_PER_SIDE" name="SYN" type="GEN" x="18.55" y="9.0"/>
+      <color-class definition="c{1..3}" name="C0" x="51.4375" y="40.0"/>
+      <color-var domain="C0" name="v0" x="53.125" y="42.0"/>
+    </nodes>
+    <edges>
+      <arc head="ACK" head-magnet="4" kind="INPUT" tail="ackonce"/>
+      <arc head="ackonce" kind="OUTPUT" tail="COMPLETE"/>
+      <arc head="ackonce_" kind="OUTPUT" tail="COMPLETE"/>
+      <arc head="SYNACK_" head-magnet="9" kind="INPUT" tail="ackonce_"/>
+      <arc head="ACK_" head-magnet="9" kind="INPUT" tail="ackonce_"/>
+      <arc head="idle" head-magnet="15" kind="OUTPUT" tail="COMPLETE"/>
+      <arc head="COMPLETE" kind="INPUT" tail="connected"/>
+      <arc head="COMPLETE" kind="INPUT" tail="connected_"/>
+      <arc head="client" head-magnet="0" kind="OUTPUT" tail="SYN"/>
+      <arc head="SYN" head-magnet="15" kind="INPUT" tail="client"/>
+      <arc head="SYNACK" head-magnet="0" kind="INPUT" tail="syn2"/>
+      <arc head="syn2" kind="OUTPUT" mult-k="1.28115234375" tail="SYN_" tail-magnet="15">
+        <point x="18.5" y="7.5"/>
+      </arc>
+      <arc head="myisn" kind="OUTPUT" tail="SYN" tail-magnet="8"/>
+      <arc head="SYNACK" kind="INPUT" tail="myisn"/>
+      <arc head="myisn" kind="OUTPUT" tail="SYNACK"/>
+      <arc head="ACK" head-magnet="12" kind="INPUT" mult-k="1.2083007812499997" tail="myisn" tail-magnet="4">
+        <point x="8.556207314709258" y="18.801043212000074"/>
+      </arc>
+      <arc head="myisn" kind="OUTPUT" tail="ACK" tail-magnet="2"/>
+      <arc head="CONNECT" kind="INPUT" tail="myisn" tail-magnet="5"/>
+      <arc head="SYNACK" head-magnet="15" kind="INPUT" tail="theirisn" tail-magnet="13"/>
+      <arc head="theirisn" kind="OUTPUT" tail="SYNACK" tail-magnet="8"/>
+      <arc head="ACK" kind="INPUT" tail="theirisn" tail-magnet="1"/>
+      <arc head="theirisn" head-magnet="3" kind="OUTPUT" tail="ACK" tail-magnet="14"/>
+      <arc head="theirisn" head-magnet="11" kind="OUTPUT" tail="SYN_" tail-magnet="8"/>
+      <arc head="theirisn" head-magnet="0" kind="OUTPUT" tail="SYNACK_"/>
+      <arc head="theirisn_" head-magnet="6" kind="OUTPUT" tail="SYN" tail-magnet="11"/>
+      <arc head="ackrcvd_" kind="OUTPUT" tail="SYNACK"/>
+      <arc head="acksent" kind="OUTPUT" mult-k="1.4465820312499997" tail="SYNACK" tail-magnet="10">
+        <point x="16.5883681640625" y="18.79609375"/>
+      </arc>
+      <arc head="theirisn_" head-magnet="4" kind="OUTPUT" tail="SYNACK"/>
+      <arc head="acksent" kind="OUTPUT" tail="ACK"/>
+      <arc head="ackrcvd" kind="OUTPUT" tail="ACK" tail-magnet="7"/>
+      <arc head="ACK" head-magnet="15" kind="INPUT" tail="ackrcvd" tail-magnet="11"/>
+      <arc head="ackrcvd_" kind="OUTPUT" tail="ACK"/>
+      <arc head="CONNECT" kind="INPUT" tail="ackrcvd" tail-magnet="3"/>
+      <arc head="connected" kind="OUTPUT" tail="CONNECT"/>
+      <arc head="ackrcvd" head-magnet="15" kind="OUTPUT" tail="SYNACK_" tail-magnet="6"/>
+      <arc head="ackrcvd" head-magnet="0" kind="OUTPUT" tail="ACK_" tail-magnet="6"/>
+      <arc head="connected_" kind="OUTPUT" tail="CONNECT_"/>
+      <arc head="CONNECT_" head-magnet="6" kind="INPUT" tail="ackrcvd_"/>
+      <arc head="ackrcvd_" kind="OUTPUT" tail="ACK_" tail-magnet="5"/>
+      <arc head="ACK_" head-magnet="8" kind="INPUT" tail="ackrcvd_"/>
+      <arc head="acksent_" kind="OUTPUT" mult-k="1.3024414062499998" tail="ACK_" tail-magnet="5">
+        <point x="42.6544384765625" y="26.355517578125"/>
+      </arc>
+      <arc head="CONNECT_" head-magnet="1" kind="INPUT" tail="acksent_"/>
+      <arc head="acksent_" kind="OUTPUT" tail="SYNACK_" tail-magnet="8"/>
+      <arc head="CONNECT_" head-magnet="5" kind="INPUT" tail="theirisn_" tail-magnet="1"/>
+      <arc head="CONNECT_" head-magnet="4" kind="INPUT" tail="myisn_"/>
+      <arc head="theirisn_" head-magnet="3" kind="OUTPUT" tail="ACK_"/>
+      <arc head="ACK_" head-magnet="5" kind="INPUT" tail="theirisn_" tail-magnet="2"/>
+      <arc head="myisn_" kind="OUTPUT" tail="ACK_"/>
+      <arc head="myisn_" head-magnet="5" kind="OUTPUT" tail="SYNACK_"/>
+      <arc head="theirisn_" kind="OUTPUT" tail="SYNACK_"/>
+      <arc head="myisn_" head-magnet="6" kind="OUTPUT" tail="SYN_" tail-magnet="11"/>
+      <arc head="SYNACK_" head-magnet="3" kind="INPUT" mult-k="0.52978515625" tail="syn2_" tail-magnet="1">
+        <point x="39.30672230460764" y="16.118563124920144"/>
+      </arc>
+      <arc head="idle_" kind="OUTPUT" tail="COMPLETE"/>
+      <arc head="SYN_" head-magnet="0" kind="INPUT" mult-k="1.46240234375" tail="idle_">
+        <point x="40.0" y="4.0"/>
+      </arc>
+      <arc head="SYNACK_" kind="INPUT" tail="idle_"/>
+      <arc head="SYN_" head-magnet="4" kind="INPUT" tail="client_"/>
+      <arc head="client_" head-magnet="3" kind="OUTPUT" tail="SYN_"/>
+      <arc head="SYN" head-magnet="0" kind="INPUT" tail="idle"/>
+      <arc head="SYN_" head-magnet="7" kind="INPUT" tail="syn2_"/>
+      <arc head="COMPLETE" kind="INPUT" tail="client_" tail-magnet="5"/>
+      <arc head="client_" kind="OUTPUT" tail="SYN"/>
+      <arc head="syn2_" head-magnet="3" kind="OUTPUT" mult-k="1.33447265625" tail="SYN" tail-magnet="7">
+        <point x="36.5" y="7.5"/>
+        <point x="52.28964195971005" y="9.707135384039947"/>
+      </arc>
+      <arc head="ACK_" head-magnet="2" kind="INPUT" tail="myisn_" tail-magnet="4"/>
+    </edges>
+  </gspn>
+  <gspn name="Philosophers 1">
+    <nodes>
+      <color-class definition="circular p{1..N}" name="Philo" x="3.5" y="2.875"/>
+      <color-var domain="Philo" name="x" x="3.5625" y="4.0625"/>
+      <place domain="Philo" label-x="2.875" label-y="1.3125" magnets="THREE_PER_SIDE" marking="&lt;All&gt;" name="Fork" x="6.0" y="15.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF1a" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="14.55" y="11.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF1b" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="22.55" y="11.0"/>
+      <place domain="Philo" label-y="-1.5" marking="&lt;All&gt;" name="Think" x="18.0" y="6.0"/>
+      <place domain="Philo" label-x="3.375" label-y="1.3125" name="Catch1" x="14.0" y="15.0"/>
+      <place domain="Philo" label-x="3.5" name="Catch2" x="22.0" y="15.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF2a" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="14.55" y="19.0"/>
+      <transition label-x="2.5" label-y="0.0" name="FF2b" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="22.55" y="19.0"/>
+      <place domain="Philo" name="Eat" x="18.0" y="25.0"/>
+      <transition magnets="THREE_PER_SIDE" name="end" nservers-x="0.5" rotation="3.141592653589793" type="EXP" x="11.55" y="25.0"/>
+      <template last-binding="2" name="N" type="INTEGER" x="3.5" y="1.6875"/>
+    </nodes>
+    <edges>
+      <arc head="FF1a" kind="INPUT" mult="&lt;x&gt;" mult-k="0.56103515625" mult-x="0.744140625" mult-y="0.69482421875" tail="Think"/>
+      <arc head="FF1b" kind="INPUT" mult="&lt;x&gt;" mult-k="0.56103515625" mult-x="-0.744140625" mult-y="0.69482421875" tail="Think"/>
+      <arc head="Catch1" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.37509765625" mult-x="-0.8125" mult-y="0.062109375000000355" tail="FF1a"/>
+      <arc head="FF2a" kind="INPUT" mult="&lt;x&gt;" mult-k="0.50009765625" mult-x="-0.75" mult-y="0.0" tail="Catch1"/>
+      <arc head="FF2b" kind="INPUT" mult="&lt;x&gt;" mult-k="0.50009765625" mult-x="-0.75" mult-y="0.125" tail="Catch2"/>
+      <arc head="Catch2" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.37509765625" mult-x="-0.8125" mult-y="-3.9062499999964473E-4" tail="FF1b"/>
+      <arc head="Eat" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.44228515625" mult-x="0.5625" mult-y="-0.4375" tail="FF2a"/>
+      <arc head="Eat" kind="OUTPUT" mult="&lt;x&gt;" mult-k="0.44228515625" mult-x="-0.6625000000000014" mult-y="-0.3500000000000014" tail="FF2b"/>
+      <arc head="end" kind="INPUT" mult="&lt;x&gt;" mult-k="0.50009765625" mult-x="0.0" mult-y="-0.6875" tail="Eat"/>
+      <arc head="Think" kind="OUTPUT" mult="&lt;x&gt;" mult-k="2.6465820312500004" mult-x="0.0" mult-y="-0.4375" tail="end" tail-magnet="3">
+        <point x="3.5" y="26.5"/>
+        <point x="3.5" y="7.0"/>
+      </arc>
+      <arc head="FF1b" kind="INPUT" mult="&lt;x&gt;" mult-k="2.39228515625" mult-x="0.6875" mult-y="0.125" tail="Fork" tail-magnet="8">
+        <point x="6.5" y="9.0"/>
+        <point x="23.0" y="9.0"/>
+      </arc>
+      <arc head="FF1a" kind="INPUT" mult="&lt;x++&gt;" mult-k="1.6516601562499997" mult-x="0.125" mult-y="0.625" tail="Fork" tail-magnet="10">
+        <point x="7.5" y="10.0"/>
+        <point x="15.0" y="10.0"/>
+      </arc>
+      <arc head="FF2a" kind="INPUT" mult="&lt;x&gt;" mult-k="1.7165039062499998" mult-x="-0.1875" mult-y="-0.5" tail="Fork" tail-magnet="2">
+        <point x="7.5" y="22.5"/>
+        <point x="15.0" y="22.5"/>
+      </arc>
+      <arc head="FF2b" kind="INPUT" mult="&lt;x++&gt;" mult-k="2.32822265625" mult-x="1.25" mult-y="0.0625" tail="Fork" tail-magnet="4">
+        <point x="6.5" y="23.5"/>
+        <point x="23.0" y="23.5"/>
+      </arc>
+      <arc head="Fork" kind="OUTPUT" mult="&lt;x&gt;+&lt;x++&gt;" mult-k="0.5999023437500001" mult-x="0.6249999999999991" mult-y="-0.5" tail="end" tail-magnet="5">
+        <point x="4.5" y="25.5"/>
+        <point x="4.5" y="16.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <measures gspn-name="Philosophers 1" name="PhilosophersMeasures 1" simplified-UI="false">
+    <assignments>
+      <assignment bind-model="SINGLE_VALUE" single-val="4" type="INTEGER" varname="N"/>
+    </assignments>
+    <greatspn/>
+    <formulas>
+      <formula comment="Basic statistics of the toolchain execution." language="STAT"/>
+      <formula comment="All the basic Petri net measures" language="ALL"/>
+    </formulas>
+  </measures>
+  <gspn name="multiproc 2">
+    <nodes>
+      <color-class definition="p{1..4} is proc" name="P" x="51.5" y="2.0"/>
+      <place domain="P" label-x="0.35125200000000056" label-y="-1.373747999999999" name="OwnMemAcc" x="7.0" y="4.0"/>
+      <constant consttype="INTEGER" domain="P" name="S" value="&lt;All&gt;" x="51.25" y="6.0"/>
+      <place domain="P" label-x="-1.5" label-y="1.0" marking="S" name="Active" x="7.0" y="18.0"/>
+      <place domain="P" label-x="-0.25499999999999723" label-y="-1.3737479999999973" name="Queue" x="27.0" y="18.0"/>
+      <color-class definition="P * P" name="PxP" x="51.0" y="3.0"/>
+      <place domain="PxP" label-x="2.0" name="ExtMemAcc" x="43.0" y="18.0"/>
+      <place domain="P" label-x="3.5" label-y="-1.5" marking="S" name="Memory" x="43.0" y="10.0"/>
+      <place label-x="0.2637480000000192" label-y="-1.2737520000000035" marking="1" name="ExtBus" x="43.0" y="27.0"/>
+      <transition delay="2.000000e+00" name="req_ext_acc" nservers="1" nservers-x="0.0" nservers-y="1.5" type="EXP" x="16.55" y="18.0"/>
+      <transition delay="2.000000e+00" delay-x="1.000002000000002" delay-y="1.0937480000000015" label-x="3.5" label-y="-1.0" name="begin_own_acc" nservers="1" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="2.55" y="10.0"/>
+      <transition delay="5.000000e+00" delay-x="1.000001999999995" delay-y="1.0937540000000006" label-x="3.5" label-y="-1.0" name="end_own_acc" nservers="1" nservers-x="0.5" rotation="1.5707963267948966" type="EXP" x="12.55" y="10.0"/>
+      <transition delay="5.000000e+00" label-x="-1.0" name="end_ext_acc" nservers="1" nservers-y="1.5" type="EXP" x="50.55" y="18.0"/>
+      <color-var domain="P" name="x" x="51.0" y="4.0"/>
+      <color-var domain="P" name="y" x="51.0" y="5.0"/>
+      <transition guard="x!=y" label-x="2.0" label-y="-2.0" name="begin_ext_acc" type="IMM" x="35.85" y="18.0"/>
+    </nodes>
+    <edges>
+      <arc head="req_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.10000000000000142" mult-y="-0.5" tail="Active" tail-magnet="0"/>
+      <arc head="Queue" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-x="0.3999999999999986" mult-y="-0.5" tail="req_ext_acc" tail-magnet="0"/>
+      <arc head="begin_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.5935390510653722" mult-y="-0.4532304744673148" tail="Active" tail-magnet="0">
+        <point x="3.0" y="16.5"/>
+      </arc>
+      <arc head="OwnMemAcc" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" tail="begin_own_acc" tail-magnet="0">
+        <point x="3.0" y="5.0"/>
+      </arc>
+      <arc head="end_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="1.1081396939130386" mult-y="-0.1348824486957021" tail="Memory" tail-magnet="0">
+        <point x="43.0" y="3.0"/>
+        <point x="18.0" y="3.0"/>
+      </arc>
+      <arc head="end_own_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="-0.12241451034210371" mult-y="-0.5" tail="OwnMemAcc" tail-magnet="0">
+        <point x="13.0" y="5.0"/>
+      </arc>
+      <arc head="Memory" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-k="2.45205078125" mult-x="-0.4719368887700952" mult-y="-0.5130965412289186" tail="end_own_acc" tail-magnet="0">
+        <point x="16.0" y="14.0"/>
+        <point x="24.5" y="14.0"/>
+        <point x="39.5" y="6.5"/>
+      </arc>
+      <arc head="Active" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" tail="end_own_acc" tail-magnet="0">
+        <point x="13.0" y="16.5"/>
+      </arc>
+      <arc head="end_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x,y&gt;" mult-x="0.29999999999999716" mult-y="-0.5" tail="ExtMemAcc" tail-magnet="0"/>
+      <arc head="Active" head-magnet="0" kind="OUTPUT" mult="&lt;x&gt;" mult-x="-0.32876605545765614" mult-y="-0.5" tail="end_ext_acc" tail-magnet="0">
+        <point x="59.0" y="19.0"/>
+        <point x="59.0" y="31.0"/>
+        <point x="8.0" y="31.0"/>
+      </arc>
+      <arc head="ExtBus" head-magnet="0" kind="OUTPUT" tail="end_ext_acc" tail-magnet="0">
+        <point x="53.5" y="20.5"/>
+        <point x="53.5" y="28.0"/>
+      </arc>
+      <arc head="Memory" head-magnet="0" kind="OUTPUT" mult="&lt;y&gt;" mult-k="1.65380859375" mult-y="2.3818597561131583E-4" tail="end_ext_acc" tail-magnet="0">
+        <point x="53.5" y="17.0"/>
+        <point x="53.5" y="11.0"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" tail="ExtBus" tail-magnet="0">
+        <point x="34.0" y="28.0"/>
+        <point x="34.0" y="21.0"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;y&gt;" tail="Memory" tail-magnet="0">
+        <point x="34.0" y="11.0"/>
+        <point x="34.0" y="16.5"/>
+      </arc>
+      <arc head="begin_ext_acc" head-magnet="0" kind="INPUT" mult="&lt;x&gt;" mult-x="0.4600155999999984" mult-y="-0.5599987999999989" tail="Queue" tail-magnet="0"/>
+      <arc head="ExtMemAcc" head-magnet="0" kind="OUTPUT" mult="&lt;x,y&gt;" mult-k="0.50009765625" mult-x="0.20000000000000284" mult-y="-0.5" tail="begin_ext_acc" tail-magnet="0"/>
+    </edges>
+  </gspn>
+  <measures gspn-name="multiproc 2" name="Measures 3" simplified-UI="false">
+    <assignments/>
+    <greatspn/>
+    <formulas>
+      <formula language="STAT"/>
+      <formula language="ALL"/>
+    </formulas>
+  </measures>
+</project>
