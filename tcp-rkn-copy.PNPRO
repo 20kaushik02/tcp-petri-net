@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="tcp-rkn-copy" version="121">
+  <gspn name="CONN" zoom="50">
+    <nodes>
+      <place label-y="-1.5" marking="1" name="CLOSED" x="64.0" y="28.0"/>
+      <transition label-x="-2.0" label-y="1.0" name="POPEN" nservers-x="0.5" type="EXP" x="64.55" y="33.0"/>
+      <transition label-x="2.0" label-y="-1.0" name="AOPEN" nservers-x="0.5" type="EXP" x="42.550000000000004" y="28.0"/>
+      <place label-x="-2.0" label-y="-1.0" name="LISTEN" x="64.0" y="45.0"/>
+      <place label-x="2.5" label-y="2.0" marking="1" name="SYN_SENT" x="42.0" y="45.0"/>
+      <place label-y="-1.5" name="SYN" x="81.0" y="22.0"/>
+      <transition label-x="-1.5" label-y="-0.5" name="OPEN" nservers-x="0.5" type="EXP" x="62.550000000000004" y="56.0"/>
+      <transition label-x="2.0" label-y="-0.5" name="SEND" nservers-x="0.5" type="EXP" x="66.55" y="53.0"/>
+      <place label-y="-1.5" name="xSYN" x="104.0" y="34.0"/>
+      <transition label-x="-2.5" label-y="-1.0" name="rcv_xSYN" type="IMM" x="86.85" y="45.0"/>
+      <place label-x="-3.0" label-y="-1.5" name="SYN_RCVD" x="86.0" y="65.0"/>
+      <place label-y="-1.5" marking="1" name="xRST" x="104.0" y="28.0"/>
+      <transition label-x="-2.0" label-y="0.5" name="CLOSE" nservers-x="0.5" type="EXP" x="52.550000000000004" y="45.0"/>
+      <transition label-x="-2.0" label-y="-1.0" name="CLOSE2" nservers-x="0.5" type="EXP" x="50.550000000000004" y="39.0"/>
+      <transition magnets="TWO_PER_SIDE" name="rcv_xRST" type="IMM" x="71.85" y="28.0"/>
+      <transition magnets="TWO_PER_SIDE" name="rcv_xRST2" type="IMM" x="71.85" y="36.0"/>
+      <place label-x="-1.5" label-y="-1.5" name="RST" x="90.0" y="61.0"/>
+      <place label-y="-1.5" marking="1" name="xACK" x="104.0" y="40.0"/>
+      <transition label-x="0.5" magnets="TWO_PER_SIDE" name="rcv_xACK" type="IMM" x="90.85" y="40.0"/>
+      <transition label-x="-2.5" label-y="0.5" name="bad_xACK" priority="3" type="IMM" x="36.85" y="45.0"/>
+      <transition label-x="-2.5" label-y="0.0" name="rcv_xRST3" priority="2" type="IMM" x="48.85" y="33.0"/>
+      <place label-x="-2.0" label-y="-1.5" name="SS_bA" x="36.0" y="52.0"/>
+      <transition label-x="-2.5" label-y="1.0" magnets="TWO_PER_SIDE" name="no_xRST" type="IMM" x="36.85" y="61.0"/>
+      <transition label-x="-3.5" label-y="0.5" magnets="TWO_PER_SIDE" name="rcv_xSYNACK" type="IMM" x="7.85" y="39.0"/>
+      <place label-y="-1.5" name="ACK" x="81.0" y="18.0"/>
+      <place label-y="-1.5" name="ESTAB" x="55.0" y="70.0"/>
+      <transition label-x="-2.0" label-y="0.5" magnets="TWO_PER_SIDE" name="no_xACK" type="IMM" x="15.85" y="34.0"/>
+      <transition label-x="-0.5" label-y="2.0" magnets="TWO_PER_SIDE" name="has_xRST" type="IMM" x="31.85" y="56.0"/>
+      <transition label-x="-2.5" label-y="-2.0" name="rcv_xACK2" priority="3" type="IMM" x="31.85" y="42.0"/>
+      <place name="SS_A" x="21.0" y="42.0"/>
+      <place name="f_xRST" x="111.0" y="26.0"/>
+      <place name="f_xSYN" x="111.0" y="32.0"/>
+      <place name="f_xACK" x="111.0" y="38.0"/>
+      <transition name="t0" priority="999" type="IMM" x="107.85" y="40.0"/>
+      <transition name="t1" priority="997" type="IMM" x="107.85" y="34.0"/>
+      <transition name="t2" priority="995" type="IMM" x="107.85" y="28.0"/>
+      <transition name="t3" priority="994" type="IMM" x="107.85" y="25.0"/>
+      <transition name="t4" priority="996" type="IMM" x="107.85" y="31.0"/>
+      <transition name="t5" priority="998" type="IMM" x="107.85" y="37.0"/>
+      <place label-x="2.5" label-y="0.0" name="flush" x="118.0" y="26.0"/>
+      <transition name="f_split" priority="999" priority-x="-0.5" priority-y="1.5" type="IMM" x="115.85" y="26.0"/>
+      <text-box border-color="#b6b6b6" fill-color="none" height="20.5" horiz-pos="2" name="__textBox0" shadow="true" text-color="#000000" width="16.0" x="107.0" y="22.5">flush ---&gt; drop segment</text-box>
+      <place label-x="-1.5" label-y="1.0" name="AO" x="98.0" y="10.0"/>
+      <transition magnets="TWO_PER_SIDE" name="PO_rcv_xRST" type="IMM" x="92.85" y="65.0"/>
+      <transition magnets="TWO_PER_SIDE" name="AO_rcv_xRST" type="IMM" x="92.85" y="68.0"/>
+      <transition magnets="TWO_PER_SIDE" name="rcv_xACK3" type="IMM" x="81.85" y="70.0"/>
+      <transition label-x="1.0" name="limiter" priority="2" type="IMM" x="103.85" y="10.0"/>
+      <transition name="t7" priority="3" type="IMM" x="98.85" y="6.0"/>
+      <place name="f_AO" x="91.0" y="6.0"/>
+      <transition name="t8" priority="2" type="IMM" x="94.85" y="3.0"/>
+    </nodes>
+    <edges>
+      <arc head="POPEN" kind="INPUT" tail="CLOSED"/>
+      <arc head="AOPEN" kind="INPUT" tail="CLOSED"/>
+      <arc head="LISTEN" kind="OUTPUT" tail="POPEN"/>
+      <arc head="SYN_SENT" kind="OUTPUT" tail="AOPEN"/>
+      <arc head="SYN" kind="OUTPUT" mult-k="1.3221679687499996" mult-x="-0.0016620055396554534" mult-y="-1.0" tail="AOPEN">
+        <point x="43.0" y="23.0"/>
+      </arc>
+      <arc head="OPEN" kind="INPUT" mult-k="1.17490234375" tail="LISTEN">
+        <point x="63.0" y="48.0"/>
+      </arc>
+      <arc head="SYN" kind="OUTPUT" mult-k="0.6534179687500001" mult-x="-4.740322214829007E-4" mult-y="-0.5" tail="OPEN">
+        <point x="82.0" y="57.0"/>
+      </arc>
+      <arc head="SYN_SENT" kind="OUTPUT" mult-x="-0.4960690872534066" mult-y="-1.0" tail="OPEN">
+        <point x="43.0" y="57.0"/>
+      </arc>
+      <arc head="SEND" kind="INPUT" mult-k="0.75751953125" mult-x="0.8929441001871723" mult-y="-1.2141117996256554" tail="LISTEN">
+        <point x="67.0" y="48.0"/>
+      </arc>
+      <arc head="SYN_SENT" kind="OUTPUT" mult-k="0.6231445312500001" mult-x="-0.15640853179181136" mult-y="-1.0" tail="SEND">
+        <point x="43.0" y="54.0"/>
+      </arc>
+      <arc head="SYN" kind="OUTPUT" mult-x="-0.00683579882804608" mult-y="-0.5" tail="SEND">
+        <point x="82.0" y="54.0"/>
+      </arc>
+      <arc head="rcv_xSYN" kind="INPUT" tail="LISTEN"/>
+      <arc head="rcv_xSYN" kind="INPUT" mult-k="1.0999023437500002" tail="xSYN">
+        <point x="99.0" y="35.0"/>
+        <point x="99.0" y="46.0"/>
+      </arc>
+      <arc head="CLOSE" kind="INPUT" tail="LISTEN"/>
+      <arc head="CLOSED" kind="OUTPUT" tail="CLOSE"/>
+      <arc head="CLOSE2" kind="INPUT" tail="SYN_SENT"/>
+      <arc head="CLOSED" kind="OUTPUT" tail="CLOSE2"/>
+      <arc head="rcv_xRST" head-magnet="3" kind="INPUT" tail="xRST"/>
+      <arc head="rcv_xRST" head-magnet="7" kind="INPUT" tail="CLOSED"/>
+      <arc head="rcv_xRST2" head-magnet="3" kind="INPUT" tail="LISTEN">
+        <point x="69.0" y="37.5"/>
+      </arc>
+      <arc head="rcv_xRST2" head-magnet="3" kind="INPUT" mult-k="0.6333007812500001" tail="xRST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="37.5"/>
+      </arc>
+      <arc head="LISTEN" kind="OUTPUT" mult-x="0.32500000000000284" mult-y="0.0833333333333286" tail="rcv_xRST2" tail-magnet="6">
+        <point x="68.5" y="36.5"/>
+      </arc>
+      <arc head="rcv_xACK" head-magnet="3" kind="INPUT" tail="xACK"/>
+      <arc head="RST" kind="OUTPUT" tail="rcv_xACK"/>
+      <arc head="LISTEN" kind="OUTPUT" tail="rcv_xACK" tail-magnet="3">
+        <point x="89.0" y="42.5"/>
+      </arc>
+      <arc head="rcv_xACK" head-magnet="2" kind="INPUT" tail="LISTEN">
+        <point x="88.5" y="41.0"/>
+      </arc>
+      <arc head="SYN_RCVD" kind="OUTPUT" tail="rcv_xSYN"/>
+      <arc head="rcv_xRST3" kind="INPUT" mult-k="1.2600585937499997" tail="xRST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="49.0" y="15.0"/>
+      </arc>
+      <arc head="SYN" kind="OUTPUT" tail="rcv_xSYN">
+        <point x="87.0" y="23.0"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" mult-k="0.47802734375" tail="rcv_xRST3">
+        <point x="56.5" y="34.0"/>
+      </arc>
+      <arc head="SS_bA" kind="OUTPUT" tail="bad_xACK"/>
+      <arc head="no_xRST" kind="INPUT" tail="SS_bA"/>
+      <arc head="no_xRST" head-magnet="7" kind="INHIBITOR" mult-x="-2.0817551528222964" mult-y="0.37736727076655185" tail="xRST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="26.5" y="15.0"/>
+        <point x="26.5" y="62.0"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYNACK">
+        <point x="8.0" y="19.0"/>
+      </arc>
+      <arc head="ESTAB" kind="OUTPUT" tail="rcv_xSYNACK">
+        <point x="8.0" y="71.0"/>
+      </arc>
+      <arc head="SYN_RCVD" kind="OUTPUT" mult-k="1.47080078125" tail="no_xACK">
+        <point x="16.0" y="66.0"/>
+      </arc>
+      <arc head="SYN" kind="OUTPUT" tail="no_xACK">
+        <point x="16.0" y="23.0"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="no_xACK">
+        <point x="16.0" y="19.0"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xSYN">
+        <point x="87.0" y="19.0"/>
+      </arc>
+      <arc head="RST" kind="OUTPUT" tail="no_xRST"/>
+      <arc head="rcv_xRST3" kind="INPUT" tail="SYN_SENT"/>
+      <arc head="has_xRST" head-magnet="7" kind="INPUT" tail="xRST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="26.5" y="15.0"/>
+        <point x="26.5" y="57.0"/>
+      </arc>
+      <arc head="has_xRST" kind="INPUT" tail="SS_bA"/>
+      <arc head="bad_xACK" kind="INPUT" tail="xACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="37.0" y="15.0"/>
+      </arc>
+      <arc head="bad_xACK" kind="INPUT" mult-k="0.23330078125" tail="SYN_SENT"/>
+      <arc head="SYN_SENT" kind="OUTPUT" tail="has_xRST">
+        <point x="39.0" y="57.0"/>
+      </arc>
+      <arc head="SYN_SENT" kind="OUTPUT" tail="no_xRST"/>
+      <arc head="rcv_xACK2" kind="INPUT" tail="SYN_SENT">
+        <point x="41.0" y="43.0"/>
+      </arc>
+      <arc head="rcv_xACK2" kind="INPUT" tail="xACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="32.0" y="15.0"/>
+      </arc>
+      <arc head="SS_A" kind="OUTPUT" tail="rcv_xACK2"/>
+      <arc head="rcv_xSYNACK" head-magnet="2" kind="INPUT" tail="xSYN">
+        <point x="99.0" y="35.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="22.0" y="15.0"/>
+        <point x="22.0" y="39.5"/>
+      </arc>
+      <arc head="rcv_xSYNACK" head-magnet="3" kind="INPUT" tail="SS_A">
+        <point x="22.0" y="40.5"/>
+      </arc>
+      <arc head="no_xACK" head-magnet="2" kind="INPUT" mult-k="0.50009765625" tail="xSYN">
+        <point x="99.0" y="35.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="22.0" y="15.0"/>
+        <point x="22.0" y="34.5"/>
+      </arc>
+      <arc head="no_xACK" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="SYN_SENT">
+        <point x="41.5" y="35.5"/>
+      </arc>
+      <arc head="no_xACK" head-magnet="1" kind="INHIBITOR" mult-k="0.50009765625" tail="xACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="22.0" y="15.0"/>
+        <point x="22.0" y="34.0"/>
+      </arc>
+      <arc head="t2" kind="INPUT" tail="xRST"/>
+      <arc head="t2" kind="INPUT" tail="f_xRST"/>
+      <arc head="t1" kind="INPUT" tail="xSYN"/>
+      <arc head="t1" kind="INPUT" tail="f_xSYN"/>
+      <arc head="t0" kind="INPUT" tail="xACK"/>
+      <arc head="t0" kind="INPUT" tail="f_xACK"/>
+      <arc head="t3" kind="INPUT" tail="f_xRST"/>
+      <arc head="t4" kind="INPUT" tail="f_xSYN"/>
+      <arc head="t5" kind="INPUT" tail="f_xACK"/>
+      <arc head="f_split" kind="INPUT" tail="flush"/>
+      <arc head="f_xSYN" kind="OUTPUT" mult-k="1.62412109375" tail="f_split">
+        <point x="114.5" y="27.0"/>
+        <point x="114.5" y="33.0"/>
+      </arc>
+      <arc head="f_xRST" kind="OUTPUT" mult-k="0.19912109375" tail="f_split"/>
+      <arc head="f_xACK" kind="OUTPUT" tail="f_split">
+        <point x="114.5" y="27.0"/>
+        <point x="114.5" y="39.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="rcv_xRST2" tail-magnet="2">
+        <point x="99.0" y="37.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="rcv_xACK" tail-magnet="2">
+        <point x="99.0" y="40.5"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="has_xRST" tail-magnet="6">
+        <point x="26.5" y="56.5"/>
+        <point x="26.5" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="no_xRST" tail-magnet="6">
+        <point x="26.5" y="61.5"/>
+        <point x="26.5" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="rcv_xRST3">
+        <point x="53.0" y="34.0"/>
+        <point x="53.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="CLOSE2">
+        <point x="53.0" y="38.5"/>
+        <point x="53.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="CLOSE">
+        <point x="53.0" y="44.5"/>
+        <point x="53.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="rcv_xRST" tail-magnet="2">
+        <point x="99.0" y="28.5"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" tail="rcv_xRST" tail-magnet="6"/>
+      <arc head="AO" kind="OUTPUT" tail="AOPEN">
+        <point x="43.0" y="11.0"/>
+      </arc>
+      <arc head="PO_rcv_xRST" kind="INPUT" tail="SYN_RCVD"/>
+      <arc head="AO_rcv_xRST" kind="INPUT" tail="SYN_RCVD">
+        <point x="89.5" y="66.0"/>
+        <point x="89.5" y="69.0"/>
+      </arc>
+      <arc head="AO_rcv_xRST" head-magnet="3" kind="INPUT" tail="AO">
+        <point x="99.0" y="69.0"/>
+      </arc>
+      <arc head="PO_rcv_xRST" head-magnet="3" kind="INHIBITOR" tail="AO">
+        <point x="99.0" y="66.0"/>
+      </arc>
+      <arc head="PO_rcv_xRST" head-magnet="2" kind="INPUT" tail="xRST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="65.5"/>
+      </arc>
+      <arc head="AO_rcv_xRST" head-magnet="2" kind="INPUT" tail="xRST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="68.5"/>
+      </arc>
+      <arc head="LISTEN" kind="OUTPUT" mult-k="0.50009765625" tail="PO_rcv_xRST" tail-magnet="0">
+        <point x="99.0" y="65.0"/>
+        <point x="99.0" y="49.0"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" tail="AO_rcv_xRST" tail-magnet="5">
+        <point x="99.0" y="70.0"/>
+        <point x="99.0" y="31.0"/>
+        <point x="67.0" y="30.5"/>
+      </arc>
+      <arc head="flush" kind="OUTPUT" tail="AO_rcv_xRST" tail-magnet="4">
+        <point x="93.0" y="70.5"/>
+        <point x="99.0" y="70.5"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="rcv_xACK3" head-magnet="2" kind="INPUT" tail="SYN_RCVD">
+        <point x="87.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_xACK3" head-magnet="3" kind="INPUT" tail="xACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="71.5"/>
+      </arc>
+      <arc head="ESTAB" kind="OUTPUT" tail="rcv_xACK3" tail-magnet="7"/>
+      <arc head="limiter" kind="INPUT" mult="2" mult-k="0.6313476562500001" tail="AO">
+        <point x="102.0" y="12.5"/>
+      </arc>
+      <arc head="AO" kind="OUTPUT" mult-k="1.36865234375" tail="limiter">
+        <point x="102.0" y="9.5"/>
+      </arc>
+      <arc head="f_AO" kind="OUTPUT" tail="POPEN">
+        <point x="87.0" y="34.0"/>
+        <point x="87.0" y="7.0"/>
+      </arc>
+      <arc head="t7" kind="INPUT" tail="f_AO"/>
+      <arc head="t7" kind="INPUT" tail="AO"/>
+      <arc head="t8" kind="INPUT" tail="f_AO"/>
+      <arc head="AO" kind="OUTPUT" tail="AO_rcv_xRST" tail-magnet="1">
+        <point x="99.0" y="68.0"/>
+      </arc>
+      <arc head="AO" kind="OUTPUT" tail="OPEN">
+        <point x="99.0" y="57.0"/>
+      </arc>
+      <arc head="AO" kind="OUTPUT" tail="SEND">
+        <point x="99.0" y="54.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <gspn name="xCONN" zoom="50">
+    <nodes>
+      <place label-y="-1.5" marking="1" name="xCLOSED" x="64.0" y="28.0"/>
+      <transition label-x="-2.0" label-y="1.0" name="xPOPEN" nservers-x="0.5" type="EXP" x="64.55" y="33.0"/>
+      <transition label-x="2.5" label-y="-1.0" name="xAOPEN" nservers-x="0.5" type="EXP" x="42.550000000000004" y="28.0"/>
+      <place label-x="-2.5" label-y="-1.0" name="xLISTEN" x="64.0" y="45.0"/>
+      <place label-x="2.5" label-y="2.0" name="xSYN_SENT" x="42.0" y="45.0"/>
+      <place label-y="-1.5" name="xSYN" x="81.0" y="22.0"/>
+      <transition label-x="-1.5" label-y="-0.5" name="xOPEN" nservers-x="0.5" type="EXP" x="62.550000000000004" y="56.0"/>
+      <transition label-x="2.0" label-y="-0.5" name="xSEND" nservers-x="0.5" type="EXP" x="66.55" y="53.0"/>
+      <place label-y="-1.5" name="SYN" x="104.0" y="34.0"/>
+      <transition label-x="-2.5" label-y="-1.0" name="rcv_SYN" type="IMM" x="86.85" y="45.0"/>
+      <place label-x="-3.0" label-y="-1.5" name="xSYN_RCVD" x="86.0" y="65.0"/>
+      <place label-y="-1.5" name="RST" x="104.0" y="28.0"/>
+      <transition label-x="-2.0" label-y="0.5" name="xCLOSE" nservers-x="0.5" type="EXP" x="52.550000000000004" y="45.0"/>
+      <transition label-x="-2.5" label-y="-0.5" name="xCLOSE2" nservers-x="0.5" type="EXP" x="50.550000000000004" y="39.0"/>
+      <transition magnets="TWO_PER_SIDE" name="rcv_RST" type="IMM" x="71.85" y="28.0"/>
+      <transition magnets="TWO_PER_SIDE" name="rcv_RST2" type="IMM" x="71.85" y="36.0"/>
+      <place label-x="-1.5" label-y="-1.5" name="xRST" x="90.0" y="61.0"/>
+      <place label-y="-1.5" name="ACK" x="104.0" y="40.0"/>
+      <transition label-x="0.5" magnets="TWO_PER_SIDE" name="rcv_ACK" type="IMM" x="90.85" y="40.0"/>
+      <transition label-x="-2.5" label-y="0.5" name="bad_ACK" priority="3" type="IMM" x="36.85" y="45.0"/>
+      <transition label-x="-2.5" label-y="0.0" name="rcv_RST3" priority="2" type="IMM" x="48.85" y="33.0"/>
+      <place label-x="-2.0" label-y="-1.5" name="xSS_bA" x="36.0" y="52.0"/>
+      <transition label-x="-2.5" label-y="1.0" magnets="TWO_PER_SIDE" name="no_RST" type="IMM" x="36.85" y="61.0"/>
+      <transition label-x="-3.5" label-y="0.5" magnets="TWO_PER_SIDE" name="rcv_SYNACK" type="IMM" x="7.85" y="39.0"/>
+      <place label-y="-1.5" name="xACK" x="81.0" y="18.0"/>
+      <place label-y="-1.5" name="xESTAB" x="55.0" y="70.0"/>
+      <transition label-x="-2.0" label-y="0.5" magnets="TWO_PER_SIDE" name="no_ACK" type="IMM" x="15.85" y="34.0"/>
+      <transition label-x="-0.5" label-y="2.0" magnets="TWO_PER_SIDE" name="has_RST" type="IMM" x="31.85" y="56.0"/>
+      <transition label-x="-2.5" label-y="-2.0" name="rcv_ACK2" priority="3" type="IMM" x="31.85" y="42.0"/>
+      <place name="xSS_A" x="21.0" y="42.0"/>
+      <place name="f_RST" x="111.0" y="26.0"/>
+      <place name="f_SYN" x="111.0" y="32.0"/>
+      <place name="f_ACK" x="111.0" y="38.0"/>
+      <transition name="xt0" priority="999" type="IMM" x="107.85" y="40.0"/>
+      <transition name="xt1" priority="997" type="IMM" x="107.85" y="34.0"/>
+      <transition name="xt2" priority="995" type="IMM" x="107.85" y="28.0"/>
+      <transition name="xt3" priority="994" type="IMM" x="107.85" y="25.0"/>
+      <transition name="xt4" priority="996" type="IMM" x="107.85" y="31.0"/>
+      <transition name="xt5" priority="998" type="IMM" x="107.85" y="37.0"/>
+      <place label-x="2.5" label-y="0.0" name="xflush" x="118.0" y="26.0"/>
+      <transition label-x="0.5" name="xf_split" priority="999" priority-x="-0.5" priority-y="1.5" type="IMM" x="115.85" y="26.0"/>
+      <text-box border-color="#b6b6b6" fill-color="none" height="20.5" horiz-pos="2" name="__textBox0" shadow="true" text-color="#000000" width="16.0" x="107.0" y="22.5">flush ---&gt; drop segment</text-box>
+      <place label-x="-1.5" label-y="1.0" name="xAO" x="98.0" y="10.0"/>
+      <transition magnets="TWO_PER_SIDE" name="PO_rcv_RST" type="IMM" x="92.85" y="65.0"/>
+      <transition magnets="TWO_PER_SIDE" name="AO_rcv_RST" type="IMM" x="92.85" y="68.0"/>
+      <transition magnets="TWO_PER_SIDE" name="rcv_ACK3" type="IMM" x="81.85" y="70.0"/>
+      <transition label-x="1.0" name="xlimiter" priority="2" type="IMM" x="103.85" y="10.0"/>
+      <place name="f_xAO" x="91.0" y="6.0"/>
+      <transition name="xt7" priority="3" type="IMM" x="98.85" y="6.0"/>
+      <transition name="xt8" priority="2" type="IMM" x="94.85" y="3.0"/>
+    </nodes>
+    <edges>
+      <arc head="xPOPEN" kind="INPUT" tail="xCLOSED"/>
+      <arc head="xAOPEN" kind="INPUT" tail="xCLOSED"/>
+      <arc head="xLISTEN" kind="OUTPUT" tail="xPOPEN"/>
+      <arc head="xSYN_SENT" kind="OUTPUT" tail="xAOPEN"/>
+      <arc head="xSYN" kind="OUTPUT" mult-k="1.3221679687499996" mult-x="-0.0016620055396554534" mult-y="-1.0" tail="xAOPEN">
+        <point x="43.0" y="23.0"/>
+      </arc>
+      <arc head="xOPEN" kind="INPUT" mult-k="1.17490234375" tail="xLISTEN">
+        <point x="63.0" y="48.0"/>
+      </arc>
+      <arc head="xSYN" kind="OUTPUT" mult-k="0.6534179687500001" mult-x="-4.740322214829007E-4" mult-y="-0.5" tail="xOPEN">
+        <point x="82.0" y="57.0"/>
+      </arc>
+      <arc head="xSYN_SENT" kind="OUTPUT" mult-x="-0.4960690872534066" mult-y="-1.0" tail="xOPEN">
+        <point x="43.0" y="57.0"/>
+      </arc>
+      <arc head="xSEND" kind="INPUT" mult-k="0.75751953125" mult-x="0.8929441001871723" mult-y="-1.2141117996256554" tail="xLISTEN">
+        <point x="67.0" y="48.0"/>
+      </arc>
+      <arc head="xSYN_SENT" kind="OUTPUT" mult-k="0.6231445312500001" mult-x="-0.15640853179181136" mult-y="-1.0" tail="xSEND">
+        <point x="43.0" y="54.0"/>
+      </arc>
+      <arc head="xSYN" kind="OUTPUT" mult-x="-0.00683579882804608" mult-y="-0.5" tail="xSEND">
+        <point x="82.0" y="54.0"/>
+      </arc>
+      <arc head="rcv_SYN" kind="INPUT" tail="xLISTEN"/>
+      <arc head="rcv_SYN" kind="INPUT" mult-k="1.0999023437500002" tail="SYN">
+        <point x="99.0" y="35.0"/>
+        <point x="99.0" y="46.0"/>
+      </arc>
+      <arc head="xCLOSE" kind="INPUT" tail="xLISTEN"/>
+      <arc head="xCLOSED" kind="OUTPUT" tail="xCLOSE"/>
+      <arc head="xCLOSE2" kind="INPUT" tail="xSYN_SENT"/>
+      <arc head="xCLOSED" kind="OUTPUT" tail="xCLOSE2"/>
+      <arc head="rcv_RST" head-magnet="3" kind="INPUT" tail="RST"/>
+      <arc head="rcv_RST" head-magnet="3" kind="INPUT" tail="xCLOSED"/>
+      <arc head="rcv_RST2" head-magnet="3" kind="INPUT" tail="xLISTEN">
+        <point x="69.0" y="37.5"/>
+      </arc>
+      <arc head="rcv_RST2" head-magnet="3" kind="INPUT" mult-k="0.6333007812500001" tail="RST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="37.5"/>
+      </arc>
+      <arc head="xLISTEN" kind="OUTPUT" mult-x="0.32500000000000284" mult-y="0.0833333333333286" tail="rcv_RST2" tail-magnet="6">
+        <point x="68.5" y="36.5"/>
+      </arc>
+      <arc head="rcv_ACK" head-magnet="3" kind="INPUT" tail="ACK"/>
+      <arc head="xRST" kind="OUTPUT" tail="rcv_ACK"/>
+      <arc head="xLISTEN" kind="OUTPUT" tail="rcv_ACK" tail-magnet="3">
+        <point x="89.0" y="42.5"/>
+      </arc>
+      <arc head="rcv_ACK" head-magnet="2" kind="INPUT" tail="xLISTEN">
+        <point x="88.5" y="41.0"/>
+      </arc>
+      <arc head="xSYN_RCVD" kind="OUTPUT" tail="rcv_SYN"/>
+      <arc head="rcv_RST3" kind="INPUT" mult-k="1.2600585937499997" tail="RST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="49.0" y="15.0"/>
+      </arc>
+      <arc head="xSYN" kind="OUTPUT" tail="rcv_SYN">
+        <point x="87.0" y="23.0"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" mult-k="0.47802734375" tail="rcv_RST3">
+        <point x="56.5" y="34.0"/>
+      </arc>
+      <arc head="xSS_bA" kind="OUTPUT" tail="bad_ACK"/>
+      <arc head="no_RST" kind="INPUT" tail="xSS_bA"/>
+      <arc head="no_RST" head-magnet="7" kind="INHIBITOR" mult-x="-2.0817551528222964" mult-y="0.37736727076655185" tail="RST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="26.5" y="15.0"/>
+        <point x="26.5" y="62.0"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" mult-k="0.0" tail="rcv_SYNACK">
+        <point x="8.0" y="19.0"/>
+      </arc>
+      <arc head="xESTAB" kind="OUTPUT" tail="rcv_SYNACK">
+        <point x="8.0" y="71.0"/>
+      </arc>
+      <arc head="xSYN_RCVD" kind="OUTPUT" mult-k="1.47080078125" tail="no_ACK">
+        <point x="16.0" y="66.0"/>
+      </arc>
+      <arc head="xSYN" kind="OUTPUT" tail="no_ACK">
+        <point x="16.0" y="23.0"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="no_ACK">
+        <point x="16.0" y="19.0"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_SYN">
+        <point x="87.0" y="19.0"/>
+      </arc>
+      <arc head="xRST" kind="OUTPUT" tail="no_RST"/>
+      <arc head="rcv_RST3" kind="INPUT" tail="xSYN_SENT"/>
+      <arc head="has_RST" head-magnet="7" kind="INPUT" tail="RST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="26.5" y="15.0"/>
+        <point x="26.5" y="57.0"/>
+      </arc>
+      <arc head="has_RST" kind="INPUT" tail="xSS_bA"/>
+      <arc head="bad_ACK" kind="INPUT" tail="ACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="37.0" y="15.0"/>
+      </arc>
+      <arc head="bad_ACK" kind="INPUT" mult-k="0.23330078125" tail="xSYN_SENT"/>
+      <arc head="xSYN_SENT" kind="OUTPUT" tail="has_RST">
+        <point x="39.0" y="57.0"/>
+      </arc>
+      <arc head="xSYN_SENT" kind="OUTPUT" tail="no_RST"/>
+      <arc head="rcv_ACK2" kind="INPUT" tail="xSYN_SENT">
+        <point x="41.0" y="43.0"/>
+      </arc>
+      <arc head="rcv_ACK2" kind="INPUT" tail="ACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="32.0" y="15.0"/>
+      </arc>
+      <arc head="xSS_A" kind="OUTPUT" tail="rcv_ACK2"/>
+      <arc head="rcv_SYNACK" head-magnet="2" kind="INPUT" tail="SYN">
+        <point x="99.0" y="35.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="22.0" y="15.0"/>
+        <point x="22.0" y="39.5"/>
+      </arc>
+      <arc head="rcv_SYNACK" head-magnet="3" kind="INPUT" tail="xSS_A">
+        <point x="22.0" y="40.5"/>
+      </arc>
+      <arc head="no_ACK" head-magnet="2" kind="INPUT" mult-k="0.50009765625" tail="SYN">
+        <point x="99.0" y="35.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="22.0" y="15.0"/>
+        <point x="22.0" y="34.5"/>
+      </arc>
+      <arc head="no_ACK" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="xSYN_SENT">
+        <point x="41.5" y="35.5"/>
+      </arc>
+      <arc head="no_ACK" head-magnet="1" kind="INHIBITOR" mult-k="0.50009765625" tail="ACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="22.0" y="15.0"/>
+        <point x="22.0" y="34.0"/>
+      </arc>
+      <arc head="xt2" kind="INPUT" tail="RST"/>
+      <arc head="xt2" kind="INPUT" tail="f_RST"/>
+      <arc head="xt1" kind="INPUT" tail="SYN"/>
+      <arc head="xt1" kind="INPUT" tail="f_SYN"/>
+      <arc head="xt0" kind="INPUT" tail="ACK"/>
+      <arc head="xt0" kind="INPUT" tail="f_ACK"/>
+      <arc head="xt3" kind="INPUT" tail="f_RST"/>
+      <arc head="xt4" kind="INPUT" tail="f_SYN"/>
+      <arc head="xt5" kind="INPUT" tail="f_ACK"/>
+      <arc head="xf_split" kind="INPUT" tail="xflush"/>
+      <arc head="f_SYN" kind="OUTPUT" mult-k="1.48291015625" tail="xf_split">
+        <point x="114.5" y="27.0"/>
+        <point x="114.5" y="33.0"/>
+      </arc>
+      <arc head="f_RST" kind="OUTPUT" mult-k="0.19013671875" tail="xf_split"/>
+      <arc head="f_ACK" kind="OUTPUT" mult-k="0.49990234375" tail="xf_split">
+        <point x="114.5" y="27.0"/>
+        <point x="114.5" y="39.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="rcv_RST2" tail-magnet="2">
+        <point x="99.0" y="37.0"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="rcv_ACK" tail-magnet="2">
+        <point x="99.0" y="40.5"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="has_RST" tail-magnet="6">
+        <point x="26.5" y="56.5"/>
+        <point x="26.5" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="no_RST" tail-magnet="6">
+        <point x="26.5" y="61.5"/>
+        <point x="26.5" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="rcv_RST3">
+        <point x="53.0" y="34.0"/>
+        <point x="53.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="xCLOSE2">
+        <point x="53.0" y="38.5"/>
+        <point x="53.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="xCLOSE">
+        <point x="53.0" y="44.5"/>
+        <point x="53.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="rcv_RST" tail-magnet="2">
+        <point x="99.0" y="28.5"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" tail="rcv_RST" tail-magnet="6"/>
+      <arc head="xAO" kind="OUTPUT" tail="xAOPEN">
+        <point x="43.0" y="11.0"/>
+      </arc>
+      <arc head="AO_rcv_RST" head-magnet="3" kind="INPUT" tail="xAO">
+        <point x="99.0" y="69.0"/>
+      </arc>
+      <arc head="PO_rcv_RST" head-magnet="3" kind="INHIBITOR" tail="xAO">
+        <point x="99.0" y="66.0"/>
+      </arc>
+      <arc head="PO_rcv_RST" head-magnet="2" kind="INPUT" tail="RST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="65.5"/>
+      </arc>
+      <arc head="AO_rcv_RST" head-magnet="2" kind="INPUT" tail="RST">
+        <point x="99.0" y="29.0"/>
+        <point x="99.0" y="68.5"/>
+      </arc>
+      <arc head="PO_rcv_RST" head-magnet="6" kind="INPUT" tail="xSYN_RCVD"/>
+      <arc head="AO_rcv_RST" head-magnet="7" kind="INPUT" mult-k="1.5842773437499997" tail="xSYN_RCVD">
+        <point x="89.0" y="66.0"/>
+        <point x="89.0" y="69.0"/>
+      </arc>
+      <arc head="xLISTEN" kind="OUTPUT" mult-k="0.50009765625" tail="PO_rcv_RST" tail-magnet="1">
+        <point x="99.0" y="65.0"/>
+        <point x="99.0" y="49.0"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" tail="AO_rcv_RST" tail-magnet="5">
+        <point x="99.0" y="70.0"/>
+        <point x="99.0" y="31.0"/>
+        <point x="67.0" y="30.5"/>
+      </arc>
+      <arc head="xflush" kind="OUTPUT" tail="AO_rcv_RST" tail-magnet="4">
+        <point x="93.0" y="70.5"/>
+        <point x="99.0" y="70.5"/>
+        <point x="99.0" y="15.0"/>
+        <point x="119.0" y="15.0"/>
+      </arc>
+      <arc head="rcv_ACK3" head-magnet="3" kind="INPUT" tail="ACK">
+        <point x="99.0" y="41.0"/>
+        <point x="99.0" y="71.5"/>
+      </arc>
+      <arc head="rcv_ACK3" head-magnet="2" kind="INPUT" tail="xSYN_RCVD">
+        <point x="87.0" y="70.5"/>
+      </arc>
+      <arc head="xESTAB" kind="OUTPUT" tail="rcv_ACK3" tail-magnet="7"/>
+      <arc head="xlimiter" kind="INPUT" mult="2" tail="xAO">
+        <point x="102.0" y="12.5"/>
+      </arc>
+      <arc head="xAO" kind="OUTPUT" tail="xlimiter">
+        <point x="102.0" y="9.5"/>
+      </arc>
+      <arc head="f_xAO" kind="OUTPUT" tail="xPOPEN">
+        <point x="87.0" y="34.0"/>
+        <point x="87.0" y="7.0"/>
+      </arc>
+      <arc head="xt7" kind="INPUT" tail="xAO"/>
+      <arc head="xt7" kind="INPUT" tail="f_xAO"/>
+      <arc head="xt8" kind="INPUT" tail="f_xAO"/>
+      <arc head="xAO" kind="OUTPUT" tail="AO_rcv_RST" tail-magnet="1">
+        <point x="99.0" y="68.0"/>
+      </arc>
+      <arc head="xAO" kind="OUTPUT" tail="xSEND">
+        <point x="99.0" y="54.0"/>
+      </arc>
+      <arc head="xAO" kind="OUTPUT" tail="xOPEN">
+        <point x="99.0" y="57.0"/>
+      </arc>
+    </edges>
+  </gspn>
+  <multinet name="MultiNet" zoom="25">
+    <bindings-list/>
+    <subnet netname="CONN"/>
+    <subnet netname="xCONN"/>
+  </multinet>
+</project>
