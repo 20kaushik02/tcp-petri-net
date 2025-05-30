@@ -2,656 +2,2114 @@
 <!-- This project file has been saved by the New GreatSPN Editor, v.100 --><project name="tcp-rkn-copy" version="121">
   <gspn name="CONN" zoom="50">
     <nodes>
-      <place label-y="-1.5" marking="1" name="CLOSED" x="64.0" y="28.0"/>
-      <transition label-x="-2.0" label-y="1.0" name="POPEN" nservers-x="0.5" type="EXP" x="64.55" y="33.0"/>
-      <transition label-x="2.0" label-y="-1.0" name="AOPEN" nservers-x="0.5" type="EXP" x="42.550000000000004" y="28.0"/>
-      <place label-x="-2.0" label-y="-1.0" name="LISTEN" x="64.0" y="45.0"/>
-      <place label-x="2.5" label-y="2.0" marking="1" name="SYN_SENT" x="42.0" y="45.0"/>
-      <place label-y="-1.5" name="SYN" x="81.0" y="22.0"/>
-      <transition label-x="-1.5" label-y="-0.5" name="OPEN" nservers-x="0.5" type="EXP" x="62.550000000000004" y="56.0"/>
-      <transition label-x="2.0" label-y="-0.5" name="SEND" nservers-x="0.5" type="EXP" x="66.55" y="53.0"/>
-      <place label-y="-1.5" name="xSYN" x="104.0" y="34.0"/>
-      <transition label-x="-2.5" label-y="-1.0" name="rcv_xSYN" type="IMM" x="86.85" y="45.0"/>
-      <place label-x="-3.0" label-y="-1.5" name="SYN_RCVD" x="86.0" y="65.0"/>
-      <place label-y="-1.5" marking="1" name="xRST" x="104.0" y="28.0"/>
-      <transition label-x="-2.0" label-y="0.5" name="CLOSE" nservers-x="0.5" type="EXP" x="52.550000000000004" y="45.0"/>
-      <transition label-x="-2.0" label-y="-1.0" name="CLOSE2" nservers-x="0.5" type="EXP" x="50.550000000000004" y="39.0"/>
-      <transition magnets="TWO_PER_SIDE" name="rcv_xRST" type="IMM" x="71.85" y="28.0"/>
-      <transition magnets="TWO_PER_SIDE" name="rcv_xRST2" type="IMM" x="71.85" y="36.0"/>
-      <place label-x="-1.5" label-y="-1.5" name="RST" x="90.0" y="61.0"/>
-      <place label-y="-1.5" marking="1" name="xACK" x="104.0" y="40.0"/>
-      <transition label-x="0.5" magnets="TWO_PER_SIDE" name="rcv_xACK" type="IMM" x="90.85" y="40.0"/>
-      <transition label-x="-2.5" label-y="0.5" name="bad_xACK" priority="3" type="IMM" x="36.85" y="45.0"/>
-      <transition label-x="-2.5" label-y="0.0" name="rcv_xRST3" priority="2" type="IMM" x="48.85" y="33.0"/>
-      <place label-x="-2.0" label-y="-1.5" name="SS_bA" x="36.0" y="52.0"/>
-      <transition label-x="-2.5" label-y="1.0" magnets="TWO_PER_SIDE" name="no_xRST" type="IMM" x="36.85" y="61.0"/>
-      <transition label-x="-3.5" label-y="0.5" magnets="TWO_PER_SIDE" name="rcv_xSYNACK" type="IMM" x="7.85" y="39.0"/>
-      <place label-y="-1.5" name="ACK" x="81.0" y="18.0"/>
-      <place label-y="-1.5" name="ESTAB" x="55.0" y="70.0"/>
-      <transition label-x="-2.0" label-y="0.5" magnets="TWO_PER_SIDE" name="no_xACK" type="IMM" x="15.85" y="34.0"/>
-      <transition label-x="-0.5" label-y="2.0" magnets="TWO_PER_SIDE" name="has_xRST" type="IMM" x="31.85" y="56.0"/>
-      <transition label-x="-2.5" label-y="-2.0" name="rcv_xACK2" priority="3" type="IMM" x="31.85" y="42.0"/>
-      <place name="SS_A" x="21.0" y="42.0"/>
-      <place name="f_xRST" x="111.0" y="26.0"/>
-      <place name="f_xSYN" x="111.0" y="32.0"/>
-      <place name="f_xACK" x="111.0" y="38.0"/>
-      <transition name="t0" priority="999" type="IMM" x="107.85" y="40.0"/>
-      <transition name="t1" priority="997" type="IMM" x="107.85" y="34.0"/>
-      <transition name="t2" priority="995" type="IMM" x="107.85" y="28.0"/>
-      <transition name="t3" priority="994" type="IMM" x="107.85" y="25.0"/>
-      <transition name="t4" priority="996" type="IMM" x="107.85" y="31.0"/>
-      <transition name="t5" priority="998" type="IMM" x="107.85" y="37.0"/>
-      <place label-x="2.5" label-y="0.0" name="flush" x="118.0" y="26.0"/>
-      <transition name="f_split" priority="999" priority-x="-0.5" priority-y="1.5" type="IMM" x="115.85" y="26.0"/>
-      <text-box border-color="#b6b6b6" fill-color="none" height="20.5" horiz-pos="2" name="__textBox0" shadow="true" text-color="#000000" width="16.0" x="107.0" y="22.5">flush ---&gt; drop segment</text-box>
-      <place label-x="-1.5" label-y="1.0" name="AO" x="98.0" y="10.0"/>
-      <transition magnets="TWO_PER_SIDE" name="PO_rcv_xRST" type="IMM" x="92.85" y="65.0"/>
-      <transition magnets="TWO_PER_SIDE" name="AO_rcv_xRST" type="IMM" x="92.85" y="68.0"/>
-      <transition magnets="TWO_PER_SIDE" name="rcv_xACK3" type="IMM" x="81.85" y="70.0"/>
-      <transition label-x="1.0" name="limiter" priority="2" type="IMM" x="103.85" y="10.0"/>
-      <transition name="t7" priority="3" type="IMM" x="98.85" y="6.0"/>
-      <place name="f_AO" x="91.0" y="6.0"/>
-      <transition name="t8" priority="2" type="IMM" x="94.85" y="3.0"/>
+      <place label-x="-2.5" label-y="-1.0" magnets="ORTHOGONAL" marking="1" name="CLOSED" x="69.0" y="49.0"/>
+      <transition label-x="-2.0" label-y="1.5" magnets="ORTHOGONAL" name="POPEN" nservers-x="0.5" type="EXP" x="69.55" y="54.0"/>
+      <transition delay-x="-0.5" delay-y="2.0" magnets="ORTHOGONAL" name="AOPEN" nservers-x="0.5" type="EXP" x="50.55" y="49.0"/>
+      <place label-x="-2.0" label-y="-1.0" magnets="ORTHOGONAL" name="LISTEN" x="69.0" y="66.0"/>
+      <place label-x="2.5" label-y="-1.5" magnets="ORTHOGONAL" name="SYN_SENT" x="47.0" y="68.0"/>
+      <place label-y="-1.5" magnets="ORTHOGONAL" name="SYN" x="86.0" y="43.0"/>
+      <transition label-x="-2.000000000000007" label-y="-0.5" magnets="ORTHOGONAL" name="OPEN" nservers-x="0.5" type="EXP" x="67.55" y="75.0"/>
+      <transition label-x="2.0" label-y="-1.0" magnets="ORTHOGONAL" name="SEND" nservers-x="0.5" type="EXP" x="71.55" y="73.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_xSYN" x="109.0" y="55.0"/>
+      <transition label-x="-2.5" label-y="-1.0" magnets="ORTHOGONAL" name="rcv_xSYN" priority="2" type="IMM" x="79.85" y="69.0"/>
+      <place label-x="-3.0" label-y="-1.0" magnets="ORTHOGONAL" name="SYN_RCVD" x="91.0" y="85.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_xRST" x="109.0" y="49.0"/>
+      <transition label-x="-2.999999999999993" label-y="-0.5" magnets="ORTHOGONAL" name="CLOSE" nservers-x="0.5" type="EXP" x="55.55" y="63.0"/>
+      <transition label-x="-3.0" label-y="-1.0" magnets="ORTHOGONAL" name="CLOSE2" nservers-x="0.5" type="EXP" x="55.550000000000004" y="60.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST" priority="2" type="IMM" x="79.85" y="49.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST2" priority="4" type="IMM" x="79.85" y="57.0"/>
+      <place label-x="-1.5" label-y="-1.5" magnets="ORTHOGONAL" name="RST" x="86.0" y="82.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_xACK" x="109.0" y="61.0"/>
+      <transition label-x="0.5" magnets="ORTHOGONAL" name="rcv_xACK" priority="3" type="IMM" x="79.85" y="62.0"/>
+      <transition label-x="-2.5" label-y="0.0" magnets="ORTHOGONAL" name="bad_xACK" priority="3" type="IMM" x="42.85" y="68.0"/>
+      <transition label-x="-2.5" label-y="-1.0" magnets="ORTHOGONAL" name="rcv_xRST3" priority="2" type="IMM" x="55.85" y="57.0"/>
+      <place label-x="2.5" label-y="0.0" magnets="ORTHOGONAL" name="SS_bA" x="42.0" y="73.0"/>
+      <transition magnets="ORTHOGONAL" name="no_xRST" type="IMM" x="36.849999999999994" y="82.0"/>
+      <place label-y="-1.5" magnets="ORTHOGONAL" name="ACK" x="86.0" y="39.0"/>
+      <place label-x="2.0" label-y="-1.0" magnets="ORTHOGONAL" name="ESTAB" x="58.0" y="91.0"/>
+      <transition label-x="-2.9999999999999982" label-y="0.5" magnets="ORTHOGONAL" name="rcv_xSYN2" type="IMM" x="20.85" y="55.0"/>
+      <transition magnets="ORTHOGONAL" name="has_xRST" type="IMM" x="36.849999999999994" y="77.0"/>
+      <transition label-x="-3.5" label-y="-0.5" magnets="ORTHOGONAL" name="rcv_xSYNACK" nservers-x="0.5" type="EXP" x="27.55" y="59.0"/>
+      <place magnets="ORTHOGONAL" name="f_xRST" x="126.0" y="47.0"/>
+      <place magnets="ORTHOGONAL" name="f_xSYN" x="126.0" y="53.0"/>
+      <place magnets="ORTHOGONAL" name="f_xACK" x="126.0" y="59.0"/>
+      <transition name="t2" priority="999" type="IMM" x="122.85" y="61.0"/>
+      <transition name="t4" priority="999" type="IMM" x="122.85" y="55.0"/>
+      <transition name="t6" priority="999" type="IMM" x="122.85" y="49.0"/>
+      <transition name="t7" priority="998" type="IMM" x="122.85" y="46.0"/>
+      <transition name="t5" priority="998" type="IMM" x="122.85" y="52.0"/>
+      <transition name="t3" priority="998" type="IMM" x="122.85" y="58.0"/>
+      <place label-x="3.5" label-y="0.0" magnets="ORTHOGONAL" name="FLUSH_TCB" x="133.0" y="35.0"/>
+      <transition magnets="ORTHOGONAL" name="flush_flags" priority="999" priority-x="-0.5" priority-y="1.5" type="IMM" x="130.85" y="47.0"/>
+      <text-box border-color="#dbdbdb" fill-color="none" height="27.0" horiz-pos="2" magnets="ORTHOGONAL" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="13.0" x="122.0" y="43.0">clear flags</text-box>
+      <place label-x="-1.5" label-y="-0.5" magnets="ORTHOGONAL" name="AO" x="103.0" y="24.0"/>
+      <transition magnets="ORTHOGONAL" name="PO_rcv_xRST" priority="5" priority-x="-2.0" type="IMM" x="97.85" y="78.0"/>
+      <transition magnets="ORTHOGONAL" name="AO_rcv_xRST" priority="5" priority-x="-2.0" type="IMM" x="97.85" y="90.0"/>
+      <transition label-x="-0.5" magnets="ORTHOGONAL" name="rcv_xACK3" priority="2" type="IMM" x="86.85" y="91.0"/>
+      <transition label-x="1.0" name="limiter" priority="2" type="IMM" x="108.85" y="24.0"/>
+      <transition name="t8" priority="3" type="IMM" x="103.85" y="19.0"/>
+      <place magnets="ORTHOGONAL" name="f_AO" x="96.0" y="19.0"/>
+      <transition name="t9" priority="2" type="IMM" x="101.85" y="16.0"/>
+      <place magnets="ORTHOGONAL" name="FIN" x="86.0" y="97.0"/>
+      <transition magnets="ORTHOGONAL" name="CLOSE3" nservers-x="0.5" type="EXP" x="78.55" y="88.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="FIN_WAIT_1" x="58.0" y="97.0"/>
+      <transition label-x="-1.0" magnets="ORTHOGONAL" name="CLOSE4" nservers-x="0.5" type="EXP" x="69.55" y="88.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_xFIN" x="109.0" y="67.0"/>
+      <place magnets="ORTHOGONAL" name="f_xFIN" x="126.0" y="65.0"/>
+      <transition name="t1" priority="998" type="IMM" x="122.85" y="64.0"/>
+      <transition name="t0" priority="999" type="IMM" x="122.85" y="67.0"/>
+      <transition label-x="-0.5" magnets="ORTHOGONAL" name="bad_xACK2" priority="2" type="IMM" x="86.85" y="94.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="FIN_WAIT_2" x="58.0" y="103.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_xACK_FIN" priority="2" type="IMM" x="69.85" y="103.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="TIME_WAIT" x="58.0" y="131.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_xFIN6" type="IMM" x="69.85" y="143.0"/>
+      <transition label-x="3.0" magnets="ORTHOGONAL" name="rcv_xFINACK" priority="3" type="IMM" x="69.85" y="137.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="CLOSING" x="58.0" y="115.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_xFIN5" type="IMM" x="69.85" y="115.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="CLOSE_WAIT" x="58.0" y="109.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_xACK_FIN2" priority="2" type="IMM" x="69.85" y="131.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_xFIN3" type="IMM" x="69.85" y="107.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_xFIN4" type="IMM" x="69.85" y="111.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xFIN7" type="IMM" x="52.85" y="109.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xFIN8" type="IMM" x="52.85" y="115.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST4" priority="5" type="IMM" x="44.85" y="94.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST5" priority="5" type="IMM" x="44.85" y="99.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST6" priority="5" type="IMM" x="44.85" y="105.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST7" priority="5" type="IMM" x="44.85" y="111.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="LAST_ACK" x="58.0" y="121.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST10" priority="5" type="IMM" x="44.85" y="133.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST8" priority="5" type="IMM" x="44.85" y="117.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xRST9" priority="5" type="IMM" x="44.85" y="123.0"/>
+      <transition label-x="2.5" label-y="-1.0" magnets="ORTHOGONAL" name="CLOSE5" type="IMM" x="69.85" y="121.0"/>
+      <transition label-x="0.5" magnets="ORTHOGONAL" name="rcv_xACK_LAST" priority="2" type="IMM" x="52.85" y="127.0"/>
+      <transition magnets="ORTHOGONAL" name="end" type="IMM" x="52.849999999999994" y="137.0"/>
+      <transition magnets="ORTHOGONAL" name="PO_rcv_xSYN" priority="4" priority-x="-2.0" type="IMM" x="97.85" y="82.0"/>
+      <transition magnets="ORTHOGONAL" name="AO_rcv_xSYN" priority="4" priority-x="-2.0" type="IMM" x="97.85" y="86.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_xSYN3" priority="4" type="IMM" x="33.85" y="95.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_xSYN4" priority="4" type="IMM" x="33.85" y="99.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_xSYN5" priority="4" type="IMM" x="33.85" y="105.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_xSYN6" priority="4" type="IMM" x="33.85" y="111.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_xSYN9" priority="4" type="IMM" x="33.85" y="133.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_xSYN7" priority="4" type="IMM" x="33.85" y="117.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_xSYN8" priority="4" type="IMM" x="33.85" y="123.0"/>
+      <place magnets="ORTHOGONAL" name="F_CLOSE" x="40.0" y="142.0"/>
+      <transition label-x="-1.5" label-y="0.0" magnets="ORTHOGONAL" name="f_c" type="IMM" x="44.85" y="147.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xCS" type="IMM" x="75.85" y="27.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xCA" type="IMM" x="75.85" y="30.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xCF" type="IMM" x="75.85" y="33.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xFIN9" type="IMM" x="52.85" y="121.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xFIN10" type="IMM" x="52.85" y="131.0"/>
+      <transition label-x="0.5" magnets="ORTHOGONAL" name="rcv_xFIN" type="IMM" x="60.85" y="69.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_xFIN2" type="IMM" x="53.85" y="69.0"/>
+      <transition label-x="2.5" label-y="-0.5" magnets="ORTHOGONAL" name="rcv_xACK2" priority="3" type="IMM" x="33.85" y="53.0"/>
+      <place magnets="ORTHOGONAL" name="SS_A" x="33.0" y="59.0"/>
+      <transition magnets="ORTHOGONAL" name="empty_xACK" nservers-x="0.5" type="EXP" x="39.550000000000004" y="59.0"/>
+      <transition label-x="-3.000000000000007" label-y="0.0" magnets="ORTHOGONAL" name="_data_loop" nservers-x="0.5" type="EXP" x="54.550000000000004" y="87.0"/>
+      <place magnets="ORTHOGONAL" name="F_RST" x="31.0" y="142.0"/>
+      <transition label-x="-1.0" label-y="0.0" name="f_r" type="IMM" x="35.85" y="147.0"/>
+      <place name="xRST" x="116.0" y="46.0"/>
+      <transition name="xRST_buf" nservers-x="0.5" type="EXP" x="112.55" y="46.0"/>
+      <place name="xSYN" x="116.0" y="52.0"/>
+      <transition name="xSYN_buf" nservers-x="0.5" type="EXP" x="112.55" y="52.0"/>
+      <transition name="xACK_buf" nservers-x="0.5" type="EXP" x="112.55" y="58.0"/>
+      <transition name="xFIN_buf" nservers-x="0.5" type="EXP" x="112.55" y="64.0"/>
+      <place name="xACK" x="116.0" y="58.0"/>
+      <place name="xFIN" x="116.0" y="64.0"/>
+      <text-box border-color="#dbdbdb" fill-color="none" height="13.5" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="22.0" x="90.0" y="13.25">keep track of POPEN/AOPEN</text-box>
+      <text-box border-color="#dbdbdb" fill-color="none" height="27.0" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="12.5" x="106.5" y="43.0">one-segment buffer</text-box>
     </nodes>
     <edges>
       <arc head="POPEN" kind="INPUT" tail="CLOSED"/>
       <arc head="AOPEN" kind="INPUT" tail="CLOSED"/>
       <arc head="LISTEN" kind="OUTPUT" tail="POPEN"/>
-      <arc head="SYN_SENT" kind="OUTPUT" tail="AOPEN"/>
-      <arc head="SYN" kind="OUTPUT" mult-k="1.3221679687499996" mult-x="-0.0016620055396554534" mult-y="-1.0" tail="AOPEN">
-        <point x="43.0" y="23.0"/>
+      <arc head="SYN_SENT" kind="OUTPUT" mult-k="1.36962890625" tail="AOPEN">
+        <point x="48.0" y="50.5"/>
+      </arc>
+      <arc head="SYN" kind="OUTPUT" mult-k="2.3221679687499996" mult-x="-0.0016620055396554534" mult-y="-1.0" tail="AOPEN">
+        <point x="48.0" y="50.0"/>
+        <point x="48.0" y="44.0"/>
       </arc>
       <arc head="OPEN" kind="INPUT" mult-k="1.17490234375" tail="LISTEN">
-        <point x="63.0" y="48.0"/>
+        <point x="68.0" y="70.5"/>
       </arc>
       <arc head="SYN" kind="OUTPUT" mult-k="0.6534179687500001" mult-x="-4.740322214829007E-4" mult-y="-0.5" tail="OPEN">
-        <point x="82.0" y="57.0"/>
+        <point x="87.0" y="75.5"/>
       </arc>
       <arc head="SYN_SENT" kind="OUTPUT" mult-x="-0.4960690872534066" mult-y="-1.0" tail="OPEN">
-        <point x="43.0" y="57.0"/>
+        <point x="48.0" y="76.0"/>
       </arc>
       <arc head="SEND" kind="INPUT" mult-k="0.75751953125" mult-x="0.8929441001871723" mult-y="-1.2141117996256554" tail="LISTEN">
-        <point x="67.0" y="48.0"/>
+        <point x="72.0" y="69.0"/>
       </arc>
       <arc head="SYN_SENT" kind="OUTPUT" mult-k="0.6231445312500001" mult-x="-0.15640853179181136" mult-y="-1.0" tail="SEND">
-        <point x="43.0" y="54.0"/>
+        <point x="48.0" y="74.0"/>
       </arc>
       <arc head="SYN" kind="OUTPUT" mult-x="-0.00683579882804608" mult-y="-0.5" tail="SEND">
-        <point x="82.0" y="54.0"/>
+        <point x="87.0" y="73.5"/>
       </arc>
-      <arc head="rcv_xSYN" kind="INPUT" tail="LISTEN"/>
-      <arc head="rcv_xSYN" kind="INPUT" mult-k="1.0999023437500002" tail="xSYN">
-        <point x="99.0" y="35.0"/>
-        <point x="99.0" y="46.0"/>
+      <arc head="rcv_xSYN" kind="INPUT" mult-k="1.16748046875" tail="LISTEN">
+        <point x="76.0" y="70.0"/>
       </arc>
-      <arc head="CLOSE" kind="INPUT" tail="LISTEN"/>
-      <arc head="CLOSED" kind="OUTPUT" tail="CLOSE"/>
-      <arc head="CLOSE2" kind="INPUT" tail="SYN_SENT"/>
-      <arc head="CLOSED" kind="OUTPUT" tail="CLOSE2"/>
-      <arc head="rcv_xRST" head-magnet="3" kind="INPUT" tail="xRST"/>
-      <arc head="rcv_xRST" head-magnet="7" kind="INPUT" tail="CLOSED"/>
+      <arc head="rcv_xSYN" head-magnet="3" kind="INPUT" mult-k="1.0999023437500002" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="69.0"/>
+      </arc>
+      <arc head="CLOSE" kind="INPUT" mult-k="1.23583984375" tail="LISTEN">
+        <point x="56.0" y="66.5"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" mult-k="1.3200195312499994" tail="CLOSE">
+        <point x="58.0" y="64.5"/>
+      </arc>
+      <arc head="CLOSE2" kind="INPUT" mult-k="0.9090820312500001" tail="SYN_SENT">
+        <point x="48.0" y="61.0"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" mult-k="1.37783203125" tail="CLOSE2" tail-magnet="3">
+        <point x="58.0" y="61.5"/>
+      </arc>
+      <arc head="rcv_xRST" head-magnet="3" kind="INPUT" mult-k="2.3247070312499996" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="50.5"/>
+      </arc>
+      <arc head="rcv_xRST" head-magnet="7" kind="INPUT" mult-k="1.15810546875" tail="CLOSED">
+        <point x="74.5" y="49.5"/>
+      </arc>
       <arc head="rcv_xRST2" head-magnet="3" kind="INPUT" tail="LISTEN">
-        <point x="69.0" y="37.5"/>
+        <point x="74.5" y="58.0"/>
       </arc>
-      <arc head="rcv_xRST2" head-magnet="3" kind="INPUT" mult-k="0.6333007812500001" tail="xRST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="37.5"/>
+      <arc head="rcv_xRST2" head-magnet="3" kind="INPUT" mult-k="0.6333007812500001" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="58.5"/>
       </arc>
-      <arc head="LISTEN" kind="OUTPUT" mult-x="0.32500000000000284" mult-y="0.0833333333333286" tail="rcv_xRST2" tail-magnet="6">
-        <point x="68.5" y="36.5"/>
+      <arc head="LISTEN" kind="OUTPUT" mult-k="0.49990234375" mult-x="0.32500000000000284" mult-y="0.0833333333333286" tail="rcv_xRST2" tail-magnet="6">
+        <point x="80.0" y="60.5"/>
+        <point x="73.5" y="60.5"/>
       </arc>
-      <arc head="rcv_xACK" head-magnet="3" kind="INPUT" tail="xACK"/>
-      <arc head="RST" kind="OUTPUT" tail="rcv_xACK"/>
-      <arc head="LISTEN" kind="OUTPUT" tail="rcv_xACK" tail-magnet="3">
-        <point x="89.0" y="42.5"/>
+      <arc head="rcv_xACK" head-magnet="3" kind="INPUT" mult-k="2.2333007812499996" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="62.5"/>
       </arc>
-      <arc head="rcv_xACK" head-magnet="2" kind="INPUT" tail="LISTEN">
-        <point x="88.5" y="41.0"/>
+      <arc head="RST" kind="OUTPUT" mult-k="1.2008789062499998" tail="rcv_xACK">
+        <point x="87.0" y="63.5"/>
       </arc>
-      <arc head="SYN_RCVD" kind="OUTPUT" tail="rcv_xSYN"/>
-      <arc head="rcv_xRST3" kind="INPUT" mult-k="1.2600585937499997" tail="xRST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="49.0" y="15.0"/>
+      <arc head="LISTEN" kind="OUTPUT" mult-k="0.20341796875" tail="rcv_xACK" tail-magnet="2">
+        <point x="80.0" y="64.5"/>
+        <point x="72.5" y="64.5"/>
       </arc>
-      <arc head="SYN" kind="OUTPUT" tail="rcv_xSYN">
-        <point x="87.0" y="23.0"/>
+      <arc head="rcv_xACK" head-magnet="7" kind="INPUT" mult-k="0.66669921875" tail="LISTEN">
+        <point x="73.0" y="63.0"/>
       </arc>
-      <arc head="CLOSED" kind="OUTPUT" mult-k="0.47802734375" tail="rcv_xRST3">
-        <point x="56.5" y="34.0"/>
+      <arc head="SYN_RCVD" kind="OUTPUT" mult-k="1.3952148437499998" tail="rcv_xSYN" tail-magnet="5">
+        <point x="92.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_xRST3" kind="INPUT" mult-k="1.2600585937499997" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="56.0" y="36.0"/>
+      </arc>
+      <arc head="SYN" kind="OUTPUT" mult-k="1.21923828125" tail="rcv_xSYN" tail-magnet="0">
+        <point x="92.0" y="69.5"/>
+        <point x="92.0" y="44.0"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" mult-k="0.47802734375" tail="rcv_xRST3" tail-magnet="3">
+        <point x="58.0" y="58.5"/>
       </arc>
       <arc head="SS_bA" kind="OUTPUT" tail="bad_xACK"/>
-      <arc head="no_xRST" kind="INPUT" tail="SS_bA"/>
-      <arc head="no_xRST" head-magnet="7" kind="INHIBITOR" mult-x="-2.0817551528222964" mult-y="0.37736727076655185" tail="xRST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="26.5" y="15.0"/>
-        <point x="26.5" y="62.0"/>
+      <arc head="no_xRST" kind="INPUT" mult-k="1.3567382812499997" tail="SS_bA">
+        <point x="43.0" y="82.5"/>
       </arc>
-      <arc head="ACK" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYNACK">
-        <point x="8.0" y="19.0"/>
+      <arc head="no_xRST" head-magnet="7" kind="INHIBITOR" mult-x="-2.0817551528222964" mult-y="0.37736727076655185" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="82.5"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" mult-k="0.12509765625" tail="rcv_xSYNACK">
+        <point x="28.0" y="40.0"/>
       </arc>
       <arc head="ESTAB" kind="OUTPUT" tail="rcv_xSYNACK">
-        <point x="8.0" y="71.0"/>
+        <point x="28.0" y="91.5"/>
       </arc>
-      <arc head="SYN_RCVD" kind="OUTPUT" mult-k="1.47080078125" tail="no_xACK">
-        <point x="16.0" y="66.0"/>
+      <arc head="SYN_RCVD" kind="OUTPUT" mult-k="1.47080078125" tail="rcv_xSYN2">
+        <point x="21.0" y="86.0"/>
       </arc>
-      <arc head="SYN" kind="OUTPUT" tail="no_xACK">
-        <point x="16.0" y="23.0"/>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xSYN2">
+        <point x="21.0" y="40.0"/>
       </arc>
-      <arc head="ACK" kind="OUTPUT" tail="no_xACK">
-        <point x="16.0" y="19.0"/>
+      <arc head="ACK" kind="OUTPUT" mult-k="1.24228515625" tail="rcv_xSYN" tail-magnet="2">
+        <point x="92.0" y="70.0"/>
+        <point x="92.0" y="40.0"/>
       </arc>
-      <arc head="ACK" kind="OUTPUT" tail="rcv_xSYN">
-        <point x="87.0" y="19.0"/>
+      <arc head="RST" kind="OUTPUT" tail="no_xRST" tail-magnet="3"/>
+      <arc head="rcv_xRST3" kind="INPUT" mult-k="1.0999023437500002" tail="SYN_SENT">
+        <point x="48.0" y="58.0"/>
       </arc>
-      <arc head="RST" kind="OUTPUT" tail="no_xRST"/>
-      <arc head="rcv_xRST3" kind="INPUT" tail="SYN_SENT"/>
-      <arc head="has_xRST" head-magnet="7" kind="INPUT" tail="xRST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="26.5" y="15.0"/>
-        <point x="26.5" y="57.0"/>
+      <arc head="has_xRST" head-magnet="7" kind="INPUT" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="77.5"/>
       </arc>
-      <arc head="has_xRST" kind="INPUT" tail="SS_bA"/>
-      <arc head="bad_xACK" kind="INPUT" tail="xACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="37.0" y="15.0"/>
+      <arc head="has_xRST" head-magnet="2" kind="INPUT" mult-k="1.21865234375" mult-x="-0.22086192382812442" mult-y="-0.5" tail="SS_bA">
+        <point x="43.0" y="77.5"/>
       </arc>
-      <arc head="bad_xACK" kind="INPUT" mult-k="0.23330078125" tail="SYN_SENT"/>
-      <arc head="SYN_SENT" kind="OUTPUT" tail="has_xRST">
-        <point x="39.0" y="57.0"/>
+      <arc head="bad_xACK" kind="INPUT" mult-k="0.50009765625" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="43.0" y="36.0"/>
       </arc>
-      <arc head="SYN_SENT" kind="OUTPUT" tail="no_xRST"/>
-      <arc head="rcv_xACK2" kind="INPUT" tail="SYN_SENT">
-        <point x="41.0" y="43.0"/>
+      <arc head="bad_xACK" kind="INPUT" mult-k="0.18525390625000002" tail="SYN_SENT"/>
+      <arc head="SYN_SENT" kind="OUTPUT" tail="has_xRST" tail-magnet="3">
+        <point x="48.0" y="78.5"/>
       </arc>
-      <arc head="rcv_xACK2" kind="INPUT" tail="xACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="32.0" y="15.0"/>
+      <arc head="SYN_SENT" kind="OUTPUT" mult-k="1.40576171875" tail="no_xRST" tail-magnet="2">
+        <point x="48.0" y="83.5"/>
       </arc>
-      <arc head="SS_A" kind="OUTPUT" tail="rcv_xACK2"/>
-      <arc head="rcv_xSYNACK" head-magnet="2" kind="INPUT" tail="xSYN">
-        <point x="99.0" y="35.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="22.0" y="15.0"/>
-        <point x="22.0" y="39.5"/>
+      <arc head="rcv_xSYNACK" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="59.5"/>
       </arc>
-      <arc head="rcv_xSYNACK" head-magnet="3" kind="INPUT" tail="SS_A">
-        <point x="22.0" y="40.5"/>
+      <arc head="rcv_xSYN2" head-magnet="2" kind="INPUT" mult-k="0.50009765625" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="27.0" y="36.0"/>
+        <point x="27.0" y="55.5"/>
       </arc>
-      <arc head="no_xACK" head-magnet="2" kind="INPUT" mult-k="0.50009765625" tail="xSYN">
-        <point x="99.0" y="35.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="22.0" y="15.0"/>
-        <point x="22.0" y="34.5"/>
+      <arc head="rcv_xSYN2" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="SYN_SENT">
+        <point x="48.0" y="56.5"/>
       </arc>
-      <arc head="no_xACK" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="SYN_SENT">
-        <point x="41.5" y="35.5"/>
+      <arc head="rcv_xSYN2" head-magnet="1" kind="INHIBITOR" mult-k="0.50009765625" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="27.0" y="36.0"/>
+        <point x="27.0" y="56.0"/>
       </arc>
-      <arc head="no_xACK" head-magnet="1" kind="INHIBITOR" mult-k="0.50009765625" tail="xACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="22.0" y="15.0"/>
-        <point x="22.0" y="34.0"/>
-      </arc>
-      <arc head="t2" kind="INPUT" tail="xRST"/>
-      <arc head="t2" kind="INPUT" tail="f_xRST"/>
-      <arc head="t1" kind="INPUT" tail="xSYN"/>
-      <arc head="t1" kind="INPUT" tail="f_xSYN"/>
-      <arc head="t0" kind="INPUT" tail="xACK"/>
-      <arc head="t0" kind="INPUT" tail="f_xACK"/>
-      <arc head="t3" kind="INPUT" tail="f_xRST"/>
+      <arc head="t6" kind="INPUT" tail="_xRST"/>
+      <arc head="t6" kind="INPUT" tail="f_xRST"/>
+      <arc head="t4" kind="INPUT" tail="_xSYN"/>
       <arc head="t4" kind="INPUT" tail="f_xSYN"/>
-      <arc head="t5" kind="INPUT" tail="f_xACK"/>
-      <arc head="f_split" kind="INPUT" tail="flush"/>
-      <arc head="f_xSYN" kind="OUTPUT" mult-k="1.62412109375" tail="f_split">
-        <point x="114.5" y="27.0"/>
-        <point x="114.5" y="33.0"/>
+      <arc head="t2" kind="INPUT" tail="_xACK"/>
+      <arc head="t2" kind="INPUT" tail="f_xACK"/>
+      <arc head="t7" kind="INPUT" tail="f_xRST"/>
+      <arc head="t5" kind="INPUT" tail="f_xSYN"/>
+      <arc head="t3" kind="INPUT" tail="f_xACK"/>
+      <arc head="flush_flags" kind="INPUT" mult-k="1.3811523437500002" tail="FLUSH_TCB">
+        <point x="134.0" y="48.0"/>
       </arc>
-      <arc head="f_xRST" kind="OUTPUT" mult-k="0.19912109375" tail="f_split"/>
-      <arc head="f_xACK" kind="OUTPUT" tail="f_split">
-        <point x="114.5" y="27.0"/>
-        <point x="114.5" y="39.0"/>
+      <arc head="f_xSYN" kind="OUTPUT" mult-k="1.62412109375" tail="flush_flags">
+        <point x="129.5" y="48.0"/>
+        <point x="129.5" y="54.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="rcv_xRST2" tail-magnet="2">
-        <point x="99.0" y="37.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="f_xRST" kind="OUTPUT" mult-k="0.19912109375" tail="flush_flags"/>
+      <arc head="f_xACK" kind="OUTPUT" tail="flush_flags">
+        <point x="129.5" y="48.0"/>
+        <point x="129.5" y="60.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="rcv_xACK" tail-magnet="2">
-        <point x="99.0" y="40.5"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_xRST2" tail-magnet="2">
+        <point x="104.0" y="57.5"/>
+        <point x="104.0" y="36.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="has_xRST" tail-magnet="6">
-        <point x="26.5" y="56.5"/>
-        <point x="26.5" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_xACK" tail-magnet="2">
+        <point x="104.0" y="63.0"/>
+        <point x="104.0" y="36.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="no_xRST" tail-magnet="6">
-        <point x="26.5" y="61.5"/>
-        <point x="26.5" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="has_xRST" tail-magnet="6">
+        <point x="31.5" y="78.5"/>
+        <point x="31.5" y="36.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="rcv_xRST3">
-        <point x="53.0" y="34.0"/>
-        <point x="53.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="no_xRST" tail-magnet="6">
+        <point x="31.5" y="83.5"/>
+        <point x="31.5" y="36.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="CLOSE2">
-        <point x="53.0" y="38.5"/>
-        <point x="53.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_xRST3" tail-magnet="2">
+        <point x="58.0" y="57.5"/>
+        <point x="58.0" y="36.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="CLOSE">
-        <point x="53.0" y="44.5"/>
-        <point x="53.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="CLOSE2" tail-magnet="2">
+        <point x="58.0" y="60.5"/>
+        <point x="58.0" y="36.0"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="rcv_xRST" tail-magnet="2">
-        <point x="99.0" y="28.5"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" mult-x="1.7750096226050758" mult-y="-0.2499630267306614" tail="CLOSE">
+        <point x="58.0" y="63.5"/>
+        <point x="58.0" y="36.0"/>
       </arc>
-      <arc head="CLOSED" kind="OUTPUT" tail="rcv_xRST" tail-magnet="6"/>
-      <arc head="AO" kind="OUTPUT" tail="AOPEN">
-        <point x="43.0" y="11.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_xRST" tail-magnet="2">
+        <point x="104.0" y="49.5"/>
+        <point x="104.0" y="36.0"/>
       </arc>
-      <arc head="PO_rcv_xRST" kind="INPUT" tail="SYN_RCVD"/>
-      <arc head="AO_rcv_xRST" kind="INPUT" tail="SYN_RCVD">
-        <point x="89.5" y="66.0"/>
-        <point x="89.5" y="69.0"/>
+      <arc head="CLOSED" kind="OUTPUT" mult-k="0.59677734375" tail="rcv_xRST">
+        <point x="76.5" y="50.5"/>
+      </arc>
+      <arc head="AO" kind="OUTPUT" mult-k="1.4436523437500002" tail="AOPEN">
+        <point x="48.0" y="49.5"/>
+        <point x="48.0" y="25.5"/>
+      </arc>
+      <arc head="PO_rcv_xRST" kind="INPUT" mult-k="1.33388671875" tail="SYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="79.0"/>
+      </arc>
+      <arc head="AO_rcv_xRST" kind="INPUT" mult-x="0.4648445434463895" mult-y="1.3859378173785615" tail="SYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="91.0"/>
       </arc>
       <arc head="AO_rcv_xRST" head-magnet="3" kind="INPUT" tail="AO">
-        <point x="99.0" y="69.0"/>
+        <point x="104.0" y="91.5"/>
       </arc>
       <arc head="PO_rcv_xRST" head-magnet="3" kind="INHIBITOR" tail="AO">
-        <point x="99.0" y="66.0"/>
+        <point x="104.0" y="79.5"/>
       </arc>
-      <arc head="PO_rcv_xRST" head-magnet="2" kind="INPUT" tail="xRST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="65.5"/>
+      <arc head="PO_rcv_xRST" head-magnet="2" kind="INPUT" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="79.0"/>
       </arc>
-      <arc head="AO_rcv_xRST" head-magnet="2" kind="INPUT" tail="xRST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="68.5"/>
+      <arc head="AO_rcv_xRST" head-magnet="2" kind="INPUT" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="91.0"/>
       </arc>
       <arc head="LISTEN" kind="OUTPUT" mult-k="0.50009765625" tail="PO_rcv_xRST" tail-magnet="0">
-        <point x="99.0" y="65.0"/>
-        <point x="99.0" y="49.0"/>
+        <point x="104.0" y="78.5"/>
+        <point x="104.0" y="67.0"/>
       </arc>
       <arc head="CLOSED" kind="OUTPUT" tail="AO_rcv_xRST" tail-magnet="5">
-        <point x="99.0" y="70.0"/>
-        <point x="99.0" y="31.0"/>
-        <point x="67.0" y="30.5"/>
+        <point x="104.0" y="90.0"/>
+        <point x="104.0" y="53.5"/>
+        <point x="71.0" y="53.5"/>
       </arc>
-      <arc head="flush" kind="OUTPUT" tail="AO_rcv_xRST" tail-magnet="4">
-        <point x="93.0" y="70.5"/>
-        <point x="99.0" y="70.5"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.0" tail="AO_rcv_xRST" tail-magnet="4">
+        <point x="104.0" y="90.5"/>
+        <point x="104.0" y="36.0"/>
       </arc>
       <arc head="rcv_xACK3" head-magnet="2" kind="INPUT" tail="SYN_RCVD">
-        <point x="87.0" y="70.5"/>
+        <point x="92.0" y="91.5"/>
       </arc>
-      <arc head="rcv_xACK3" head-magnet="3" kind="INPUT" tail="xACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="71.5"/>
+      <arc head="rcv_xACK3" head-magnet="3" kind="INPUT" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="92.5"/>
       </arc>
       <arc head="ESTAB" kind="OUTPUT" tail="rcv_xACK3" tail-magnet="7"/>
-      <arc head="limiter" kind="INPUT" mult="2" mult-k="0.6313476562500001" tail="AO">
-        <point x="102.0" y="12.5"/>
+      <arc head="limiter" kind="INPUT" mult="2" mult-k="0.6313476562500001" mult-x="0.33945007919872694" mult-y="0.8357800316794908" tail="AO">
+        <point x="107.0" y="26.5"/>
       </arc>
-      <arc head="AO" kind="OUTPUT" mult-k="1.36865234375" tail="limiter">
-        <point x="102.0" y="9.5"/>
+      <arc head="AO" kind="OUTPUT" mult-k="1.36865234375" mult-x="0.8913546933032706" mult-y="-1.9303743680360785" tail="limiter">
+        <point x="107.0" y="23.5"/>
       </arc>
       <arc head="f_AO" kind="OUTPUT" tail="POPEN">
-        <point x="87.0" y="34.0"/>
-        <point x="87.0" y="7.0"/>
+        <point x="92.0" y="55.0"/>
+        <point x="92.0" y="20.0"/>
       </arc>
-      <arc head="t7" kind="INPUT" tail="f_AO"/>
-      <arc head="t7" kind="INPUT" tail="AO"/>
       <arc head="t8" kind="INPUT" tail="f_AO"/>
-      <arc head="AO" kind="OUTPUT" tail="AO_rcv_xRST" tail-magnet="1">
-        <point x="99.0" y="68.0"/>
-      </arc>
+      <arc head="t8" kind="INPUT" tail="AO"/>
+      <arc head="t9" kind="INPUT" tail="f_AO"/>
       <arc head="AO" kind="OUTPUT" tail="OPEN">
-        <point x="99.0" y="57.0"/>
+        <point x="104.0" y="76.5"/>
       </arc>
       <arc head="AO" kind="OUTPUT" tail="SEND">
-        <point x="99.0" y="54.0"/>
+        <point x="104.0" y="74.5"/>
       </arc>
+      <arc head="CLOSE3" kind="INPUT" mult-k="0.90263671875" tail="SYN_RCVD">
+        <point x="76.0" y="86.0"/>
+        <point x="76.0" y="89.0"/>
+      </arc>
+      <arc head="CLOSE4" kind="INPUT" tail="ESTAB">
+        <point x="59.0" y="89.0"/>
+      </arc>
+      <arc head="FIN_WAIT_1" kind="OUTPUT" tail="CLOSE4" tail-magnet="4">
+        <point x="69.5" y="98.0"/>
+      </arc>
+      <arc head="FIN" kind="OUTPUT" tail="CLOSE4" tail-magnet="5">
+        <point x="70.5" y="98.0"/>
+      </arc>
+      <arc head="f_xFIN" kind="OUTPUT" tail="flush_flags">
+        <point x="129.5" y="48.0"/>
+        <point x="129.5" y="66.0"/>
+      </arc>
+      <arc head="t1" kind="INPUT" tail="f_xFIN"/>
+      <arc head="t0" kind="INPUT" tail="f_xFIN"/>
+      <arc head="t0" kind="INPUT" tail="_xFIN"/>
+      <arc head="bad_xACK2" head-magnet="2" kind="INPUT" tail="SYN_RCVD">
+        <point x="92.0" y="94.5"/>
+      </arc>
+      <arc head="bad_xACK2" head-magnet="3" kind="INPUT" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="95.5"/>
+      </arc>
+      <arc head="RST" kind="OUTPUT" mult-k="0.50009765625" tail="bad_xACK2" tail-magnet="6">
+        <point x="82.5" y="95.0"/>
+        <point x="82.5" y="83.0"/>
+      </arc>
+      <arc head="SYN_RCVD" kind="OUTPUT" tail="bad_xACK2" tail-magnet="7">
+        <point x="82.5" y="95.5"/>
+        <point x="82.5" y="86.0"/>
+      </arc>
+      <arc head="rcv_xACK_FIN" head-magnet="2" kind="INPUT" mult-k="1.1520507812499998" tail="FIN_WAIT_1">
+        <point x="59.0" y="99.5"/>
+        <point x="76.0" y="99.5"/>
+        <point x="76.0" y="103.5"/>
+      </arc>
+      <arc head="rcv_xACK_FIN" head-magnet="3" kind="INPUT" mult-k="0.49990234375" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="104.5"/>
+      </arc>
+      <arc head="FIN_WAIT_2" kind="OUTPUT" tail="rcv_xACK_FIN"/>
+      <arc head="rcv_xFIN6" head-magnet="3" kind="INPUT" mult-k="0.49990234375" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="144.0"/>
+      </arc>
+      <arc head="TIME_WAIT" kind="OUTPUT" mult-k="0.32373046875" tail="rcv_xFIN6">
+        <point x="59.5" y="144.0"/>
+      </arc>
+      <arc head="rcv_xFIN6" head-magnet="2" kind="INPUT" mult-k="1.66162109375" tail="FIN_WAIT_2">
+        <point x="59.0" y="106.0"/>
+        <point x="76.0" y="106.0"/>
+        <point x="76.0" y="143.5"/>
+      </arc>
+      <arc head="TIME_WAIT" kind="OUTPUT" tail="rcv_xFINACK">
+        <point x="62.0" y="138.5"/>
+      </arc>
+      <arc head="rcv_xFINACK" head-magnet="1" kind="INPUT" mult-k="1.3352539062499997" tail="FIN_WAIT_1">
+        <point x="59.0" y="100.5"/>
+        <point x="76.0" y="100.5"/>
+        <point x="76.0" y="137.5"/>
+      </arc>
+      <arc head="rcv_xFINACK" head-magnet="3" kind="INPUT" mult-k="0.49990234375" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="138.5"/>
+      </arc>
+      <arc head="rcv_xFINACK" head-magnet="2" kind="INPUT" mult-k="0.49990234375" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="138.0"/>
+      </arc>
+      <arc head="rcv_xFIN5" head-magnet="2" kind="INPUT" mult-k="2.0809570312499996" tail="FIN_WAIT_1">
+        <point x="59.0" y="100.0"/>
+        <point x="76.0" y="100.0"/>
+        <point x="76.0" y="115.5"/>
+      </arc>
+      <arc head="CLOSING" kind="OUTPUT" tail="rcv_xFIN5" tail-magnet="6"/>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="1.58544921875" tail="bad_xACK2">
+        <point x="82.5" y="94.5"/>
+        <point x="82.5" y="96.5"/>
+        <point x="104.0" y="96.5"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="rcv_xACK_FIN2" head-magnet="2" kind="INPUT" mult-k="1.7073242187499997" tail="CLOSING">
+        <point x="59.0" y="118.0"/>
+        <point x="76.0" y="118.0"/>
+        <point x="76.0" y="131.5"/>
+      </arc>
+      <arc head="rcv_xACK_FIN2" head-magnet="3" kind="INPUT" mult-k="0.7336914062500001" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="132.5"/>
+      </arc>
+      <arc head="rcv_xFIN5" head-magnet="3" kind="INPUT" mult-k="0.5219726562500001" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="116.0"/>
+      </arc>
+      <arc head="rcv_xFIN3" head-magnet="3" kind="INPUT" mult-k="0.0" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="108.0"/>
+      </arc>
+      <arc head="CLOSE_WAIT" kind="OUTPUT" mult-k="1.4690429687500002" tail="rcv_xFIN3">
+        <point x="68.0" y="109.5"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" mult-k="0.50205078125" tail="rcv_xFIN3" tail-magnet="5">
+        <point x="76.0" y="108.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="FIN_WAIT_1" kind="OUTPUT" tail="CLOSE3" tail-magnet="4">
+        <point x="78.5" y="98.0"/>
+      </arc>
+      <arc head="FIN" kind="OUTPUT" tail="CLOSE3" tail-magnet="5">
+        <point x="79.5" y="98.0"/>
+      </arc>
+      <arc head="rcv_xFIN3" head-magnet="2" kind="INPUT" mult-k="0.09990234375000001" tail="SYN_RCVD">
+        <point x="76.0" y="86.0"/>
+        <point x="76.0" y="107.5"/>
+      </arc>
+      <arc head="rcv_xFIN4" head-magnet="2" kind="INPUT" mult-k="0.0" tail="ESTAB">
+        <point x="59.0" y="94.5"/>
+        <point x="76.0" y="94.5"/>
+        <point x="76.0" y="111.5"/>
+      </arc>
+      <arc head="CLOSE_WAIT" kind="OUTPUT" mult-k="1.9999023437499996" tail="rcv_xFIN4" tail-magnet="6">
+        <point x="67.5" y="110.0"/>
+      </arc>
+      <arc head="rcv_xFIN4" head-magnet="3" kind="INPUT" mult-k="0.0" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="112.0"/>
+      </arc>
+      <arc head="rcv_xFIN7" head-magnet="6" kind="INPUT" mult-k="0.0" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="109.5"/>
+      </arc>
+      <arc head="rcv_xFIN7" head-magnet="2" kind="INPUT" mult-k="0.66005859375" tail="CLOSE_WAIT">
+        <point x="54.5" y="109.5"/>
+      </arc>
+      <arc head="CLOSE_WAIT" kind="OUTPUT" mult-k="1.1247070312499998" tail="rcv_xFIN7">
+        <point x="55.5" y="110.5"/>
+      </arc>
+      <arc head="rcv_xFIN8" head-magnet="2" kind="INPUT" mult-k="0.0" tail="CLOSING">
+        <point x="55.5" y="115.5"/>
+      </arc>
+      <arc head="rcv_xFIN8" kind="INPUT" mult-k="0.50400390625" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="115.5"/>
+      </arc>
+      <arc head="CLOSING" kind="OUTPUT" mult-k="0.7836914062500001" tail="rcv_xFIN8" tail-magnet="3">
+        <point x="55.5" y="116.5"/>
+      </arc>
+      <arc head="rcv_xRST4" head-magnet="3" kind="INPUT" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="95.5"/>
+      </arc>
+      <arc head="rcv_xRST4" head-magnet="2" kind="INPUT" mult-k="0.50009765625" mult-x="-0.7925919284372895" mult-y="0.9432107620836092" tail="ESTAB">
+        <point x="58.5" y="94.5"/>
+      </arc>
+      <arc head="rcv_xRST5" head-magnet="2" kind="INPUT" mult-x="-0.37230475607904623" mult-y="1.4184634959473073" tail="FIN_WAIT_1">
+        <point x="58.5" y="99.5"/>
+      </arc>
+      <arc head="rcv_xRST5" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="100.5"/>
+      </arc>
+      <arc head="rcv_xRST6" head-magnet="3" kind="INPUT" mult-k="1.25107421875" tail="FIN_WAIT_2">
+        <point x="58.5" y="106.5"/>
+      </arc>
+      <arc head="rcv_xRST6" head-magnet="2" kind="INPUT" mult-k="0.49990234375" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="105.5"/>
+      </arc>
+      <arc head="rcv_xRST7" head-magnet="2" kind="INPUT" mult-k="0.49990234375" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="111.5"/>
+      </arc>
+      <arc head="rcv_xRST7" head-magnet="3" kind="INPUT" mult-k="0.50009765625" mult-x="-0.99999997612111" mult-y="0.9998350227040902" tail="CLOSE_WAIT">
+        <point x="58.5" y="112.5"/>
+      </arc>
+      <arc head="rcv_xRST8" head-magnet="3" kind="INPUT" mult-k="0.0" mult-x="-2.1646728515625" mult-y="0.75299072265625" tail="CLOSING">
+        <point x="58.5" y="118.5"/>
+      </arc>
+      <arc head="rcv_xRST8" head-magnet="2" kind="INPUT" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="117.5"/>
+      </arc>
+      <arc head="rcv_xRST9" head-magnet="3" kind="INPUT" mult-x="-0.6797579854255247" mult-y="0.8202420145744753" tail="LAST_ACK">
+        <point x="58.5" y="124.5"/>
+      </arc>
+      <arc head="rcv_xRST9" head-magnet="2" kind="INPUT" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="123.5"/>
+      </arc>
+      <arc head="rcv_xRST10" head-magnet="2" kind="INPUT" tail="_xRST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="133.5"/>
+      </arc>
+      <arc head="rcv_xRST10" head-magnet="3" kind="INPUT" mult-x="-3.0815365040527" mult-y="0.6276952439209396" tail="TIME_WAIT">
+        <point x="58.5" y="134.5"/>
+      </arc>
+      <arc head="CLOSE5" kind="INPUT" mult-k="0.5961914062500001" tail="CLOSE_WAIT">
+        <point x="59.0" y="113.5"/>
+        <point x="76.0" y="113.5"/>
+        <point x="76.0" y="122.0"/>
+      </arc>
+      <arc head="LAST_ACK" kind="OUTPUT" tail="CLOSE5"/>
+      <arc head="FIN" kind="OUTPUT" mult-k="0.86240234375" tail="CLOSE5">
+        <point x="70.0" y="125.5"/>
+        <point x="76.0" y="125.5"/>
+        <point x="76.0" y="98.0"/>
+      </arc>
+      <arc head="rcv_xACK_LAST" head-magnet="0" kind="INPUT" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="127.5"/>
+      </arc>
+      <arc head="rcv_xACK_LAST" kind="INPUT" mult-k="1.3424804687500003" tail="LAST_ACK">
+        <point x="59.5" y="128.0"/>
+      </arc>
+      <arc head="TIME_WAIT" kind="OUTPUT" tail="rcv_xACK_FIN2"/>
+      <arc head="end" kind="INPUT" mult-k="2.19990234375" tail="TIME_WAIT">
+        <point x="58.5" y="138.0"/>
+      </arc>
+      <arc head="PO_rcv_xSYN" kind="INPUT" tail="SYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="83.0"/>
+      </arc>
+      <arc head="AO_rcv_xSYN" kind="INPUT" tail="SYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="87.0"/>
+      </arc>
+      <arc head="PO_rcv_xSYN" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="83.0"/>
+      </arc>
+      <arc head="PO_rcv_xSYN" kind="INHIBITOR" tail="AO">
+        <point x="104.0" y="83.5"/>
+      </arc>
+      <arc head="AO_rcv_xSYN" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="87.5"/>
+      </arc>
+      <arc head="AO_rcv_xSYN" kind="INPUT" tail="AO">
+        <point x="104.0" y="88.0"/>
+      </arc>
+      <arc head="RST" kind="OUTPUT" tail="AO_rcv_xSYN">
+        <point x="104.0" y="87.0"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" tail="AO_rcv_xSYN">
+        <point x="104.0" y="86.5"/>
+        <point x="104.0" y="53.5"/>
+        <point x="71.0" y="53.5"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="AO_rcv_xSYN">
+        <point x="104.0" y="86.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="LISTEN" kind="OUTPUT" tail="PO_rcv_xSYN">
+        <point x="104.0" y="82.5"/>
+        <point x="104.0" y="67.0"/>
+      </arc>
+      <arc head="rcv_xSYN3" kind="INPUT" mult-k="0.04990234375" tail="ESTAB">
+        <point x="40.5" y="92.0"/>
+        <point x="40.5" y="96.5"/>
+      </arc>
+      <arc head="rcv_xSYN3" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="95.5"/>
+      </arc>
+      <arc head="rcv_xSYN4" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="99.5"/>
+      </arc>
+      <arc head="rcv_xSYN4" kind="INPUT" mult-k="0.49990234375" tail="FIN_WAIT_1">
+        <point x="58.5" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="100.5"/>
+      </arc>
+      <arc head="rcv_xSYN5" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="105.5"/>
+      </arc>
+      <arc head="rcv_xSYN5" kind="INPUT" mult-k="1.34267578125" tail="FIN_WAIT_2">
+        <point x="58.5" y="107.5"/>
+        <point x="40.5" y="107.5"/>
+        <point x="40.5" y="106.5"/>
+      </arc>
+      <arc head="rcv_xSYN7" kind="INPUT" tail="CLOSING">
+        <point x="58.5" y="119.5"/>
+        <point x="40.5" y="119.5"/>
+        <point x="40.5" y="118.5"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" tail="rcv_xRST10">
+        <point x="40.5" y="134.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" tail="rcv_xRST9">
+        <point x="40.5" y="124.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" tail="rcv_xRST8">
+        <point x="40.5" y="118.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" tail="rcv_xRST7">
+        <point x="40.5" y="112.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" tail="rcv_xRST6">
+        <point x="40.5" y="106.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" tail="rcv_xRST5">
+        <point x="40.5" y="100.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" tail="rcv_xRST4">
+        <point x="40.5" y="95.0"/>
+      </arc>
+      <arc head="f_c" kind="INPUT" mult-k="0.8100585937499999" tail="F_CLOSE">
+        <point x="45.0" y="143.0"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" mult-k="0.50009765625" tail="f_c">
+        <point x="76.0" y="147.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="53.5"/>
+        <point x="71.0" y="53.5"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.8774414062500001" tail="f_c">
+        <point x="76.0" y="148.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="F_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYN3">
+        <point x="31.5" y="96.0"/>
+      </arc>
+      <arc head="F_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYN4">
+        <point x="31.5" y="100.0"/>
+      </arc>
+      <arc head="F_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYN5">
+        <point x="31.5" y="106.0"/>
+      </arc>
+      <arc head="F_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYN6">
+        <point x="31.5" y="112.0"/>
+      </arc>
+      <arc head="F_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYN7">
+        <point x="31.5" y="118.0"/>
+      </arc>
+      <arc head="F_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_xSYN8">
+        <point x="31.5" y="124.0"/>
+      </arc>
+      <arc head="F_RST" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_xSYN9">
+        <point x="31.5" y="134.0"/>
+      </arc>
+      <arc head="rcv_xSYN6" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="111.5"/>
+      </arc>
+      <arc head="rcv_xSYN6" kind="INPUT" tail="CLOSE_WAIT">
+        <point x="58.5" y="113.5"/>
+        <point x="40.5" y="113.5"/>
+        <point x="40.5" y="112.5"/>
+      </arc>
+      <arc head="rcv_xSYN8" kind="INPUT" tail="LAST_ACK">
+        <point x="58.5" y="125.5"/>
+        <point x="40.5" y="125.5"/>
+        <point x="40.5" y="124.5"/>
+      </arc>
+      <arc head="rcv_xSYN9" kind="INPUT" tail="TIME_WAIT">
+        <point x="58.5" y="135.5"/>
+        <point x="40.5" y="135.5"/>
+        <point x="40.5" y="134.5"/>
+      </arc>
+      <arc head="rcv_xSYN7" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="117.5"/>
+      </arc>
+      <arc head="rcv_xSYN8" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="123.5"/>
+      </arc>
+      <arc head="rcv_xSYN9" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="133.5"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" mult-k="0.50009765625" tail="end">
+        <point x="40.5" y="138.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" mult-k="0.15712890625" tail="rcv_xACK_LAST">
+        <point x="40.5" y="128.5"/>
+      </arc>
+      <arc head="rcv_xCF" kind="INPUT" tail="CLOSED">
+        <point x="70.0" y="33.5"/>
+      </arc>
+      <arc head="rcv_xCA" kind="INPUT" tail="CLOSED">
+        <point x="70.0" y="30.5"/>
+      </arc>
+      <arc head="rcv_xCS" kind="INPUT" tail="CLOSED">
+        <point x="70.0" y="27.5"/>
+      </arc>
+      <arc head="rcv_xCS" kind="INPUT" tail="_xSYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="27.5"/>
+      </arc>
+      <arc head="rcv_xCA" kind="INPUT" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="30.5"/>
+      </arc>
+      <arc head="rcv_xCF" kind="INPUT" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="33.5"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" tail="rcv_xCF">
+        <point x="70.0" y="34.5"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" tail="rcv_xCA">
+        <point x="70.0" y="31.5"/>
+      </arc>
+      <arc head="CLOSED" kind="OUTPUT" tail="rcv_xCS">
+        <point x="70.0" y="28.5"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_xCS">
+        <point x="104.0" y="28.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_xCA">
+        <point x="104.0" y="31.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_xCF">
+        <point x="104.0" y="34.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="RST" kind="OUTPUT" tail="rcv_xCS">
+        <point x="104.0" y="28.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="RST" kind="OUTPUT" tail="rcv_xCA">
+        <point x="104.0" y="31.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="RST" kind="OUTPUT" tail="rcv_xCF">
+        <point x="104.0" y="34.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xFIN4">
+        <point x="76.0" y="112.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xFIN5">
+        <point x="76.0" y="116.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xFIN6">
+        <point x="76.0" y="144.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xFIN7">
+        <point x="48.5" y="110.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xFIN8">
+        <point x="48.5" y="116.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="rcv_xFIN9" kind="INPUT" mult-k="0.75009765625" tail="LAST_ACK">
+        <point x="55.0" y="121.5"/>
+      </arc>
+      <arc head="LAST_ACK" kind="OUTPUT" mult-k="1.22568359375" tail="rcv_xFIN9">
+        <point x="55.5" y="122.5"/>
+      </arc>
+      <arc head="rcv_xFIN9" kind="INPUT" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="121.5"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xFIN9">
+        <point x="48.5" y="122.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="rcv_xFIN10" kind="INPUT" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="131.5"/>
+      </arc>
+      <arc head="rcv_xFIN10" kind="INPUT" mult-k="0.75009765625" tail="TIME_WAIT">
+        <point x="55.5" y="131.5"/>
+      </arc>
+      <arc head="TIME_WAIT" kind="OUTPUT" mult-x="1.1750499999999988" mult-y="-0.7499499999999983" tail="rcv_xFIN10">
+        <point x="55.5" y="132.5"/>
+      </arc>
+      <arc head="ACK" kind="OUTPUT" tail="rcv_xFIN10">
+        <point x="48.5" y="132.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="rcv_xFIN" kind="INPUT" mult-k="0.50009765625" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="72.0"/>
+        <point x="58.0" y="72.0"/>
+        <point x="58.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_xFIN2" kind="INPUT" mult-k="0.50009765625" tail="_xFIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="72.0"/>
+        <point x="58.0" y="72.0"/>
+        <point x="58.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_xFIN" kind="INPUT" tail="LISTEN">
+        <point x="68.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_xFIN2" kind="INPUT" mult-x="1.2075654035738026" mult-y="1.943420538098401" tail="SYN_SENT">
+        <point x="50.0" y="70.5"/>
+      </arc>
+      <arc head="LISTEN" kind="OUTPUT" tail="rcv_xFIN">
+        <point x="67.5" y="69.5"/>
+      </arc>
+      <arc head="SYN_SENT" kind="OUTPUT" tail="rcv_xFIN2">
+        <point x="50.5" y="69.5"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_xFIN2">
+        <point x="58.0" y="69.5"/>
+        <point x="58.0" y="36.0"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_xFIN">
+        <point x="58.0" y="69.5"/>
+        <point x="58.0" y="36.0"/>
+      </arc>
+      <arc head="rcv_xACK2" kind="INPUT" tail="_xACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="53.5"/>
+      </arc>
+      <arc head="rcv_xACK2" kind="INPUT" tail="SYN_SENT">
+        <point x="48.0" y="64.5"/>
+        <point x="31.5" y="64.5"/>
+        <point x="31.5" y="54.5"/>
+      </arc>
+      <arc head="SS_A" kind="OUTPUT" tail="rcv_xACK2"/>
+      <arc head="rcv_xSYNACK" kind="INPUT" mult-k="1.29091796875" tail="SS_A">
+        <point x="33.0" y="60.5"/>
+      </arc>
+      <arc head="empty_xACK" kind="INPUT" tail="SS_A"/>
+      <arc head="SYN_SENT" kind="OUTPUT" tail="empty_xACK">
+        <point x="48.0" y="60.5"/>
+      </arc>
+      <arc head="FLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="empty_xACK">
+        <point x="43.0" y="59.5"/>
+        <point x="43.0" y="36.0"/>
+      </arc>
+      <arc head="_data_loop" kind="INPUT" tail="ESTAB">
+        <point x="58.0" y="88.0"/>
+      </arc>
+      <arc head="ESTAB" kind="OUTPUT" tail="_data_loop">
+        <point x="55.0" y="90.5"/>
+      </arc>
+      <arc head="f_r" kind="INPUT" mult-k="0.8577148437500001" tail="F_RST">
+        <point x="36.0" y="143.0"/>
+      </arc>
+      <arc head="F_CLOSE" kind="OUTPUT" mult-k="2.7321289062500003" tail="f_r">
+        <point x="38.5" y="148.0"/>
+        <point x="38.5" y="143.0"/>
+      </arc>
+      <arc head="RST" kind="OUTPUT" mult-x="-0.5" mult-y="-0.7497236382462518" tail="f_r">
+        <point x="36.0" y="149.5"/>
+        <point x="76.0" y="149.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="xRST_buf" kind="INPUT" tail="xRST"/>
+      <arc head="_xRST" kind="OUTPUT" tail="xRST_buf"/>
+      <arc head="xSYN_buf" kind="INPUT" tail="xSYN"/>
+      <arc head="_xSYN" kind="OUTPUT" tail="xSYN_buf"/>
+      <arc head="xACK_buf" kind="INPUT" tail="xACK"/>
+      <arc head="_xACK" kind="OUTPUT" tail="xACK_buf"/>
+      <arc head="xFIN_buf" kind="INPUT" tail="xFIN"/>
+      <arc head="_xFIN" kind="OUTPUT" tail="xFIN_buf"/>
     </edges>
   </gspn>
-  <gspn name="xCONN" zoom="50">
+  <gspn name="xCONN" zoom="75">
     <nodes>
-      <place label-y="-1.5" marking="1" name="xCLOSED" x="64.0" y="28.0"/>
-      <transition label-x="-2.0" label-y="1.0" name="xPOPEN" nservers-x="0.5" type="EXP" x="64.55" y="33.0"/>
-      <transition label-x="2.5" label-y="-1.0" name="xAOPEN" nservers-x="0.5" type="EXP" x="42.550000000000004" y="28.0"/>
-      <place label-x="-2.5" label-y="-1.0" name="xLISTEN" x="64.0" y="45.0"/>
-      <place label-x="2.5" label-y="2.0" name="xSYN_SENT" x="42.0" y="45.0"/>
-      <place label-y="-1.5" name="xSYN" x="81.0" y="22.0"/>
-      <transition label-x="-1.5" label-y="-0.5" name="xOPEN" nservers-x="0.5" type="EXP" x="62.550000000000004" y="56.0"/>
-      <transition label-x="2.0" label-y="-0.5" name="xSEND" nservers-x="0.5" type="EXP" x="66.55" y="53.0"/>
-      <place label-y="-1.5" name="SYN" x="104.0" y="34.0"/>
-      <transition label-x="-2.5" label-y="-1.0" name="rcv_SYN" type="IMM" x="86.85" y="45.0"/>
-      <place label-x="-3.0" label-y="-1.5" name="xSYN_RCVD" x="86.0" y="65.0"/>
-      <place label-y="-1.5" name="RST" x="104.0" y="28.0"/>
-      <transition label-x="-2.0" label-y="0.5" name="xCLOSE" nservers-x="0.5" type="EXP" x="52.550000000000004" y="45.0"/>
-      <transition label-x="-2.5" label-y="-0.5" name="xCLOSE2" nservers-x="0.5" type="EXP" x="50.550000000000004" y="39.0"/>
-      <transition magnets="TWO_PER_SIDE" name="rcv_RST" type="IMM" x="71.85" y="28.0"/>
-      <transition magnets="TWO_PER_SIDE" name="rcv_RST2" type="IMM" x="71.85" y="36.0"/>
-      <place label-x="-1.5" label-y="-1.5" name="xRST" x="90.0" y="61.0"/>
-      <place label-y="-1.5" name="ACK" x="104.0" y="40.0"/>
-      <transition label-x="0.5" magnets="TWO_PER_SIDE" name="rcv_ACK" type="IMM" x="90.85" y="40.0"/>
-      <transition label-x="-2.5" label-y="0.5" name="bad_ACK" priority="3" type="IMM" x="36.85" y="45.0"/>
-      <transition label-x="-2.5" label-y="0.0" name="rcv_RST3" priority="2" type="IMM" x="48.85" y="33.0"/>
-      <place label-x="-2.0" label-y="-1.5" name="xSS_bA" x="36.0" y="52.0"/>
-      <transition label-x="-2.5" label-y="1.0" magnets="TWO_PER_SIDE" name="no_RST" type="IMM" x="36.85" y="61.0"/>
-      <transition label-x="-3.5" label-y="0.5" magnets="TWO_PER_SIDE" name="rcv_SYNACK" type="IMM" x="7.85" y="39.0"/>
-      <place label-y="-1.5" name="xACK" x="81.0" y="18.0"/>
-      <place label-y="-1.5" name="xESTAB" x="55.0" y="70.0"/>
-      <transition label-x="-2.0" label-y="0.5" magnets="TWO_PER_SIDE" name="no_ACK" type="IMM" x="15.85" y="34.0"/>
-      <transition label-x="-0.5" label-y="2.0" magnets="TWO_PER_SIDE" name="has_RST" type="IMM" x="31.85" y="56.0"/>
-      <transition label-x="-2.5" label-y="-2.0" name="rcv_ACK2" priority="3" type="IMM" x="31.85" y="42.0"/>
-      <place name="xSS_A" x="21.0" y="42.0"/>
-      <place name="f_RST" x="111.0" y="26.0"/>
-      <place name="f_SYN" x="111.0" y="32.0"/>
-      <place name="f_ACK" x="111.0" y="38.0"/>
-      <transition name="xt0" priority="999" type="IMM" x="107.85" y="40.0"/>
-      <transition name="xt1" priority="997" type="IMM" x="107.85" y="34.0"/>
-      <transition name="xt2" priority="995" type="IMM" x="107.85" y="28.0"/>
-      <transition name="xt3" priority="994" type="IMM" x="107.85" y="25.0"/>
-      <transition name="xt4" priority="996" type="IMM" x="107.85" y="31.0"/>
-      <transition name="xt5" priority="998" type="IMM" x="107.85" y="37.0"/>
-      <place label-x="2.5" label-y="0.0" name="xflush" x="118.0" y="26.0"/>
-      <transition label-x="0.5" name="xf_split" priority="999" priority-x="-0.5" priority-y="1.5" type="IMM" x="115.85" y="26.0"/>
-      <text-box border-color="#b6b6b6" fill-color="none" height="20.5" horiz-pos="2" name="__textBox0" shadow="true" text-color="#000000" width="16.0" x="107.0" y="22.5">flush ---&gt; drop segment</text-box>
-      <place label-x="-1.5" label-y="1.0" name="xAO" x="98.0" y="10.0"/>
-      <transition magnets="TWO_PER_SIDE" name="PO_rcv_RST" type="IMM" x="92.85" y="65.0"/>
-      <transition magnets="TWO_PER_SIDE" name="AO_rcv_RST" type="IMM" x="92.85" y="68.0"/>
-      <transition magnets="TWO_PER_SIDE" name="rcv_ACK3" type="IMM" x="81.85" y="70.0"/>
-      <transition label-x="1.0" name="xlimiter" priority="2" type="IMM" x="103.85" y="10.0"/>
-      <place name="f_xAO" x="91.0" y="6.0"/>
-      <transition name="xt7" priority="3" type="IMM" x="98.85" y="6.0"/>
-      <transition name="xt8" priority="2" type="IMM" x="94.85" y="3.0"/>
+      <place label-x="-2.5" label-y="-1.0" magnets="ORTHOGONAL" marking="1" name="xCLOSED" x="69.0" y="49.0"/>
+      <transition label-x="-2.0" label-y="1.5" magnets="ORTHOGONAL" name="xPOPEN" nservers-x="0.5" type="EXP" x="69.55" y="54.0"/>
+      <transition delay-x="0.0" delay-y="1.5" label-y="-2.0" magnets="ORTHOGONAL" name="xAOPEN" nservers-x="0.5" type="EXP" x="50.55" y="49.0"/>
+      <place label-x="-2.0" label-y="-1.0" magnets="ORTHOGONAL" name="xLISTEN" x="69.0" y="66.0"/>
+      <place label-x="2.5" label-y="-1.5" magnets="ORTHOGONAL" name="xSYN_SENT" x="47.0" y="68.0"/>
+      <place label-y="-1.5" magnets="ORTHOGONAL" name="xSYN" x="86.0" y="43.0"/>
+      <transition label-x="-2.000000000000007" label-y="-0.5" magnets="ORTHOGONAL" name="xOPEN" nservers-x="0.5" type="EXP" x="67.55" y="75.0"/>
+      <transition label-x="2.0" label-y="-1.0" magnets="ORTHOGONAL" name="xSEND" nservers-x="0.5" type="EXP" x="71.55" y="73.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_SYN" x="109.0" y="55.0"/>
+      <transition label-x="-2.5" label-y="-1.0" magnets="ORTHOGONAL" name="rcv_SYN" priority="2" type="IMM" x="79.85" y="69.0"/>
+      <place label-x="-3.0" label-y="-1.0" magnets="ORTHOGONAL" name="xSYN_RCVD" x="91.0" y="85.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_RST" x="109.0" y="49.0"/>
+      <transition label-x="-2.499999999999993" label-y="-0.5" magnets="ORTHOGONAL" name="xCLOSE" nservers-x="0.5" type="EXP" x="55.55" y="63.0"/>
+      <transition label-x="-3.0" label-y="-1.0" magnets="ORTHOGONAL" name="xCLOSE2" nservers-x="0.5" type="EXP" x="55.550000000000004" y="60.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST" priority="2" type="IMM" x="79.85" y="49.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST2" priority="4" type="IMM" x="79.85" y="57.0"/>
+      <place label-x="-1.5" label-y="-1.5" magnets="ORTHOGONAL" name="xRST" x="86.0" y="82.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_ACK" x="109.0" y="61.0"/>
+      <transition label-x="0.5" magnets="ORTHOGONAL" name="rcv_ACK" priority="3" type="IMM" x="79.85" y="62.0"/>
+      <transition label-x="-2.5" label-y="0.0" magnets="ORTHOGONAL" name="bad_ACK" priority="3" type="IMM" x="42.85" y="68.0"/>
+      <transition label-x="-2.5" label-y="-1.0" magnets="ORTHOGONAL" name="rcv_RST3" priority="2" type="IMM" x="55.85" y="57.0"/>
+      <place label-x="2.5" label-y="0.0" magnets="ORTHOGONAL" name="xSS_bA" x="42.0" y="73.0"/>
+      <transition magnets="ORTHOGONAL" name="no_RST" type="IMM" x="36.849999999999994" y="82.0"/>
+      <place label-y="-1.5" magnets="ORTHOGONAL" name="xACK" x="86.0" y="39.0"/>
+      <place label-x="2.0" label-y="-1.0" magnets="ORTHOGONAL" name="xESTAB" x="58.0" y="91.0"/>
+      <transition label-x="-2.5" label-y="0.5" magnets="ORTHOGONAL" name="rcv_SYN2" type="IMM" x="20.85" y="55.0"/>
+      <transition magnets="ORTHOGONAL" name="has_RST" type="IMM" x="36.849999999999994" y="77.0"/>
+      <transition label-x="-3.5" label-y="-0.5" magnets="ORTHOGONAL" name="rcv_SYNACK" nservers-x="0.5" type="EXP" x="27.55" y="59.0"/>
+      <place magnets="ORTHOGONAL" name="f_RST" x="126.0" y="47.0"/>
+      <place magnets="ORTHOGONAL" name="f_SYN" x="126.0" y="53.0"/>
+      <place magnets="ORTHOGONAL" name="f_ACK" x="126.0" y="59.0"/>
+      <transition name="xt2" priority="999" type="IMM" x="122.85" y="61.0"/>
+      <transition name="xt4" priority="999" type="IMM" x="122.85" y="55.0"/>
+      <transition name="xt6" priority="999" type="IMM" x="122.85" y="49.0"/>
+      <transition name="xt7" priority="998" type="IMM" x="122.85" y="46.0"/>
+      <transition name="xt5" priority="998" type="IMM" x="122.85" y="52.0"/>
+      <transition name="xt3" priority="998" type="IMM" x="122.85" y="58.0"/>
+      <place label-x="4.0" label-y="0.0" magnets="ORTHOGONAL" name="xFLUSH_TCB" x="133.0" y="35.0"/>
+      <transition magnets="ORTHOGONAL" name="xflush_flags" priority="999" priority-x="-0.5" priority-y="1.5" type="IMM" x="130.85" y="47.0"/>
+      <text-box border-color="#b6b6b6" fill-color="none" height="27.0" horiz-pos="2" magnets="ORTHOGONAL" name="__textBox0" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="13.0" x="122.0" y="43.0">clear flags</text-box>
+      <place label-x="-1.5" label-y="-0.5" magnets="ORTHOGONAL" name="xAO" x="103.0" y="24.0"/>
+      <transition magnets="ORTHOGONAL" name="PO_rcv_RST" priority="5" priority-x="-2.0" type="IMM" x="97.85" y="78.0"/>
+      <transition magnets="ORTHOGONAL" name="AO_rcv_RST" priority="5" priority-x="-2.0" type="IMM" x="97.85" y="90.0"/>
+      <transition label-x="-0.5" magnets="ORTHOGONAL" name="rcv_ACK3" priority="2" type="IMM" x="86.85" y="91.0"/>
+      <transition label-x="1.0" name="xlimiter" priority="2" type="IMM" x="108.85" y="24.0"/>
+      <transition name="xt8" priority="3" type="IMM" x="103.85" y="19.0"/>
+      <place magnets="ORTHOGONAL" name="xf_AO" x="96.0" y="19.0"/>
+      <transition name="xt9" priority="2" type="IMM" x="101.85" y="16.0"/>
+      <place magnets="ORTHOGONAL" name="xFIN" x="86.0" y="97.0"/>
+      <transition magnets="ORTHOGONAL" name="xCLOSE3" nservers-x="0.5" type="EXP" x="78.55" y="88.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="xFIN_WAIT_1" x="58.0" y="97.0"/>
+      <transition label-x="-1.0" magnets="ORTHOGONAL" name="xCLOSE4" nservers-x="0.5" type="EXP" x="69.55" y="88.0"/>
+      <place label-x="-2.0" label-y="-0.5" magnets="ORTHOGONAL" name="_FIN" x="109.0" y="67.0"/>
+      <place magnets="ORTHOGONAL" name="f_FIN" x="126.0" y="65.0"/>
+      <transition name="xt1" priority="998" type="IMM" x="122.85" y="64.0"/>
+      <transition name="xt0" priority="999" type="IMM" x="122.85" y="67.0"/>
+      <transition label-x="-0.5" magnets="ORTHOGONAL" name="bad_ACK2" priority="2" type="IMM" x="86.85" y="94.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="xFIN_WAIT_2" x="58.0" y="103.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_ACK_FIN" priority="2" type="IMM" x="69.85" y="103.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="xTIME_WAIT" x="58.0" y="131.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_FIN6" type="IMM" x="69.85" y="143.0"/>
+      <transition label-x="3.0" magnets="ORTHOGONAL" name="rcv_FINACK" priority="3" type="IMM" x="69.85" y="137.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="xCLOSING" x="58.0" y="115.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_FIN5" type="IMM" x="69.85" y="115.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="xCLOSE_WAIT" x="58.0" y="109.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_ACK_FIN2" priority="2" type="IMM" x="69.85" y="131.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_FIN3" type="IMM" x="69.85" y="107.0"/>
+      <transition label-x="2.5" magnets="ORTHOGONAL" name="rcv_FIN4" type="IMM" x="69.85" y="111.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_FIN7" type="IMM" x="52.85" y="109.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_FIN8" type="IMM" x="52.85" y="115.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST4" priority="5" type="IMM" x="44.85" y="94.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST5" priority="5" type="IMM" x="44.85" y="99.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST6" priority="5" type="IMM" x="44.85" y="105.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST7" priority="5" type="IMM" x="44.85" y="111.0"/>
+      <place label-x="0.5" label-y="-1.5" magnets="ORTHOGONAL" name="xLAST_ACK" x="58.0" y="121.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST10" priority="5" type="IMM" x="44.85" y="133.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST8" priority="5" type="IMM" x="44.85" y="117.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_RST9" priority="5" type="IMM" x="44.85" y="123.0"/>
+      <transition label-x="2.5" label-y="-1.0" magnets="ORTHOGONAL" name="xCLOSE5" type="IMM" x="69.85" y="121.0"/>
+      <transition label-x="0.5" magnets="ORTHOGONAL" name="rcv_ACK_LAST" priority="2" type="IMM" x="52.85" y="127.0"/>
+      <transition magnets="ORTHOGONAL" name="xend" nservers-x="0.5" type="EXP" x="52.55" y="137.0"/>
+      <transition magnets="ORTHOGONAL" name="PO_rcv_SYN" priority="4" priority-x="-2.0" type="IMM" x="97.85" y="82.0"/>
+      <transition magnets="ORTHOGONAL" name="AO_rcv_SYN" priority="4" priority-x="-2.0" type="IMM" x="97.85" y="86.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_SYN3" priority="4" type="IMM" x="33.85" y="95.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_SYN4" priority="4" type="IMM" x="33.85" y="99.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_SYN5" priority="4" type="IMM" x="33.85" y="105.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_SYN6" priority="4" type="IMM" x="33.85" y="111.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_SYN9" priority="4" type="IMM" x="33.85" y="133.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_SYN7" priority="4" type="IMM" x="33.85" y="117.0"/>
+      <transition label-x="1.0" magnets="ORTHOGONAL" name="rcv_SYN8" priority="4" type="IMM" x="33.85" y="123.0"/>
+      <place magnets="ORTHOGONAL" name="xF_CLOSE" x="40.0" y="142.0"/>
+      <transition label-x="-1.5" label-y="0.0" magnets="ORTHOGONAL" name="xf_c" type="IMM" x="44.85" y="147.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_CS" type="IMM" x="75.85" y="27.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_CA" type="IMM" x="75.85" y="30.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_CF" type="IMM" x="75.85" y="33.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_FIN9" type="IMM" x="52.85" y="121.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_FIN10" type="IMM" x="52.85" y="131.0"/>
+      <transition label-x="0.5" magnets="ORTHOGONAL" name="rcv_FIN" type="IMM" x="60.85" y="69.0"/>
+      <transition magnets="ORTHOGONAL" name="rcv_FIN2" type="IMM" x="53.85" y="69.0"/>
+      <transition label-x="2.5" label-y="-0.5" magnets="ORTHOGONAL" name="rcv_ACK2" priority="3" type="IMM" x="33.85" y="53.0"/>
+      <place magnets="ORTHOGONAL" name="xSS_A" x="33.0" y="59.0"/>
+      <transition magnets="ORTHOGONAL" name="empty_ACK" nservers-x="0.5" type="EXP" x="39.550000000000004" y="59.0"/>
+      <transition label-x="-3.000000000000007" label-y="0.0" magnets="ORTHOGONAL" name="_xdata_loop" nservers-x="0.5" type="EXP" x="54.550000000000004" y="87.0"/>
+      <place magnets="ORTHOGONAL" name="xF_RST" x="31.0" y="142.0"/>
+      <transition label-x="-1.5" label-y="0.0" name="xf_r" type="IMM" x="35.85" y="147.0"/>
+      <place name="RST" x="116.0" y="46.0"/>
+      <transition name="RST_buf" nservers-x="0.5" type="EXP" x="112.55" y="46.0"/>
+      <place name="SYN" x="116.0" y="52.0"/>
+      <transition name="SYN_buf" nservers-x="0.5" type="EXP" x="112.55" y="52.0"/>
+      <transition name="ACK_buf" nservers-x="0.5" type="EXP" x="112.55" y="58.0"/>
+      <transition name="FIN_buf" nservers-x="0.5" type="EXP" x="112.55" y="64.0"/>
+      <place name="ACK" x="116.0" y="58.0"/>
+      <place name="FIN" x="116.0" y="64.0"/>
+      <text-box border-color="#dbdbdb" fill-color="none" height="13.5" name="__textBox1" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="22.0" x="90.0" y="13.25">keep track of POPEN/AOPEN</text-box>
+      <text-box border-color="#dbdbdb" fill-color="none" height="27.0" name="__textBox2" shadow="true" shape="ROUND_RECTANGLE" text-color="#000000" width="12.5" x="106.75" y="43.0">one-segment buffer</text-box>
     </nodes>
     <edges>
       <arc head="xPOPEN" kind="INPUT" tail="xCLOSED"/>
       <arc head="xAOPEN" kind="INPUT" tail="xCLOSED"/>
       <arc head="xLISTEN" kind="OUTPUT" tail="xPOPEN"/>
-      <arc head="xSYN_SENT" kind="OUTPUT" tail="xAOPEN"/>
-      <arc head="xSYN" kind="OUTPUT" mult-k="1.3221679687499996" mult-x="-0.0016620055396554534" mult-y="-1.0" tail="xAOPEN">
-        <point x="43.0" y="23.0"/>
+      <arc head="xSYN_SENT" kind="OUTPUT" mult-k="1.40322265625" tail="xAOPEN">
+        <point x="48.0" y="50.5"/>
+      </arc>
+      <arc head="xSYN" kind="OUTPUT" mult-k="2.3221679687499996" mult-x="-0.0016620055396554534" mult-y="-1.0" tail="xAOPEN">
+        <point x="48.0" y="50.0"/>
+        <point x="48.0" y="44.0"/>
       </arc>
       <arc head="xOPEN" kind="INPUT" mult-k="1.17490234375" tail="xLISTEN">
-        <point x="63.0" y="48.0"/>
+        <point x="68.0" y="70.5"/>
       </arc>
       <arc head="xSYN" kind="OUTPUT" mult-k="0.6534179687500001" mult-x="-4.740322214829007E-4" mult-y="-0.5" tail="xOPEN">
-        <point x="82.0" y="57.0"/>
+        <point x="87.0" y="75.5"/>
       </arc>
       <arc head="xSYN_SENT" kind="OUTPUT" mult-x="-0.4960690872534066" mult-y="-1.0" tail="xOPEN">
-        <point x="43.0" y="57.0"/>
+        <point x="48.0" y="76.0"/>
       </arc>
       <arc head="xSEND" kind="INPUT" mult-k="0.75751953125" mult-x="0.8929441001871723" mult-y="-1.2141117996256554" tail="xLISTEN">
-        <point x="67.0" y="48.0"/>
+        <point x="72.0" y="69.0"/>
       </arc>
       <arc head="xSYN_SENT" kind="OUTPUT" mult-k="0.6231445312500001" mult-x="-0.15640853179181136" mult-y="-1.0" tail="xSEND">
-        <point x="43.0" y="54.0"/>
+        <point x="48.0" y="74.0"/>
       </arc>
       <arc head="xSYN" kind="OUTPUT" mult-x="-0.00683579882804608" mult-y="-0.5" tail="xSEND">
-        <point x="82.0" y="54.0"/>
+        <point x="87.0" y="73.5"/>
       </arc>
-      <arc head="rcv_SYN" kind="INPUT" tail="xLISTEN"/>
-      <arc head="rcv_SYN" kind="INPUT" mult-k="1.0999023437500002" tail="SYN">
-        <point x="99.0" y="35.0"/>
-        <point x="99.0" y="46.0"/>
+      <arc head="rcv_SYN" kind="INPUT" mult-k="1.16748046875" tail="xLISTEN">
+        <point x="76.0" y="70.0"/>
       </arc>
-      <arc head="xCLOSE" kind="INPUT" tail="xLISTEN"/>
-      <arc head="xCLOSED" kind="OUTPUT" tail="xCLOSE"/>
-      <arc head="xCLOSE2" kind="INPUT" tail="xSYN_SENT"/>
-      <arc head="xCLOSED" kind="OUTPUT" tail="xCLOSE2"/>
-      <arc head="rcv_RST" head-magnet="3" kind="INPUT" tail="RST"/>
-      <arc head="rcv_RST" head-magnet="3" kind="INPUT" tail="xCLOSED"/>
+      <arc head="rcv_SYN" head-magnet="3" kind="INPUT" mult-k="1.0999023437500002" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="69.0"/>
+      </arc>
+      <arc head="xCLOSE" kind="INPUT" mult-k="1.23583984375" tail="xLISTEN">
+        <point x="56.0" y="66.5"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" mult-k="1.3200195312499994" tail="xCLOSE">
+        <point x="58.0" y="64.5"/>
+      </arc>
+      <arc head="xCLOSE2" kind="INPUT" mult-k="0.9090820312500001" tail="xSYN_SENT">
+        <point x="48.0" y="61.0"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" mult-k="1.37783203125" tail="xCLOSE2" tail-magnet="3">
+        <point x="58.0" y="61.5"/>
+      </arc>
+      <arc head="rcv_RST" head-magnet="3" kind="INPUT" mult-k="2.3247070312499996" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="50.5"/>
+      </arc>
+      <arc head="rcv_RST" head-magnet="7" kind="INPUT" mult-k="1.15810546875" tail="xCLOSED">
+        <point x="74.5" y="49.5"/>
+      </arc>
       <arc head="rcv_RST2" head-magnet="3" kind="INPUT" tail="xLISTEN">
-        <point x="69.0" y="37.5"/>
+        <point x="74.5" y="58.0"/>
       </arc>
-      <arc head="rcv_RST2" head-magnet="3" kind="INPUT" mult-k="0.6333007812500001" tail="RST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="37.5"/>
+      <arc head="rcv_RST2" head-magnet="3" kind="INPUT" mult-k="0.6333007812500001" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="58.5"/>
       </arc>
-      <arc head="xLISTEN" kind="OUTPUT" mult-x="0.32500000000000284" mult-y="0.0833333333333286" tail="rcv_RST2" tail-magnet="6">
-        <point x="68.5" y="36.5"/>
+      <arc head="xLISTEN" kind="OUTPUT" mult-k="0.49990234375" mult-x="0.32500000000000284" mult-y="0.0833333333333286" tail="rcv_RST2" tail-magnet="6">
+        <point x="80.0" y="60.5"/>
+        <point x="73.5" y="60.5"/>
       </arc>
-      <arc head="rcv_ACK" head-magnet="3" kind="INPUT" tail="ACK"/>
-      <arc head="xRST" kind="OUTPUT" tail="rcv_ACK"/>
-      <arc head="xLISTEN" kind="OUTPUT" tail="rcv_ACK" tail-magnet="3">
-        <point x="89.0" y="42.5"/>
+      <arc head="rcv_ACK" head-magnet="3" kind="INPUT" mult-k="2.2333007812499996" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="62.5"/>
       </arc>
-      <arc head="rcv_ACK" head-magnet="2" kind="INPUT" tail="xLISTEN">
-        <point x="88.5" y="41.0"/>
+      <arc head="xRST" kind="OUTPUT" mult-k="1.2008789062499998" tail="rcv_ACK">
+        <point x="87.0" y="63.5"/>
       </arc>
-      <arc head="xSYN_RCVD" kind="OUTPUT" tail="rcv_SYN"/>
-      <arc head="rcv_RST3" kind="INPUT" mult-k="1.2600585937499997" tail="RST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="49.0" y="15.0"/>
+      <arc head="xLISTEN" kind="OUTPUT" mult-k="0.20341796875" tail="rcv_ACK" tail-magnet="2">
+        <point x="80.0" y="64.5"/>
+        <point x="72.5" y="64.5"/>
       </arc>
-      <arc head="xSYN" kind="OUTPUT" tail="rcv_SYN">
-        <point x="87.0" y="23.0"/>
+      <arc head="rcv_ACK" head-magnet="7" kind="INPUT" mult-k="0.66669921875" tail="xLISTEN">
+        <point x="73.0" y="63.0"/>
       </arc>
-      <arc head="xCLOSED" kind="OUTPUT" mult-k="0.47802734375" tail="rcv_RST3">
-        <point x="56.5" y="34.0"/>
+      <arc head="xSYN_RCVD" kind="OUTPUT" mult-k="1.3952148437499998" tail="rcv_SYN" tail-magnet="5">
+        <point x="92.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_RST3" kind="INPUT" mult-k="1.2600585937499997" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="56.0" y="36.0"/>
+      </arc>
+      <arc head="xSYN" kind="OUTPUT" mult-k="1.21923828125" tail="rcv_SYN" tail-magnet="0">
+        <point x="92.0" y="69.5"/>
+        <point x="92.0" y="44.0"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" mult-k="0.47802734375" tail="rcv_RST3" tail-magnet="3">
+        <point x="58.0" y="58.5"/>
       </arc>
       <arc head="xSS_bA" kind="OUTPUT" tail="bad_ACK"/>
-      <arc head="no_RST" kind="INPUT" tail="xSS_bA"/>
-      <arc head="no_RST" head-magnet="7" kind="INHIBITOR" mult-x="-2.0817551528222964" mult-y="0.37736727076655185" tail="RST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="26.5" y="15.0"/>
-        <point x="26.5" y="62.0"/>
+      <arc head="no_RST" kind="INPUT" mult-k="1.3567382812499997" tail="xSS_bA">
+        <point x="43.0" y="82.5"/>
       </arc>
-      <arc head="xACK" kind="OUTPUT" mult-k="0.0" tail="rcv_SYNACK">
-        <point x="8.0" y="19.0"/>
+      <arc head="no_RST" head-magnet="7" kind="INHIBITOR" mult-x="-2.0817551528222964" mult-y="0.37736727076655185" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="82.5"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" mult-k="0.12509765625" tail="rcv_SYNACK">
+        <point x="28.0" y="40.0"/>
       </arc>
       <arc head="xESTAB" kind="OUTPUT" tail="rcv_SYNACK">
-        <point x="8.0" y="71.0"/>
+        <point x="28.0" y="91.5"/>
       </arc>
-      <arc head="xSYN_RCVD" kind="OUTPUT" mult-k="1.47080078125" tail="no_ACK">
-        <point x="16.0" y="66.0"/>
+      <arc head="xSYN_RCVD" kind="OUTPUT" mult-k="1.47080078125" tail="rcv_SYN2">
+        <point x="21.0" y="86.0"/>
       </arc>
-      <arc head="xSYN" kind="OUTPUT" tail="no_ACK">
-        <point x="16.0" y="23.0"/>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_SYN2">
+        <point x="21.0" y="40.0"/>
       </arc>
-      <arc head="xACK" kind="OUTPUT" tail="no_ACK">
-        <point x="16.0" y="19.0"/>
+      <arc head="xACK" kind="OUTPUT" mult-k="1.24228515625" tail="rcv_SYN" tail-magnet="2">
+        <point x="92.0" y="70.0"/>
+        <point x="92.0" y="40.0"/>
       </arc>
-      <arc head="xACK" kind="OUTPUT" tail="rcv_SYN">
-        <point x="87.0" y="19.0"/>
+      <arc head="xRST" kind="OUTPUT" tail="no_RST" tail-magnet="3"/>
+      <arc head="rcv_RST3" kind="INPUT" mult-k="1.0999023437500002" tail="xSYN_SENT">
+        <point x="48.0" y="58.0"/>
       </arc>
-      <arc head="xRST" kind="OUTPUT" tail="no_RST"/>
-      <arc head="rcv_RST3" kind="INPUT" tail="xSYN_SENT"/>
-      <arc head="has_RST" head-magnet="7" kind="INPUT" tail="RST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="26.5" y="15.0"/>
-        <point x="26.5" y="57.0"/>
+      <arc head="has_RST" head-magnet="7" kind="INPUT" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="77.5"/>
       </arc>
-      <arc head="has_RST" kind="INPUT" tail="xSS_bA"/>
-      <arc head="bad_ACK" kind="INPUT" tail="ACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="37.0" y="15.0"/>
+      <arc head="has_RST" head-magnet="2" kind="INPUT" mult-k="1.21865234375" mult-x="-0.22086192382812442" mult-y="-0.5" tail="xSS_bA">
+        <point x="43.0" y="77.5"/>
       </arc>
-      <arc head="bad_ACK" kind="INPUT" mult-k="0.23330078125" tail="xSYN_SENT"/>
-      <arc head="xSYN_SENT" kind="OUTPUT" tail="has_RST">
-        <point x="39.0" y="57.0"/>
+      <arc head="bad_ACK" kind="INPUT" mult-k="0.50009765625" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="43.0" y="36.0"/>
       </arc>
-      <arc head="xSYN_SENT" kind="OUTPUT" tail="no_RST"/>
-      <arc head="rcv_ACK2" kind="INPUT" tail="xSYN_SENT">
-        <point x="41.0" y="43.0"/>
+      <arc head="bad_ACK" kind="INPUT" mult-k="0.18525390625000002" tail="xSYN_SENT"/>
+      <arc head="xSYN_SENT" kind="OUTPUT" tail="has_RST" tail-magnet="3">
+        <point x="48.0" y="78.5"/>
       </arc>
-      <arc head="rcv_ACK2" kind="INPUT" tail="ACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="32.0" y="15.0"/>
+      <arc head="xSYN_SENT" kind="OUTPUT" mult-k="1.40576171875" tail="no_RST" tail-magnet="2">
+        <point x="48.0" y="83.5"/>
       </arc>
-      <arc head="xSS_A" kind="OUTPUT" tail="rcv_ACK2"/>
-      <arc head="rcv_SYNACK" head-magnet="2" kind="INPUT" tail="SYN">
-        <point x="99.0" y="35.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="22.0" y="15.0"/>
-        <point x="22.0" y="39.5"/>
+      <arc head="rcv_SYNACK" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="59.5"/>
       </arc>
-      <arc head="rcv_SYNACK" head-magnet="3" kind="INPUT" tail="xSS_A">
-        <point x="22.0" y="40.5"/>
+      <arc head="rcv_SYN2" head-magnet="2" kind="INPUT" mult-k="0.50009765625" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="27.0" y="36.0"/>
+        <point x="27.0" y="55.5"/>
       </arc>
-      <arc head="no_ACK" head-magnet="2" kind="INPUT" mult-k="0.50009765625" tail="SYN">
-        <point x="99.0" y="35.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="22.0" y="15.0"/>
-        <point x="22.0" y="34.5"/>
+      <arc head="rcv_SYN2" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="xSYN_SENT">
+        <point x="48.0" y="56.5"/>
       </arc>
-      <arc head="no_ACK" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="xSYN_SENT">
-        <point x="41.5" y="35.5"/>
+      <arc head="rcv_SYN2" head-magnet="1" kind="INHIBITOR" mult-k="0.50009765625" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="27.0" y="36.0"/>
+        <point x="27.0" y="56.0"/>
       </arc>
-      <arc head="no_ACK" head-magnet="1" kind="INHIBITOR" mult-k="0.50009765625" tail="ACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="22.0" y="15.0"/>
-        <point x="22.0" y="34.0"/>
-      </arc>
-      <arc head="xt2" kind="INPUT" tail="RST"/>
-      <arc head="xt2" kind="INPUT" tail="f_RST"/>
-      <arc head="xt1" kind="INPUT" tail="SYN"/>
-      <arc head="xt1" kind="INPUT" tail="f_SYN"/>
-      <arc head="xt0" kind="INPUT" tail="ACK"/>
-      <arc head="xt0" kind="INPUT" tail="f_ACK"/>
-      <arc head="xt3" kind="INPUT" tail="f_RST"/>
+      <arc head="xt6" kind="INPUT" tail="_RST"/>
+      <arc head="xt6" kind="INPUT" tail="f_RST"/>
+      <arc head="xt4" kind="INPUT" tail="_SYN"/>
       <arc head="xt4" kind="INPUT" tail="f_SYN"/>
-      <arc head="xt5" kind="INPUT" tail="f_ACK"/>
-      <arc head="xf_split" kind="INPUT" tail="xflush"/>
-      <arc head="f_SYN" kind="OUTPUT" mult-k="1.48291015625" tail="xf_split">
-        <point x="114.5" y="27.0"/>
-        <point x="114.5" y="33.0"/>
+      <arc head="xt2" kind="INPUT" tail="_ACK"/>
+      <arc head="xt2" kind="INPUT" tail="f_ACK"/>
+      <arc head="xt7" kind="INPUT" tail="f_RST"/>
+      <arc head="xt5" kind="INPUT" tail="f_SYN"/>
+      <arc head="xt3" kind="INPUT" tail="f_ACK"/>
+      <arc head="xflush_flags" kind="INPUT" mult-k="1.3811523437500002" tail="xFLUSH_TCB">
+        <point x="134.0" y="48.0"/>
       </arc>
-      <arc head="f_RST" kind="OUTPUT" mult-k="0.19013671875" tail="xf_split"/>
-      <arc head="f_ACK" kind="OUTPUT" mult-k="0.49990234375" tail="xf_split">
-        <point x="114.5" y="27.0"/>
-        <point x="114.5" y="39.0"/>
+      <arc head="f_SYN" kind="OUTPUT" mult-k="1.62412109375" tail="xflush_flags">
+        <point x="129.5" y="48.0"/>
+        <point x="129.5" y="54.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="rcv_RST2" tail-magnet="2">
-        <point x="99.0" y="37.0"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="f_RST" kind="OUTPUT" mult-k="0.19912109375" tail="xflush_flags"/>
+      <arc head="f_ACK" kind="OUTPUT" tail="xflush_flags">
+        <point x="129.5" y="48.0"/>
+        <point x="129.5" y="60.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="rcv_ACK" tail-magnet="2">
-        <point x="99.0" y="40.5"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_RST2" tail-magnet="2">
+        <point x="104.0" y="57.5"/>
+        <point x="104.0" y="36.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="has_RST" tail-magnet="6">
-        <point x="26.5" y="56.5"/>
-        <point x="26.5" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_ACK" tail-magnet="2">
+        <point x="104.0" y="63.0"/>
+        <point x="104.0" y="36.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="no_RST" tail-magnet="6">
-        <point x="26.5" y="61.5"/>
-        <point x="26.5" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="has_RST" tail-magnet="6">
+        <point x="31.5" y="78.5"/>
+        <point x="31.5" y="36.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="rcv_RST3">
-        <point x="53.0" y="34.0"/>
-        <point x="53.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="no_RST" tail-magnet="6">
+        <point x="31.5" y="83.5"/>
+        <point x="31.5" y="36.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="xCLOSE2">
-        <point x="53.0" y="38.5"/>
-        <point x="53.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_RST3" tail-magnet="2">
+        <point x="58.0" y="57.5"/>
+        <point x="58.0" y="36.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="xCLOSE">
-        <point x="53.0" y="44.5"/>
-        <point x="53.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="xCLOSE2" tail-magnet="2">
+        <point x="58.0" y="60.5"/>
+        <point x="58.0" y="36.0"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="rcv_RST" tail-magnet="2">
-        <point x="99.0" y="28.5"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" mult-x="1.7750096226050758" mult-y="-0.2499630267306614" tail="xCLOSE">
+        <point x="58.0" y="63.5"/>
+        <point x="58.0" y="36.0"/>
       </arc>
-      <arc head="xCLOSED" kind="OUTPUT" tail="rcv_RST" tail-magnet="6"/>
-      <arc head="xAO" kind="OUTPUT" tail="xAOPEN">
-        <point x="43.0" y="11.0"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_RST" tail-magnet="2">
+        <point x="104.0" y="49.5"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" mult-k="0.59677734375" tail="rcv_RST">
+        <point x="76.5" y="50.5"/>
+      </arc>
+      <arc head="xAO" kind="OUTPUT" mult-k="0.7899414062500002" tail="xAOPEN">
+        <point x="48.0" y="49.5"/>
+        <point x="48.0" y="25.5"/>
+      </arc>
+      <arc head="PO_rcv_RST" kind="INPUT" mult-k="1.33388671875" tail="xSYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="79.0"/>
+      </arc>
+      <arc head="AO_rcv_RST" kind="INPUT" mult-x="0.4648445434463895" mult-y="1.3859378173785615" tail="xSYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="91.0"/>
       </arc>
       <arc head="AO_rcv_RST" head-magnet="3" kind="INPUT" tail="xAO">
-        <point x="99.0" y="69.0"/>
+        <point x="104.0" y="91.5"/>
       </arc>
       <arc head="PO_rcv_RST" head-magnet="3" kind="INHIBITOR" tail="xAO">
-        <point x="99.0" y="66.0"/>
+        <point x="104.0" y="79.5"/>
       </arc>
-      <arc head="PO_rcv_RST" head-magnet="2" kind="INPUT" tail="RST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="65.5"/>
+      <arc head="PO_rcv_RST" head-magnet="2" kind="INPUT" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="79.0"/>
       </arc>
-      <arc head="AO_rcv_RST" head-magnet="2" kind="INPUT" tail="RST">
-        <point x="99.0" y="29.0"/>
-        <point x="99.0" y="68.5"/>
+      <arc head="AO_rcv_RST" head-magnet="2" kind="INPUT" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="91.0"/>
       </arc>
-      <arc head="PO_rcv_RST" head-magnet="6" kind="INPUT" tail="xSYN_RCVD"/>
-      <arc head="AO_rcv_RST" head-magnet="7" kind="INPUT" mult-k="1.5842773437499997" tail="xSYN_RCVD">
-        <point x="89.0" y="66.0"/>
-        <point x="89.0" y="69.0"/>
-      </arc>
-      <arc head="xLISTEN" kind="OUTPUT" mult-k="0.50009765625" tail="PO_rcv_RST" tail-magnet="1">
-        <point x="99.0" y="65.0"/>
-        <point x="99.0" y="49.0"/>
+      <arc head="xLISTEN" kind="OUTPUT" mult-k="0.50009765625" tail="PO_rcv_RST" tail-magnet="0">
+        <point x="104.0" y="78.5"/>
+        <point x="104.0" y="67.0"/>
       </arc>
       <arc head="xCLOSED" kind="OUTPUT" tail="AO_rcv_RST" tail-magnet="5">
-        <point x="99.0" y="70.0"/>
-        <point x="99.0" y="31.0"/>
-        <point x="67.0" y="30.5"/>
+        <point x="104.0" y="90.0"/>
+        <point x="104.0" y="53.5"/>
+        <point x="71.0" y="53.5"/>
       </arc>
-      <arc head="xflush" kind="OUTPUT" tail="AO_rcv_RST" tail-magnet="4">
-        <point x="93.0" y="70.5"/>
-        <point x="99.0" y="70.5"/>
-        <point x="99.0" y="15.0"/>
-        <point x="119.0" y="15.0"/>
-      </arc>
-      <arc head="rcv_ACK3" head-magnet="3" kind="INPUT" tail="ACK">
-        <point x="99.0" y="41.0"/>
-        <point x="99.0" y="71.5"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.0" tail="AO_rcv_RST" tail-magnet="4">
+        <point x="104.0" y="90.5"/>
+        <point x="104.0" y="36.0"/>
       </arc>
       <arc head="rcv_ACK3" head-magnet="2" kind="INPUT" tail="xSYN_RCVD">
-        <point x="87.0" y="70.5"/>
+        <point x="92.0" y="91.5"/>
+      </arc>
+      <arc head="rcv_ACK3" head-magnet="3" kind="INPUT" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="92.5"/>
       </arc>
       <arc head="xESTAB" kind="OUTPUT" tail="rcv_ACK3" tail-magnet="7"/>
-      <arc head="xlimiter" kind="INPUT" mult="2" tail="xAO">
-        <point x="102.0" y="12.5"/>
+      <arc head="xlimiter" kind="INPUT" mult="2" mult-k="0.6313476562500001" mult-x="0.33945007919872694" mult-y="0.8357800316794908" tail="xAO">
+        <point x="107.0" y="26.5"/>
       </arc>
-      <arc head="xAO" kind="OUTPUT" tail="xlimiter">
-        <point x="102.0" y="9.5"/>
+      <arc head="xAO" kind="OUTPUT" mult-k="1.36865234375" mult-x="0.8913546933032706" mult-y="-1.9303743680360785" tail="xlimiter">
+        <point x="107.0" y="23.5"/>
       </arc>
-      <arc head="f_xAO" kind="OUTPUT" tail="xPOPEN">
-        <point x="87.0" y="34.0"/>
-        <point x="87.0" y="7.0"/>
+      <arc head="xf_AO" kind="OUTPUT" tail="xPOPEN">
+        <point x="92.0" y="55.0"/>
+        <point x="92.0" y="20.0"/>
       </arc>
-      <arc head="xt7" kind="INPUT" tail="xAO"/>
-      <arc head="xt7" kind="INPUT" tail="f_xAO"/>
-      <arc head="xt8" kind="INPUT" tail="f_xAO"/>
-      <arc head="xAO" kind="OUTPUT" tail="AO_rcv_RST" tail-magnet="1">
-        <point x="99.0" y="68.0"/>
+      <arc head="xt8" kind="INPUT" tail="xf_AO"/>
+      <arc head="xt8" kind="INPUT" tail="xAO"/>
+      <arc head="xt9" kind="INPUT" tail="xf_AO"/>
+      <arc head="xAO" kind="OUTPUT" tail="xOPEN">
+        <point x="104.0" y="76.5"/>
       </arc>
       <arc head="xAO" kind="OUTPUT" tail="xSEND">
-        <point x="99.0" y="54.0"/>
+        <point x="104.0" y="74.5"/>
       </arc>
-      <arc head="xAO" kind="OUTPUT" tail="xOPEN">
-        <point x="99.0" y="57.0"/>
+      <arc head="xCLOSE3" kind="INPUT" mult-k="0.90263671875" tail="xSYN_RCVD">
+        <point x="76.0" y="86.0"/>
+        <point x="76.0" y="89.0"/>
       </arc>
+      <arc head="xCLOSE4" kind="INPUT" tail="xESTAB">
+        <point x="59.0" y="89.0"/>
+      </arc>
+      <arc head="xFIN_WAIT_1" kind="OUTPUT" tail="xCLOSE4" tail-magnet="4">
+        <point x="69.5" y="98.0"/>
+      </arc>
+      <arc head="xFIN" kind="OUTPUT" tail="xCLOSE4" tail-magnet="5">
+        <point x="70.5" y="98.0"/>
+      </arc>
+      <arc head="f_FIN" kind="OUTPUT" tail="xflush_flags">
+        <point x="129.5" y="48.0"/>
+        <point x="129.5" y="66.0"/>
+      </arc>
+      <arc head="xt1" kind="INPUT" tail="f_FIN"/>
+      <arc head="xt0" kind="INPUT" tail="f_FIN"/>
+      <arc head="xt0" kind="INPUT" tail="_FIN"/>
+      <arc head="bad_ACK2" head-magnet="2" kind="INPUT" tail="xSYN_RCVD">
+        <point x="92.0" y="94.5"/>
+      </arc>
+      <arc head="bad_ACK2" head-magnet="3" kind="INPUT" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="95.5"/>
+      </arc>
+      <arc head="xRST" kind="OUTPUT" mult-k="0.50009765625" tail="bad_ACK2" tail-magnet="6">
+        <point x="82.5" y="95.0"/>
+        <point x="82.5" y="83.0"/>
+      </arc>
+      <arc head="xSYN_RCVD" kind="OUTPUT" tail="bad_ACK2" tail-magnet="7">
+        <point x="82.5" y="95.5"/>
+        <point x="82.5" y="86.0"/>
+      </arc>
+      <arc head="rcv_ACK_FIN" head-magnet="2" kind="INPUT" mult-k="1.1520507812499998" tail="xFIN_WAIT_1">
+        <point x="59.0" y="99.5"/>
+        <point x="76.0" y="99.5"/>
+        <point x="76.0" y="103.5"/>
+      </arc>
+      <arc head="rcv_ACK_FIN" head-magnet="3" kind="INPUT" mult-k="0.49990234375" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="104.5"/>
+      </arc>
+      <arc head="xFIN_WAIT_2" kind="OUTPUT" tail="rcv_ACK_FIN"/>
+      <arc head="rcv_FIN6" head-magnet="3" kind="INPUT" mult-k="0.49990234375" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="144.0"/>
+      </arc>
+      <arc head="xTIME_WAIT" kind="OUTPUT" mult-k="0.32373046875" tail="rcv_FIN6">
+        <point x="59.5" y="144.0"/>
+      </arc>
+      <arc head="rcv_FIN6" head-magnet="2" kind="INPUT" mult-k="1.66162109375" tail="xFIN_WAIT_2">
+        <point x="59.0" y="106.0"/>
+        <point x="76.0" y="106.0"/>
+        <point x="76.0" y="143.5"/>
+      </arc>
+      <arc head="xTIME_WAIT" kind="OUTPUT" tail="rcv_FINACK">
+        <point x="62.0" y="138.5"/>
+      </arc>
+      <arc head="rcv_FINACK" head-magnet="1" kind="INPUT" mult-k="1.3352539062499997" tail="xFIN_WAIT_1">
+        <point x="59.0" y="100.5"/>
+        <point x="76.0" y="100.5"/>
+        <point x="76.0" y="137.5"/>
+      </arc>
+      <arc head="rcv_FINACK" head-magnet="3" kind="INPUT" mult-k="0.49990234375" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="138.5"/>
+      </arc>
+      <arc head="rcv_FINACK" head-magnet="2" kind="INPUT" mult-k="0.49990234375" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="138.0"/>
+      </arc>
+      <arc head="rcv_FIN5" head-magnet="2" kind="INPUT" mult-k="2.0809570312499996" tail="xFIN_WAIT_1">
+        <point x="59.0" y="100.0"/>
+        <point x="76.0" y="100.0"/>
+        <point x="76.0" y="115.5"/>
+      </arc>
+      <arc head="xCLOSING" kind="OUTPUT" tail="rcv_FIN5" tail-magnet="6"/>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="1.58544921875" tail="bad_ACK2">
+        <point x="82.5" y="94.5"/>
+        <point x="82.5" y="96.5"/>
+        <point x="104.0" y="96.5"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="rcv_ACK_FIN2" head-magnet="2" kind="INPUT" mult-k="1.7073242187499997" tail="xCLOSING">
+        <point x="59.0" y="118.0"/>
+        <point x="76.0" y="118.0"/>
+        <point x="76.0" y="131.5"/>
+      </arc>
+      <arc head="rcv_ACK_FIN2" head-magnet="3" kind="INPUT" mult-k="0.7336914062500001" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="132.5"/>
+      </arc>
+      <arc head="rcv_FIN5" head-magnet="3" kind="INPUT" mult-k="0.5219726562500001" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="116.0"/>
+      </arc>
+      <arc head="rcv_FIN3" head-magnet="3" kind="INPUT" mult-k="0.0" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="108.0"/>
+      </arc>
+      <arc head="xCLOSE_WAIT" kind="OUTPUT" mult-k="1.4690429687500002" tail="rcv_FIN3">
+        <point x="68.0" y="109.5"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" mult-k="0.50205078125" tail="rcv_FIN3" tail-magnet="5">
+        <point x="76.0" y="108.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="xFIN_WAIT_1" kind="OUTPUT" tail="xCLOSE3" tail-magnet="4">
+        <point x="78.5" y="98.0"/>
+      </arc>
+      <arc head="xFIN" kind="OUTPUT" tail="xCLOSE3" tail-magnet="5">
+        <point x="79.5" y="98.0"/>
+      </arc>
+      <arc head="rcv_FIN3" head-magnet="2" kind="INPUT" mult-k="0.09990234375000001" tail="xSYN_RCVD">
+        <point x="76.0" y="86.0"/>
+        <point x="76.0" y="107.5"/>
+      </arc>
+      <arc head="rcv_FIN4" head-magnet="2" kind="INPUT" mult-k="0.0" tail="xESTAB">
+        <point x="59.0" y="94.5"/>
+        <point x="76.0" y="94.5"/>
+        <point x="76.0" y="111.5"/>
+      </arc>
+      <arc head="xCLOSE_WAIT" kind="OUTPUT" mult-k="1.9999023437499996" tail="rcv_FIN4" tail-magnet="6">
+        <point x="67.5" y="110.0"/>
+      </arc>
+      <arc head="rcv_FIN4" head-magnet="3" kind="INPUT" mult-k="0.0" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="76.0" y="112.0"/>
+      </arc>
+      <arc head="rcv_FIN7" head-magnet="6" kind="INPUT" mult-k="0.0" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="109.5"/>
+      </arc>
+      <arc head="rcv_FIN7" head-magnet="2" kind="INPUT" mult-k="0.66005859375" tail="xCLOSE_WAIT">
+        <point x="54.5" y="109.5"/>
+      </arc>
+      <arc head="xCLOSE_WAIT" kind="OUTPUT" mult-k="1.1247070312499998" tail="rcv_FIN7">
+        <point x="55.5" y="110.5"/>
+      </arc>
+      <arc head="rcv_FIN8" head-magnet="2" kind="INPUT" mult-k="0.0" tail="xCLOSING">
+        <point x="55.5" y="115.5"/>
+      </arc>
+      <arc head="rcv_FIN8" kind="INPUT" mult-k="0.50400390625" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="115.5"/>
+      </arc>
+      <arc head="xCLOSING" kind="OUTPUT" mult-k="0.7836914062500001" tail="rcv_FIN8" tail-magnet="3">
+        <point x="55.5" y="116.5"/>
+      </arc>
+      <arc head="rcv_RST4" head-magnet="3" kind="INPUT" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="95.5"/>
+      </arc>
+      <arc head="rcv_RST4" head-magnet="2" kind="INPUT" mult-k="0.50009765625" mult-x="-0.7925919284372895" mult-y="0.9432107620836092" tail="xESTAB">
+        <point x="58.5" y="94.5"/>
+      </arc>
+      <arc head="rcv_RST5" head-magnet="2" kind="INPUT" mult-x="-0.37230475607904623" mult-y="1.4184634959473073" tail="xFIN_WAIT_1">
+        <point x="58.5" y="99.5"/>
+      </arc>
+      <arc head="rcv_RST5" head-magnet="3" kind="INPUT" mult-k="0.50009765625" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="100.5"/>
+      </arc>
+      <arc head="rcv_RST6" head-magnet="3" kind="INPUT" mult-k="1.25107421875" tail="xFIN_WAIT_2">
+        <point x="58.5" y="106.5"/>
+      </arc>
+      <arc head="rcv_RST6" head-magnet="2" kind="INPUT" mult-k="0.49990234375" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="105.5"/>
+      </arc>
+      <arc head="rcv_RST7" head-magnet="2" kind="INPUT" mult-k="0.49990234375" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="111.5"/>
+      </arc>
+      <arc head="rcv_RST7" head-magnet="3" kind="INPUT" mult-k="0.50009765625" mult-x="-0.99999997612111" mult-y="0.9998350227040902" tail="xCLOSE_WAIT">
+        <point x="58.5" y="112.5"/>
+      </arc>
+      <arc head="rcv_RST8" head-magnet="3" kind="INPUT" mult-k="0.0" mult-x="-2.1646728515625" mult-y="0.75299072265625" tail="xCLOSING">
+        <point x="58.5" y="118.5"/>
+      </arc>
+      <arc head="rcv_RST8" head-magnet="2" kind="INPUT" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="117.5"/>
+      </arc>
+      <arc head="rcv_RST9" head-magnet="3" kind="INPUT" mult-x="-0.6797579854255247" mult-y="0.8202420145744753" tail="xLAST_ACK">
+        <point x="58.5" y="124.5"/>
+      </arc>
+      <arc head="rcv_RST9" head-magnet="2" kind="INPUT" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="123.5"/>
+      </arc>
+      <arc head="rcv_RST10" head-magnet="2" kind="INPUT" tail="_RST">
+        <point x="104.0" y="50.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="133.5"/>
+      </arc>
+      <arc head="rcv_RST10" head-magnet="3" kind="INPUT" mult-x="-3.0815365040527" mult-y="0.6276952439209396" tail="xTIME_WAIT">
+        <point x="58.5" y="134.5"/>
+      </arc>
+      <arc head="xCLOSE5" kind="INPUT" mult-k="0.5961914062500001" tail="xCLOSE_WAIT">
+        <point x="59.0" y="113.5"/>
+        <point x="76.0" y="113.5"/>
+        <point x="76.0" y="122.0"/>
+      </arc>
+      <arc head="xLAST_ACK" kind="OUTPUT" tail="xCLOSE5"/>
+      <arc head="xFIN" kind="OUTPUT" mult-k="0.86240234375" tail="xCLOSE5">
+        <point x="70.0" y="125.5"/>
+        <point x="76.0" y="125.5"/>
+        <point x="76.0" y="98.0"/>
+      </arc>
+      <arc head="rcv_ACK_LAST" head-magnet="0" kind="INPUT" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="127.5"/>
+      </arc>
+      <arc head="rcv_ACK_LAST" kind="INPUT" mult-k="1.3424804687500003" tail="xLAST_ACK">
+        <point x="59.5" y="128.0"/>
+      </arc>
+      <arc head="xTIME_WAIT" kind="OUTPUT" tail="rcv_ACK_FIN2"/>
+      <arc head="xend" kind="INPUT" mult-k="2.19990234375" tail="xTIME_WAIT">
+        <point x="58.5" y="138.0"/>
+      </arc>
+      <arc head="PO_rcv_SYN" kind="INPUT" tail="xSYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="83.0"/>
+      </arc>
+      <arc head="AO_rcv_SYN" kind="INPUT" tail="xSYN_RCVD">
+        <point x="94.5" y="86.0"/>
+        <point x="94.5" y="87.0"/>
+      </arc>
+      <arc head="PO_rcv_SYN" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="83.0"/>
+      </arc>
+      <arc head="PO_rcv_SYN" kind="INHIBITOR" tail="xAO">
+        <point x="104.0" y="83.5"/>
+      </arc>
+      <arc head="AO_rcv_SYN" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="87.5"/>
+      </arc>
+      <arc head="AO_rcv_SYN" kind="INPUT" tail="xAO">
+        <point x="104.0" y="88.0"/>
+      </arc>
+      <arc head="xRST" kind="OUTPUT" tail="AO_rcv_SYN">
+        <point x="104.0" y="87.0"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" tail="AO_rcv_SYN">
+        <point x="104.0" y="86.5"/>
+        <point x="104.0" y="53.5"/>
+        <point x="71.0" y="53.5"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="AO_rcv_SYN">
+        <point x="104.0" y="86.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="xLISTEN" kind="OUTPUT" tail="PO_rcv_SYN">
+        <point x="104.0" y="82.5"/>
+        <point x="104.0" y="67.0"/>
+      </arc>
+      <arc head="rcv_SYN3" kind="INPUT" mult-k="0.04990234375" tail="xESTAB">
+        <point x="40.5" y="92.0"/>
+        <point x="40.5" y="96.5"/>
+      </arc>
+      <arc head="rcv_SYN3" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="95.5"/>
+      </arc>
+      <arc head="rcv_SYN4" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="99.5"/>
+      </arc>
+      <arc head="rcv_SYN4" kind="INPUT" mult-k="0.49990234375" tail="xFIN_WAIT_1">
+        <point x="58.5" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="100.5"/>
+      </arc>
+      <arc head="rcv_SYN5" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="105.5"/>
+      </arc>
+      <arc head="rcv_SYN5" kind="INPUT" mult-k="1.34267578125" tail="xFIN_WAIT_2">
+        <point x="58.5" y="107.5"/>
+        <point x="40.5" y="107.5"/>
+        <point x="40.5" y="106.5"/>
+      </arc>
+      <arc head="rcv_SYN7" kind="INPUT" tail="xCLOSING">
+        <point x="58.5" y="119.5"/>
+        <point x="40.5" y="119.5"/>
+        <point x="40.5" y="118.5"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" tail="rcv_RST10">
+        <point x="40.5" y="134.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" tail="rcv_RST9">
+        <point x="40.5" y="124.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" tail="rcv_RST8">
+        <point x="40.5" y="118.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" tail="rcv_RST7">
+        <point x="40.5" y="112.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" tail="rcv_RST6">
+        <point x="40.5" y="106.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" tail="rcv_RST5">
+        <point x="40.5" y="100.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" tail="rcv_RST4">
+        <point x="40.5" y="95.0"/>
+      </arc>
+      <arc head="xf_c" kind="INPUT" mult-k="0.8100585937499999" tail="xF_CLOSE">
+        <point x="45.0" y="143.0"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" mult-k="0.50009765625" tail="xf_c">
+        <point x="76.0" y="147.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="53.5"/>
+        <point x="71.0" y="53.5"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.8774414062500001" tail="xf_c">
+        <point x="76.0" y="148.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="xF_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_SYN3">
+        <point x="31.5" y="96.0"/>
+      </arc>
+      <arc head="xF_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_SYN4">
+        <point x="31.5" y="100.0"/>
+      </arc>
+      <arc head="xF_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_SYN5">
+        <point x="31.5" y="106.0"/>
+      </arc>
+      <arc head="xF_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_SYN6">
+        <point x="31.5" y="112.0"/>
+      </arc>
+      <arc head="xF_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_SYN7">
+        <point x="31.5" y="118.0"/>
+      </arc>
+      <arc head="xF_RST" kind="OUTPUT" mult-k="0.0" tail="rcv_SYN8">
+        <point x="31.5" y="124.0"/>
+      </arc>
+      <arc head="xF_RST" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_SYN9">
+        <point x="31.5" y="134.0"/>
+      </arc>
+      <arc head="rcv_SYN6" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="111.5"/>
+      </arc>
+      <arc head="rcv_SYN6" kind="INPUT" tail="xCLOSE_WAIT">
+        <point x="58.5" y="113.5"/>
+        <point x="40.5" y="113.5"/>
+        <point x="40.5" y="112.5"/>
+      </arc>
+      <arc head="rcv_SYN8" kind="INPUT" tail="xLAST_ACK">
+        <point x="58.5" y="125.5"/>
+        <point x="40.5" y="125.5"/>
+        <point x="40.5" y="124.5"/>
+      </arc>
+      <arc head="rcv_SYN9" kind="INPUT" tail="xTIME_WAIT">
+        <point x="58.5" y="135.5"/>
+        <point x="40.5" y="135.5"/>
+        <point x="40.5" y="134.5"/>
+      </arc>
+      <arc head="rcv_SYN7" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="117.5"/>
+      </arc>
+      <arc head="rcv_SYN8" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="123.5"/>
+      </arc>
+      <arc head="rcv_SYN9" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="40.5" y="101.5"/>
+        <point x="40.5" y="133.5"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" mult-k="0.50009765625" tail="xend">
+        <point x="40.5" y="138.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" mult-k="0.15712890625" tail="rcv_ACK_LAST">
+        <point x="40.5" y="128.5"/>
+      </arc>
+      <arc head="rcv_CF" kind="INPUT" tail="xCLOSED">
+        <point x="70.0" y="33.5"/>
+      </arc>
+      <arc head="rcv_CA" kind="INPUT" tail="xCLOSED">
+        <point x="70.0" y="30.5"/>
+      </arc>
+      <arc head="rcv_CS" kind="INPUT" tail="xCLOSED">
+        <point x="70.0" y="27.5"/>
+      </arc>
+      <arc head="rcv_CS" kind="INPUT" tail="_SYN">
+        <point x="104.0" y="56.0"/>
+        <point x="104.0" y="27.5"/>
+      </arc>
+      <arc head="rcv_CA" kind="INPUT" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="30.5"/>
+      </arc>
+      <arc head="rcv_CF" kind="INPUT" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="33.5"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" tail="rcv_CF">
+        <point x="70.0" y="34.5"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" tail="rcv_CA">
+        <point x="70.0" y="31.5"/>
+      </arc>
+      <arc head="xCLOSED" kind="OUTPUT" tail="rcv_CS">
+        <point x="70.0" y="28.5"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_CS">
+        <point x="104.0" y="28.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_CA">
+        <point x="104.0" y="31.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_CF">
+        <point x="104.0" y="34.0"/>
+        <point x="104.0" y="36.0"/>
+      </arc>
+      <arc head="xRST" kind="OUTPUT" tail="rcv_CS">
+        <point x="104.0" y="28.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="xRST" kind="OUTPUT" tail="rcv_CA">
+        <point x="104.0" y="31.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="xRST" kind="OUTPUT" tail="rcv_CF">
+        <point x="104.0" y="34.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_FIN4">
+        <point x="76.0" y="112.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_FIN5">
+        <point x="76.0" y="116.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_FIN6">
+        <point x="76.0" y="144.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_FIN7">
+        <point x="48.5" y="110.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_FIN8">
+        <point x="48.5" y="116.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="rcv_FIN9" kind="INPUT" mult-k="0.75009765625" tail="xLAST_ACK">
+        <point x="55.0" y="121.5"/>
+      </arc>
+      <arc head="xLAST_ACK" kind="OUTPUT" mult-k="1.22568359375" tail="rcv_FIN9">
+        <point x="55.5" y="122.5"/>
+      </arc>
+      <arc head="rcv_FIN9" kind="INPUT" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="121.5"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_FIN9">
+        <point x="48.5" y="122.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="rcv_FIN10" kind="INPUT" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="101.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="48.5" y="131.5"/>
+      </arc>
+      <arc head="rcv_FIN10" kind="INPUT" mult-k="0.75009765625" tail="xTIME_WAIT">
+        <point x="55.5" y="131.5"/>
+      </arc>
+      <arc head="xTIME_WAIT" kind="OUTPUT" mult-x="1.1750499999999988" mult-y="-0.7499499999999983" tail="rcv_FIN10">
+        <point x="55.5" y="132.5"/>
+      </arc>
+      <arc head="xACK" kind="OUTPUT" tail="rcv_FIN10">
+        <point x="48.5" y="132.5"/>
+        <point x="48.5" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="40.0"/>
+      </arc>
+      <arc head="rcv_FIN" kind="INPUT" mult-k="0.50009765625" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="72.0"/>
+        <point x="58.0" y="72.0"/>
+        <point x="58.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_FIN2" kind="INPUT" mult-k="0.50009765625" tail="_FIN">
+        <point x="104.0" y="68.0"/>
+        <point x="104.0" y="72.0"/>
+        <point x="58.0" y="72.0"/>
+        <point x="58.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_FIN" kind="INPUT" tail="xLISTEN">
+        <point x="68.0" y="70.5"/>
+      </arc>
+      <arc head="rcv_FIN2" kind="INPUT" mult-x="1.2075654035738026" mult-y="1.943420538098401" tail="xSYN_SENT">
+        <point x="50.0" y="70.5"/>
+      </arc>
+      <arc head="xLISTEN" kind="OUTPUT" tail="rcv_FIN">
+        <point x="67.5" y="69.5"/>
+      </arc>
+      <arc head="xSYN_SENT" kind="OUTPUT" tail="rcv_FIN2">
+        <point x="50.5" y="69.5"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="rcv_FIN2">
+        <point x="58.0" y="69.5"/>
+        <point x="58.0" y="36.0"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.49990234375" tail="rcv_FIN">
+        <point x="58.0" y="69.5"/>
+        <point x="58.0" y="36.0"/>
+      </arc>
+      <arc head="rcv_ACK2" kind="INPUT" tail="_ACK">
+        <point x="104.0" y="62.0"/>
+        <point x="104.0" y="36.0"/>
+        <point x="31.5" y="36.0"/>
+        <point x="31.5" y="53.5"/>
+      </arc>
+      <arc head="rcv_ACK2" kind="INPUT" tail="xSYN_SENT">
+        <point x="48.0" y="64.5"/>
+        <point x="31.5" y="64.5"/>
+        <point x="31.5" y="54.5"/>
+      </arc>
+      <arc head="xSS_A" kind="OUTPUT" tail="rcv_ACK2"/>
+      <arc head="rcv_SYNACK" kind="INPUT" mult-k="1.29091796875" tail="xSS_A">
+        <point x="33.0" y="60.5"/>
+      </arc>
+      <arc head="empty_ACK" kind="INPUT" tail="xSS_A"/>
+      <arc head="xSYN_SENT" kind="OUTPUT" tail="empty_ACK">
+        <point x="48.0" y="60.5"/>
+      </arc>
+      <arc head="xFLUSH_TCB" kind="OUTPUT" mult-k="0.50009765625" tail="empty_ACK">
+        <point x="43.0" y="59.5"/>
+        <point x="43.0" y="36.0"/>
+      </arc>
+      <arc head="_xdata_loop" kind="INPUT" tail="xESTAB">
+        <point x="58.0" y="88.0"/>
+      </arc>
+      <arc head="xESTAB" kind="OUTPUT" tail="_xdata_loop">
+        <point x="55.0" y="90.5"/>
+      </arc>
+      <arc head="xf_r" kind="INPUT" mult-k="0.8577148437500001" tail="xF_RST">
+        <point x="36.0" y="143.0"/>
+      </arc>
+      <arc head="xF_CLOSE" kind="OUTPUT" mult-k="2.7321289062500003" tail="xf_r">
+        <point x="38.5" y="148.0"/>
+        <point x="38.5" y="143.0"/>
+      </arc>
+      <arc head="xRST" kind="OUTPUT" mult-x="-0.5" mult-y="-0.7497236382462518" tail="xf_r">
+        <point x="36.0" y="149.5"/>
+        <point x="76.0" y="149.5"/>
+        <point x="76.0" y="101.5"/>
+        <point x="104.0" y="101.5"/>
+        <point x="104.0" y="76.5"/>
+        <point x="87.0" y="76.5"/>
+      </arc>
+      <arc head="RST_buf" kind="INPUT" tail="RST"/>
+      <arc head="_RST" kind="OUTPUT" tail="RST_buf"/>
+      <arc head="SYN_buf" kind="INPUT" tail="SYN"/>
+      <arc head="_SYN" kind="OUTPUT" tail="SYN_buf"/>
+      <arc head="ACK_buf" kind="INPUT" tail="ACK"/>
+      <arc head="_ACK" kind="OUTPUT" tail="ACK_buf"/>
+      <arc head="FIN_buf" kind="INPUT" tail="FIN"/>
+      <arc head="_FIN" kind="OUTPUT" tail="FIN_buf"/>
     </edges>
   </gspn>
   <multinet name="MultiNet" zoom="25">
@@ -659,4 +2117,45 @@
     <subnet netname="CONN"/>
     <subnet netname="xCONN"/>
   </multinet>
+  <measures gspn-name="MultiNet" log-uuid="ba7c24cc-a4ea-4e91-aa7d-4c6b9f87bc35" name="Measures" simplified-UI="false">
+    <assignments/>
+    <rgmedd2/>
+    <formulas>
+      <formula language="ALL">
+        <result-table>
+          <all-measures failure_reason="&lt;not computed&gt;" name="ALL" state="FAIL_COMPUTE">
+            <bindings/>
+          </all-measures>
+        </result-table>
+      </formula>
+      <formula language="STAT">
+        <result-table>
+          <stat-result name="STAT">
+            <bindings/>
+            <stat key="build_time" value="3.907 seconds."/>
+            <stat key="num_rs_nodes" value="0"/>
+            <stat key="num_tangible_markings" value="inf"/>
+            <stat key="total_firings" value="inf"/>
+          </stat-result>
+        </result-table>
+      </formula>
+      <formula language="INC">
+        <result-table>
+          <pdf-result name="INC">
+            <bindings/>
+          </pdf-result>
+        </result-table>
+      </formula>
+      <formula expr="AG ndeadlock" language="CTLSTAR">
+        <result-table>
+          <mc-result failure_reason="&lt;not computed&gt;" name="MEASURE0" state="FAIL_COMPUTE">
+            <bindings/>
+          </mc-result>
+        </result-table>
+      </formula>
+    </formulas>
+  </measures>
+  <resource-list>
+    <document-log uuid="ba7c24cc-a4ea-4e91-aa7d-4c6b9f87bc35">rO0ABXNyABRqYXZhLnV0aWwuTGlua2VkTGlzdAwpU11KYIgiAwAAeHB3BAAAARx0ANwbWzBtRVhFQzogIkM6XEthdXNoaWtcUHJvZHVjdGl2aXR5XEdyZWF0U1BOXGFwcFxwb3J0YWJsZV9ncmVhdHNwblxiaW5cRFNQTi1Ub29sLmV4ZSIgLWxvYWQgIkM6XEthdXNoaWtcQVNVXENTRSA1OTMgLSBBcHBsaWVkIFByb2plY3RcdGNwLXBldHJpLW5ldFx0Y3AtcmtuLWNvcHktTWVhc3VyZXMuc29sdXRpb25cTXVsdGlOZXQiIC1wYmFzaXMgLWRldGVjdC1leHAgLXBzZmwgLWJuZCAKdACQG1sxbRtbNG1MT0FESU5HIFBFVFJJIE5FVCBDOlxLYXVzaGlrXEFTVVxDU0UgNTkzIC0gQXBwbGllZCBQcm9qZWN0XHRjcC1wZXRyaS1uZXRcdGNwLXJrbi1jb3B5LU1lYXN1cmVzLnNvbHV0aW9uXE11bHRpTmV0IChuZXQvZGVmKS4uLhtbMjJtG1syNG0KdAAPTUFSS0lORyBQQVI6IDAKdAAQUExBQ0VTOiAgICAgIDYwCnQAD1JBVEUgUEFSOiAgICAwCnQAEVRSQU5TSVRJT05TOiAxNTYKdAAPTUVBU1VSRVM6ICAgIDAKdAAoTE9BRElORyBUSU1FOiBbVXNlciAwLjAwMHMsIFN5cyAwLjAwMHNdCnQAAQp0AAEKdAAeQ09NUFVUSU5HIFBMQUNFIEZMT1cgQkFTSVMuLi4KdAATTT0xNTYsIE49NjAsIE4wPTYwCnQAT0NvbXB1dGF0aW9uIG9mIEZsb3cgYmFzaXM6IGNvbXBsZXRlZCBpbiA1OCBzdGVwcywgfEt8PTIuICAgICAgICAgICAgICAgICAgICAgIAp0AClGT1VORCAyIFZFQ1RPUlMgSU4gVEhFIFBMQUNFIEZMT1cgQkFTSVMuCnQAAQp0AAEKdAAvVGhlcmUgYXJlIDMwIHBsYWNlcyBub3QgY292ZXJlZCBieSBhbnkgUC1mbG93Ogp0AAEKdAAmVE9UQUwgVElNRTogW1VzZXIgMC4wMDBzLCBTeXMgMC4wMDBzXQp0ACdBVk9JRCBFWFBPTkVOVElBTCBHUk9XVEggT0YgU0VNSUZMT1dTLgp0AB1DT01QVVRJTkcgUExBQ0UgU0VNSUZMT1dTLi4uCnQAE009MTU2LCBOPTYwLCBOMD02MAp0AE1HZW5lcmF0aW9uIG9mIFNlbWlmbG93czogY29tcGxldGVkIGluIDQ2IHN0ZXBzLCB8S3w9Mi4gICAgICAgICAgICAgICAgICAgICAgCnQAGUZPVU5EIDIgUExBQ0UgU0VNSUZMT1dTLgp0AAEKdAABCnQAM1RoZXJlIGFyZSAzMCBwbGFjZXMgbm90IGNvdmVyZWQgYnkgYW55IFAtc2VtaWZsb3c6CnQAAQp0ACZUT1RBTCBUSU1FOiBbVXNlciAwLjAwMHMsIFN5cyAwLjAwMHNdCnQALENPTVBVVElORyBQTEFDRSBCT1VORFMgRlJPTSBQLVNFTUlGTE9XUyAuLi4KdABOG1sxbRtbMzFtV0FSTklORzogG1syMm0bWzBtUEVUUkkgTkVUIEhBUyBJTkhJQklUT1IgQVJDUyBUSEFUIFdJTEwgQkUgSUdOT1JFRC4KdABOG1sxbRtbMzFtV0FSTklORzogG1syMm0bWzBtUEVUUkkgTkVUIEhBUyBJTkhJQklUT1IgQVJDUyBUSEFUIFdJTEwgQkUgSUdOT1JFRC4KdAAnG1swWBtbMzJtIFBST0NFU1MgRVhJVEVEIE5PUk1BTExZLhtbMG0KdADbG1swbUVYRUM6ICJDOlxLYXVzaGlrXFByb2R1Y3Rpdml0eVxHcmVhdFNQTlxhcHBccG9ydGFibGVfZ3JlYXRzcG5cYmluXERTUE4tVG9vbC5leGUiIC1sb2FkICJDOlxLYXVzaGlrXEFTVVxDU0UgNTkzIC0gQXBwbGllZCBQcm9qZWN0XHRjcC1wZXRyaS1uZXRcdGNwLXJrbi1jb3B5LU1lYXN1cmVzLnNvbHV0aW9uXE11bHRpTmV0IiAtbG9hZC1ibmQgLXRpbWVvdXQgNSAtaWxwLWJuZCAKdACQG1sxbRtbNG1MT0FESU5HIFBFVFJJIE5FVCBDOlxLYXVzaGlrXEFTVVxDU0UgNTkzIC0gQXBwbGllZCBQcm9qZWN0XHRjcC1wZXRyaS1uZXRcdGNwLXJrbi1jb3B5LU1lYXN1cmVzLnNvbHV0aW9uXE11bHRpTmV0IChuZXQvZGVmKS4uLhtbMjJtG1syNG0KdAAPTUFSS0lORyBQQVI6IDAKdAAQUExBQ0VTOiAgICAgIDYwCnQAD1JBVEUgUEFSOiAgICAwCnQAEVRSQU5TSVRJT05TOiAxNTYKdAAPTUVBU1VSRVM6ICAgIDAKdAAoTE9BRElORyBUSU1FOiBbVXNlciAwLjAwMHMsIFN5cyAwLjAwMHNdCnQAAQp0AAEKdAAVTE9BRElORyBCTkQgRklMRSAuLi4KdAAgU2NoZWR1bGVkIHRpbWVvdXQgb2YgNSBzZWNvbmRzLgp0ACVDT01QVVRJTkcgUExBQ0UgQk9VTkRTIFVTSU5HIElMUCAuLi4KdAAiSW5oaWJpdG9yIGFyY3MgaGF2ZSBiZWVuIGlnbm9yZWQuCnQAH1RoZXJlIGFyZSAzMCB1bmJvdW5kZWQgcGxhY2VzLgpxAH4AInQAvhtbMG1FWEVDOiAiQzpcS2F1c2hpa1xQcm9kdWN0aXZpdHlcR3JlYXRTUE5cYXBwXHBvcnRhYmxlX2dyZWF0c3BuXGJpblxSR01FREQzLmV4ZSIgIkM6XEthdXNoaWtcQVNVXENTRSA1OTMgLSBBcHBsaWVkIFByb2plY3RcdGNwLXBldHJpLW5ldFx0Y3AtcmtuLWNvcHktTWVhc3VyZXMuc29sdXRpb25cTXVsdGlOZXQiIC1NRVRBIC1DIAp0AB9SYW5kb20gc2VlZHM6IDE3NDg1ODgzNDcgMzAyNjIKdABQPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQp0ABFHcmVhdFNQTi9NZWRkbHkuCnQAOCAgQ29weXJpZ2h0IChDKSAxOTg3LTIwMTgsIFVuaXZlcnNpdHkgb2YgVG9yaW5vLCBJdGFseS4KdAAxICBTZW5kIGZpbGVzIG5ldG5hbWUubmV0LCAuZGVmIHRvIGUtbWFpbCBhZGRyZXNzCnQAKyAgYmVjY3V0aUBkaS51bml0by5pdCBpZiB5b3UgZmluZCBhbnkgYnVnLgp0AFA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CnQAH0Jhc2VkIG9uIE1FRERMWSB2ZXJzaW9uIDAuMTcuMQp0AEYgIENvcHlyaWdodCAoQykgMjAwOSwgSW93YSBTdGF0ZSBVbml2ZXJzaXR5IFJlc2VhcmNoIEZvdW5kYXRpb24sIEluYy4KdAAtICB3ZWJzaXRlOiBodHRwczovL2FzbWluZXIuZ2l0aHViLmlvL21lZGRseS8KdABQPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQp0AClVc2luZyBwZXItZXZlbnQgc2F0dXJhdGlvbiAoc2F0LXByZWdlbikuCnQAG1VzaW5nIGZhc3QgTlNGIGdlbmVyYXRpb24uCnQAEVByb2Nlc3MgSUQ6IDE2MTQKdABrTU9ERUwgTkFNRTogQzpcS2F1c2hpa1xBU1VcQ1NFIDU5MyAtIEFwcGxpZWQgUHJvamVjdFx0Y3AtcGV0cmktbmV0XHRjcC1ya24tY29weS1NZWFzdXJlcy5zb2x1dGlvblxNdWx0aU5ldAp0AB4gIDYwIHBsYWNlcywgMTU2IHRyYW5zaXRpb25zLgp0ACVVc2VkIE1lbW9yeSBmb3IgZW5jb2RpbmcgbmV0OiA4ODY0S0IKdAB1T3BlbmluZyBmaWxlOiBDOlxLYXVzaGlrXEFTVVxDU0UgNTkzIC0gQXBwbGllZCBQcm9qZWN0XHRjcC1wZXRyaS1uZXRcdGNwLXJrbi1jb3B5LU1lYXN1cmVzLnNvbHV0aW9uXE11bHRpTmV0LmJuZCBPSy4KdAB4T3BlbmluZyBmaWxlOiBDOlxLYXVzaGlrXEFTVVxDU0UgNTkzIC0gQXBwbGllZCBQcm9qZWN0XHRjcC1wZXRyaS1uZXRcdGNwLXJrbi1jb3B5LU1lYXN1cmVzLnNvbHV0aW9uXE11bHRpTmV0LmlscGJuZCBPSy4KdAAcRW5hYmxpbmcgY292ZXJhYmlsaXR5IHRlc3QuCnQAEUlOUFVUIEFSQ1M6ICAyMzYKdAART1VUUFVUIEFSQ1M6IDIwOAp0AA9JTkhJQiBBUkNTOiAgOAp0ABBURVNUIEFSQ1M6ICAgMzAKdAAQUExBQ0VTOiAgICAgIDYwCnQAEVRSQU5TSVRJT05TOiAxNTYKdAAPSU5WQVJJQU5UUzogIDIKdAAPUC1TRU1JRkxPV1M6IDIKdAAWTUFYIElOVkFSSUFOVCBDQVJEOiAxCnQAAQp0AFA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IFZBUklBQkxFIE9SREVSID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CnQAPFZhcmlhYmxlIG9yZGVyIG1ldGhvZDogTWV0YS1oZXVyaXN0aWMgdXNpbmcgd2VpZ2h0ZWQgc2NvcmUuCnQAGU51bWJlciBvZiBjb21wb25lbnRzOiAxMwp0AFEgIE1FVEhPRCAgICAgICAgICAgICAgU0NPUkUgICAgICAgIFNXSVIgICAgICAgU09VUFMgRElTQ09VTlQgIFdFSUdIVCAgICAgICBUSU1FIAp0AFUgIFNMTyAgICAgICAgICAgICAgIDE2NTYuMDcgICAgICAgIDE0NzYgICAgICAgIDE0NzYgICAgICAgIDEgICAxLjEyMiAgICAgICAgICAwIHNlYy4KdABVICBTTE8rRm9yY2UgICAgICAgICAxMTAxLjc2ICAgICAgICAxMjUyICAgICAgICAxMjUyICAgICAgICAxICAgIDAuODggICAgICAgICAgMCBzZWMuCnQAVSAgU0xPLTE2ICAgICAgICAgICAgMTE3Ny44NSAgICAgICAgMTQ3NiAgICAgICAgMTQ3NiAgICAgICAgMSAgIDAuNzk4ICAgICAgICAgIDAgc2VjLgp0AFUgIFNMTy0xNitGb3JjZSAgICAgIDExNDAuNTcgICAgICAgIDEyNTIgICAgICAgIDEyNTIgICAgICAgIDEgICAwLjkxMSAgICAgICAgICAwIHNlYy4KdABVICBUT1YyICAgICAgICAgICAgICAxMjQxLjY5ICAgICAgICAxMzY2ICAgICAgICAxMzY2ICAgICAgICAxICAgMC45MDkgICAgICAgICAgMCBzZWMuCnQAVSAgVE9WMitGb3JjZSAgICAgICAgMTU0My42MSAgICAgICAgMTMzMyAgICAgICAgMTMzMyAgICAgICAgMSAgIDEuMTU4ICAgICAgICAgIDAgc2VjLgp0AFUgIE5PQUNLMiAgICAgICAgICAgIDE1NDguMzQgICAgICAgIDEzNjkgICAgICAgIDEzNjkgICAgICAgIDEgICAxLjEzMSAgICAgICAgICAwIHNlYy4KdABVICBOT0FDSzIrRm9yY2UgICAgICAgMTUzMy43ICAgICAgICAxNTY1ICAgICAgICAxNTY1ICAgICAgICAxICAgIDAuOTggICAgICAgICAgMCBzZWMuCnQAVSAgQUNNICAgICAgICAgICAgICAgMTM3Mi45NCAgICAgICAgMTM1OCAgICAgICAgMTM1OCAgICAgICAgMSAgIDEuMDExICAgICAgICAgIDAgc2VjLgp0AFUgIEFDTStGb3JjZSAgICAgICAgIDE1MDYuNzYgICAgICAgIDExNzkgICAgICAgIDExNzkgICAgICAgIDEgICAxLjI3OCAgICAgICAgICAwIHNlYy4KdABVICBDTTIgICAgICAgICAgICAgICAyMDAxLjc1ICAgICAgICAxNTcwICAgICAgICAxNTcwICAgICAgICAxICAgMS4yNzUgICAgICAgICAgMCBzZWMuCnQAVSAgQ00yK0ZvcmNlICAgICAgICAgMTQzOC41OSAgICAgICAgMTMwOSAgICAgICAgMTMwOSAgICAgICAgMSAgIDEuMDk5ICAgICAgICAgIDAgc2VjLgp0AFUgIFAgICAgICAgICAgICAgICAgIDMzMjEuMTMgICAgICAgIDMxNjYgICAgICAgIDMxNjYgICAgICAgIDEgICAxLjA0OSAgICAgICAgICAwIHNlYy4KdABVICBHUCAgICAgICAgICAgICAgICAgMzY5MC4yICAgICAgICAzMTczICAgICAgICAzMTczICAgICAgICAxICAgMS4xNjMgICAgICAgICAgMCBzZWMuCnQAVSAgR1ArRm9yY2UgICAgICAgICAgMjA5MS4zOCAgICAgICAgMTg1OSAgICAgICAgMTg1OSAgICAgICAgMSAgIDEuMTI1ICAgICAgICAgIDAgc2VjLgp0AFUgIFRTICAgICAgICAgICAgICAgIDE2MDEuMjQgICAgICAgIDIzNDEgICAgICAgIDIzNDEgICAgICAgIDEgICAwLjY4NCAgICAgICAgICAwIHNlYy4KdABVICBUUytGb3JjZSAgICAgICAgICAxMDI4Ljg2ICAgICAgICAxMzA0ICAgICAgICAxMzA0ICAgICAgICAxICAgMC43ODkgICAgICAgICAgMCBzZWMuCnQAPk1ldGEtaGV1cmlzdGljOiBzZWxlY3RpbmcgbWV0aG9kIFRTK0ZvcmNlIHdpdGggc2NvcmU6IDEwMjguODYKdAAmVGltZSB0byBjb21wdXRlIHZhcmlhYmxlIG9yZGVyOiAwLjAxNQp0AAEKdABQPT09PT09PT09PT09PT09PT09PT09PT09PSBTVEFSVCBGSVJJTkcgUlVMRVMgRU5DT0RJTkcgPT09PT09PT09PT09PT09PT09PT09PT09PQp0ADQJRW5jb2RpbmcgdHJhbnNpdGlvbiB0MiAoMS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDcKdAA0CUVuY29kaW5nIHRyYW5zaXRpb24gdDQgKDIvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA3CnQANAlFbmNvZGluZyB0cmFuc2l0aW9uIHQ2ICgzLzE1NiksIHByaW9yaXR5IGdyb3VwID0gNwp0AD0JRW5jb2RpbmcgdHJhbnNpdGlvbiBmbHVzaF9mbGFncyAoNC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDcKdAA0CUVuY29kaW5nIHRyYW5zaXRpb24gdDAgKDUvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA3CnQANQlFbmNvZGluZyB0cmFuc2l0aW9uIHh0MiAoNi8xNTYpLCBwcmlvcml0eSBncm91cCA9IDcKdAA1CUVuY29kaW5nIHRyYW5zaXRpb24geHQ0ICg3LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNwp0ADUJRW5jb2RpbmcgdHJhbnNpdGlvbiB4dDYgKDgvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA3CnQAPglFbmNvZGluZyB0cmFuc2l0aW9uIHhmbHVzaF9mbGFncyAoOS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDcKdAA2CUVuY29kaW5nIHRyYW5zaXRpb24geHQwICgxMC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDcKdAA1CUVuY29kaW5nIHRyYW5zaXRpb24gdDcgKDExLzE1NiksIHByaW9yaXR5IGdyb3VwID0gNgp0ADUJRW5jb2RpbmcgdHJhbnNpdGlvbiB0NSAoMTIvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA2CnQANQlFbmNvZGluZyB0cmFuc2l0aW9uIHQzICgxMy8xNTYpLCBwcmlvcml0eSBncm91cCA9IDYKdAA1CUVuY29kaW5nIHRyYW5zaXRpb24gdDEgKDE0LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNgp0ADYJRW5jb2RpbmcgdHJhbnNpdGlvbiB4dDcgKDE1LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNgp0ADYJRW5jb2RpbmcgdHJhbnNpdGlvbiB4dDUgKDE2LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNgp0ADYJRW5jb2RpbmcgdHJhbnNpdGlvbiB4dDMgKDE3LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNgp0ADYJRW5jb2RpbmcgdHJhbnNpdGlvbiB4dDEgKDE4LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNgp0AD4JRW5jb2RpbmcgdHJhbnNpdGlvbiBQT19yY3ZfeFJTVCAoMTkvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA1CnQAPglFbmNvZGluZyB0cmFuc2l0aW9uIEFPX3Jjdl94UlNUICgyMC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hSU1Q0ICgyMS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hSU1Q1ICgyMi8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hSU1Q2ICgyMy8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hSU1Q3ICgyNC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA9CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hSU1QxMCAoMjUvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA1CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94UlNUOCAoMjYvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA1CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94UlNUOSAoMjcvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA1CnQAPQlFbmNvZGluZyB0cmFuc2l0aW9uIFBPX3Jjdl9SU1QgKDI4LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNQp0AD0JRW5jb2RpbmcgdHJhbnNpdGlvbiBBT19yY3ZfUlNUICgyOS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X1JTVDQgKDMwLzE1NiksIHByaW9yaXR5IGdyb3VwID0gNQp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfUlNUNSAoMzEvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA1CnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9SU1Q2ICgzMi8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X1JTVDcgKDMzLzE1NiksIHByaW9yaXR5IGdyb3VwID0gNQp0ADwJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfUlNUMTAgKDM0LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNQp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfUlNUOCAoMzUvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA1CnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9SU1Q5ICgzNi8xNTYpLCBwcmlvcml0eSBncm91cCA9IDUKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hSU1QyICgzNy8xNTYpLCBwcmlvcml0eSBncm91cCA9IDQKdAA+CUVuY29kaW5nIHRyYW5zaXRpb24gUE9fcmN2X3hTWU4gKDM4LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNAp0AD4JRW5jb2RpbmcgdHJhbnNpdGlvbiBBT19yY3ZfeFNZTiAoMzkvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94U1lOMyAoNDAvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94U1lONCAoNDEvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94U1lONSAoNDIvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94U1lONiAoNDMvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94U1lOOSAoNDQvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94U1lONyAoNDUvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94U1lOOCAoNDYvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9SU1QyICg0Ny8xNTYpLCBwcmlvcml0eSBncm91cCA9IDQKdAA9CUVuY29kaW5nIHRyYW5zaXRpb24gUE9fcmN2X1NZTiAoNDgvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAPQlFbmNvZGluZyB0cmFuc2l0aW9uIEFPX3Jjdl9TWU4gKDQ5LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNAp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfU1lOMyAoNTAvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9TWU40ICg1MS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDQKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X1NZTjUgKDUyLzE1NiksIHByaW9yaXR5IGdyb3VwID0gNAp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfU1lONiAoNTMvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9TWU45ICg1NC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDQKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X1NZTjcgKDU1LzE1NiksIHByaW9yaXR5IGdyb3VwID0gNAp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfU1lOOCAoNTYvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSA0CnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94QUNLICg1Ny8xNTYpLCBwcmlvcml0eSBncm91cCA9IDMKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gYmFkX3hBQ0sgKDU4LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMwp0ADUJRW5jb2RpbmcgdHJhbnNpdGlvbiB0OCAoNTkvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAzCnQAPglFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94RklOQUNLICg2MC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDMKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hBQ0syICg2MS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDMKdAA6CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0FDSyAoNjIvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAzCnQAOglFbmNvZGluZyB0cmFuc2l0aW9uIGJhZF9BQ0sgKDYzLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMwp0ADYJRW5jb2RpbmcgdHJhbnNpdGlvbiB4dDggKDY0LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMwp0AD0JRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfRklOQUNLICg2NS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDMKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0FDSzIgKDY2LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMwp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeFNZTiAoNjcvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAyCnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94UlNUICg2OC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hSU1QzICg2OS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hBQ0szICg3MC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA6CUVuY29kaW5nIHRyYW5zaXRpb24gbGltaXRlciAoNzEvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAyCnQANQlFbmNvZGluZyB0cmFuc2l0aW9uIHQ5ICg3Mi8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gYmFkX3hBQ0syICg3My8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA/CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hBQ0tfRklOICg3NC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdABACUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hBQ0tfRklOMiAoNzUvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAyCnQAQAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94QUNLX0xBU1QgKDc2LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMgp0ADoJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfU1lOICg3Ny8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA6CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X1JTVCAoNzgvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAyCnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9SU1QzICg3OS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0FDSzMgKDgwLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMgp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiB4bGltaXRlciAoODEvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAyCnQANglFbmNvZGluZyB0cmFuc2l0aW9uIHh0OSAoODIvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAyCnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIGJhZF9BQ0syICg4My8xNTYpLCBwcmlvcml0eSBncm91cCA9IDIKdAA+CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0FDS19GSU4gKDg0LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMgp0AD8JRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfQUNLX0ZJTjIgKDg1LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMgp0AD8JRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfQUNLX0xBU1QgKDg2LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMgp0ADoJRW5jb2RpbmcgdHJhbnNpdGlvbiBub194UlNUICg4Ny8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hTWU4yICg4OC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gaGFzX3hSU1QgKDg5LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADwJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeEZJTjYgKDkwLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADwJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeEZJTjUgKDkxLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADwJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeEZJTjMgKDkyLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADwJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeEZJTjQgKDkzLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADwJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeEZJTjcgKDk0LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADwJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeEZJTjggKDk1LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADkJRW5jb2RpbmcgdHJhbnNpdGlvbiBDTE9TRTUgKDk2LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADYJRW5jb2RpbmcgdHJhbnNpdGlvbiBlbmQgKDk3LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADYJRW5jb2RpbmcgdHJhbnNpdGlvbiBmX2MgKDk4LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADoJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeENTICg5OS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X3hDQSAoMTAwLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeENGICgxMDEvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAPQlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94RklOOSAoMTAyLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0AD4JRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeEZJTjEwICgxMDMvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94RklOICgxMDQvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAPQlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl94RklOMiAoMTA1LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADcJRW5jb2RpbmcgdHJhbnNpdGlvbiBmX3IgKDEwNi8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA6CUVuY29kaW5nIHRyYW5zaXRpb24gbm9fUlNUICgxMDcvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9TWU4yICgxMDgvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAOwlFbmNvZGluZyB0cmFuc2l0aW9uIGhhc19SU1QgKDEwOS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0ZJTjYgKDExMC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0ZJTjUgKDExMS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0ZJTjMgKDExMi8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0ZJTjQgKDExMy8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0ZJTjcgKDExNC8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA8CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0ZJTjggKDExNS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA7CUVuY29kaW5nIHRyYW5zaXRpb24geENMT1NFNSAoMTE2LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADgJRW5jb2RpbmcgdHJhbnNpdGlvbiB4Zl9jICgxMTcvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAOglFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9DUyAoMTE4LzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADoJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfQ0EgKDExOS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAA6CUVuY29kaW5nIHRyYW5zaXRpb24gcmN2X0NGICgxMjAvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9GSU45ICgxMjEvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAPQlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9GSU4xMCAoMTIyLzE1NiksIHByaW9yaXR5IGdyb3VwID0gMQp0ADsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfRklOICgxMjMvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAPAlFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9GSU4yICgxMjQvMTU2KSwgcHJpb3JpdHkgZ3JvdXAgPSAxCnQAOAlFbmNvZGluZyB0cmFuc2l0aW9uIHhmX3IgKDEyNS8xNTYpLCBwcmlvcml0eSBncm91cCA9IDEKdAAlCUVuY29kaW5nIHRyYW5zaXRpb24gUE9QRU4gKDEyNi8xNTYpCnQAJQlFbmNvZGluZyB0cmFuc2l0aW9uIEFPUEVOICgxMjcvMTU2KQp0ACQJRW5jb2RpbmcgdHJhbnNpdGlvbiBPUEVOICgxMjgvMTU2KQp0ACQJRW5jb2RpbmcgdHJhbnNpdGlvbiBTRU5EICgxMjkvMTU2KQp0ACUJRW5jb2RpbmcgdHJhbnNpdGlvbiBDTE9TRSAoMTMwLzE1NikKdAAmCUVuY29kaW5nIHRyYW5zaXRpb24gQ0xPU0UyICgxMzEvMTU2KQp0ACsJRW5jb2RpbmcgdHJhbnNpdGlvbiByY3ZfeFNZTkFDSyAoMTMyLzE1NikKdAAmCUVuY29kaW5nIHRyYW5zaXRpb24gQ0xPU0UzICgxMzMvMTU2KQp0ACYJRW5jb2RpbmcgdHJhbnNpdGlvbiBDTE9TRTQgKDEzNC8xNTYpCnQAKglFbmNvZGluZyB0cmFuc2l0aW9uIGVtcHR5X3hBQ0sgKDEzNS8xNTYpCnQAKglFbmNvZGluZyB0cmFuc2l0aW9uIF9kYXRhX2xvb3AgKDEzNi8xNTYpCnQAKAlFbmNvZGluZyB0cmFuc2l0aW9uIHhSU1RfYnVmICgxMzcvMTU2KQp0ACgJRW5jb2RpbmcgdHJhbnNpdGlvbiB4U1lOX2J1ZiAoMTM4LzE1NikKdAAoCUVuY29kaW5nIHRyYW5zaXRpb24geEFDS19idWYgKDEzOS8xNTYpCnQAKAlFbmNvZGluZyB0cmFuc2l0aW9uIHhGSU5fYnVmICgxNDAvMTU2KQp0ACYJRW5jb2RpbmcgdHJhbnNpdGlvbiB4UE9QRU4gKDE0MS8xNTYpCnQAJglFbmNvZGluZyB0cmFuc2l0aW9uIHhBT1BFTiAoMTQyLzE1NikKdAAlCUVuY29kaW5nIHRyYW5zaXRpb24geE9QRU4gKDE0My8xNTYpCnQAJQlFbmNvZGluZyB0cmFuc2l0aW9uIHhTRU5EICgxNDQvMTU2KQp0ACYJRW5jb2RpbmcgdHJhbnNpdGlvbiB4Q0xPU0UgKDE0NS8xNTYpCnQAJwlFbmNvZGluZyB0cmFuc2l0aW9uIHhDTE9TRTIgKDE0Ni8xNTYpCnQAKglFbmNvZGluZyB0cmFuc2l0aW9uIHJjdl9TWU5BQ0sgKDE0Ny8xNTYpCnQAJwlFbmNvZGluZyB0cmFuc2l0aW9uIHhDTE9TRTMgKDE0OC8xNTYpCnQAJwlFbmNvZGluZyB0cmFuc2l0aW9uIHhDTE9TRTQgKDE0OS8xNTYpCnQAJAlFbmNvZGluZyB0cmFuc2l0aW9uIHhlbmQgKDE1MC8xNTYpCnQAKQlFbmNvZGluZyB0cmFuc2l0aW9uIGVtcHR5X0FDSyAoMTUxLzE1NikKdAArCUVuY29kaW5nIHRyYW5zaXRpb24gX3hkYXRhX2xvb3AgKDE1Mi8xNTYpCnQAJwlFbmNvZGluZyB0cmFuc2l0aW9uIFJTVF9idWYgKDE1My8xNTYpCnQAJwlFbmNvZGluZyB0cmFuc2l0aW9uIFNZTl9idWYgKDE1NC8xNTYpCnQAJwlFbmNvZGluZyB0cmFuc2l0aW9uIEFDS19idWYgKDE1NS8xNTYpCnQAJwlFbmNvZGluZyB0cmFuc2l0aW9uIEZJTl9idWYgKDE1Ni8xNTYpCnQALUVuY29kZWQgMTU2IHRyYW5zaXRpb24gaW4gOCBwcmlvcml0eSBncm91cHMuCnQAHlRpbWUgdG8gYnVpbGQgYWxsIE5TRnM6IDMuODI4CnQAAQp0AFA9PT09PT09PT09PT09PT09PT09PT09PT09IFJFQUNIQUJJTElUWSBTRVQgR0VORVJBVElPTiA9PT09PT09PT09PT09PT09PT09PT09PT09CnQAJTEgQyAyIDMgQyBjb3ZlcmFiaWxpdHkgdGVzdCBmYWlsZWQhIQp0ABhDb252ZXJnZW5jZSBpbiAzIHN0ZXBzLgp0AB4gVGhlIHN0YXRlIHNwYWNlIGlzIGluZmluaXRlLgp0ABZSUyBnZW5lcmF0aW9uIHRpbWU6IDAKdAABCnQAUD09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IE1FTU9SWSA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KdAApIFRvdGFsIE1lbW9yeSBVc2VkOiAgICAgICAxMTQ0MTIgS0J5dGVzLgp0ACxTdGF0ZSBzcGFjZSBpcyBpbmZpbml0ZS4gQ291bGQgbm90IHJ1biBDVEwuCnQAAQp0AFA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0gVElNRSA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CnQAJSBWYXJpYWJsZSBvcmRlciBUaW1lOiAgICAgMC4wMzEgc2VjLgp0ACUgTlNGIGdlbi4gVGltZTogICAgICAgICAgIDMuODI4IHNlYy4KdAAlIFJTIEdlbmVyYXRpb24gVGltZTogICAgICAwLjAwMCBzZWMuCnQAJSBUb3RhbCBSUyBUaW1lOiAgICAgICAgICAgMy44Mjggc2VjLgp0ACUgU3RhdGlzdGljcyBUaW1lOiAgICAgICAgIDAuMDAwIHNlYy4KdAApIENUTCBUaW1lOiAgICAgICAgICAgIDI1NzY5ODAzNy45MTYgc2VjLgp0ACUgVG90YWwgVGltZTogICAgICAgICAgICAgIDMuODU5IHNlYy4KdABQPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpxAH4AInhzcQB+AAB3BAAAARxzcgARamF2YS5sYW5nLkJvb2xlYW7NIHKA1Zz67gIAAVoABXZhbHVleHABcQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR5xAH4BHnEAfgEecQB+AR54</document-log>
+  </resource-list>
 </project>
